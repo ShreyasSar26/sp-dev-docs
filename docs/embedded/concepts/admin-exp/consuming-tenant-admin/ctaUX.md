@@ -134,8 +134,17 @@ Upon clicking Delete, the container is permanently deleted and the status of the
 ![SPE Container Deleted](../../../images/ctaux15-n.png)
 
 ## Sorting on Active containers page
+![Restored SPE Container](../../../images/Sorting.png)
 ## Filtering on Active containers page
+![Restored SPE Container](../../../images/Filter.png)
 ## Editing sensitivity label of a container on Active containers page
+![Restored SPE Container](../../../images/Sensitivity_Label.png)
 ## Managing user membership of a container
+![Restored SPE Container](../../../images/add owners.png)
 
+![Restored SPE Container](../../../images/add owners.png)
+
+![Restored SPE Container](../../../images/add owners.png)
+
+![Restored SPE Container](../../../images/add owners.png)
 
