@@ -1,14 +1,14 @@
 ---
 title: Manage Containers in SharePoint Admin Center
 description: This article describes how administrator can manage containers in SPAC.
-ms.date: 10/16/2024
+ms.date: 12/11/2024
 ms.localizationpriority: high
 ---
 # Manage SharePoint Embedded containers in SharePoint Admin Center
 
-The organizations that use the SharePoint Embedded applications on their Microsoft 365 (Microsoft 365) tenants are the consuming tenants and the persona that is responsible for managing these applications on their Microsoft 365 tenancy is the consuming tenant administrator (CTA). Consuming tenant administrators can manage containers through a graphical user interface (GUI) using the [SharePoint Administrator Center](https://go.microsoft.com/fwlink/?linkid=2185219).
+The organizations that use the SharePoint Embedded applications on their Microsoft 365 tenants are the consuming tenants and the persona that is responsible for managing these applications on their Microsoft 365 tenancy is the consuming tenant administrator (CTA). Consuming tenant administrators can manage containers through a graphical user interface (GUI) using the [SharePoint Administrator Center](https://go.microsoft.com/fwlink/?linkid=2185219).
 
-To manage SharePoint Embedded containers, CTA need to be assigned the Microsoft 365 SharePoint Embedded Administrator role. Global Administrators in Microsoft 365 have all the permissions of the SharePoint Embedded Administrator role.  A global administrator can assign a user the SharePoint Embedded administrator role to act as a consuming tenant admin for SharePoint Embedded. This role is available in both Microsoft Entra and the Microsoft 365 Admin Center.
+To manage SharePoint Embedded containers, CTA need to be assigned the SharePoint Embedded Administrator role.
 For information on SharePoint Embedded admin role, see [SharePoint Embedded Admin](../adminrole.md).
 
 The following actions are supported in SharePoint Admin Center:
@@ -19,8 +19,13 @@ The following actions are supported in SharePoint Admin Center:
 1. Delete a container
 1. Restore a deleted container
 1. Permanently deleted a container
+2. Sort active containers in the tenant
+3. Filter active containers in the tenant
+4. Set sensitivity label on active containers
+5. Add users to different roles on a container
+6. Reassign users from existing roles on a container
+7. Remove users from existing roles on a container
 
-**Global admin** will also see "Active Containers" and "Deleted Containers" page along with Site administration pages when they sign in to SharePoint Admin Center.
 
 ![Active Containers global admin](../../../images/ctaux1.png)
 
