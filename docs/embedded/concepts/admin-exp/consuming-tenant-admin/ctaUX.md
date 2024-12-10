@@ -133,9 +133,9 @@ Upon clicking Delete, the container is permanently deleted and the status of the
 
 ![SPE Container Deleted](../../../images/ctaux15-n.png)
 
-## Coming Soon
+## Sorting on Active containers page
+## Filtering on Active containers page
+## Editing sensitivity label of a container on Active containers page
+## Managing user membership of a container
 
-1. Sort containers by created date and storage
-1. Filter containers by created date, application name and publisher name
-1. Edit sensitivity label of a container
-1. Add and remove users to/from a container
+
