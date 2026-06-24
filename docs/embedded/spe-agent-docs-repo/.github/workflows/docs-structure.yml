@@ -1,0 +1,21 @@
+name: Docs structure tests
+
+# Runs on every push and pull request to ANY branch — so you can validate the
+# structure of proposed doc changes without merging to main.
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    branches: ['**']
+  workflow_dispatch: {}
+
+jobs:
+  structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Validate agent-first doc structure
+        run: python test_doc_structure.py
