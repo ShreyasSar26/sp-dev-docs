@@ -1,0 +1,75 @@
+# SharePoint Embedded — Agent Docs
+
+> Agent-first documentation for SharePoint Embedded (SPE), converted from the official
+> Microsoft Learn docs (SharePoint/sp-dev-docs). Hand this file and the linked .md pages
+> to an AI agent so it can perform SPE tasks against Microsoft Graph and Microsoft Purview.
+> Each page is self-contained: prerequisites, exact API calls, persona (developer/admin),
+> and a source_of_truth link back to Microsoft Learn.
+
+## Overview & scenarios
+- [SharePoint Embedded Overview](overview.md): Microsoft SharePoint Embedded is a cloud-based file and document management system suitable for use in any application. SharePoint Embedded is a new API-only solution that enables app developers to harness the power of the Microsoft 365 file and document storage platform for any app, and is suitable for enterprises building line-of-business applications and ISVs building multitenant applications.
+- [Scenarios and Use Cases](scenarios-and-use-cases.md): Scenarios and Use Cases for SharePoint Embedded
+- [What's new in SharePoint Embedded?](whats-new.md): Updates about Microsoft SharePoint Embedded.
+
+## Get started
+- [Create new SharePoint Embedded container types](getting-started__containertypes.md): This article explains how container types work and the steps to create new container types. (scenarios: A2)
+- [Microsoft 365 Archive support for SharePoint Embedded containers](getting-started__microsoft-365-archive-support-for-containers.md): This article provides an overview of Microsoft 365 Archive support for archival of SharePoint Embedded containers.
+- [Register file storage container type application permissions](getting-started__register-api-documentation.md): Register the container type. (scenarios: D1)
+- [SharePoint Embedded for Visual Studio Code](getting-started__spembedded-for-vscode.md): Installation and getting started with SharePoint Embedded for Visual Studio Code (scenarios: D2)
+
+## Development — Core Storage, Collaboration, Copilot
+- [App Architecture](development__app-architecture.md): Anatomy of a SharePoint Embedded application
+- [SharePoint Embedded Authentication and Authorization](development__auth.md): This article describes the authentication and authorization model for SharePoint Embedded applications. (scenarios: D1, D15)
+- [Configuring redirect behavior](development__content-experiences__configure-redirect-behavior.md): Configure the urlTemplate property on a SharePoint Embedded container type to control how Microsoft 365 routes users to container content from Microsoft 365 search results and from the driveItem.webUrl property returned by Microsoft Graph. (scenarios: D9)
+- [Office Experiences](development__content-experiences__office-experience.md): Overview of Office experiences with SharePoint Embedded content (scenarios: D9)
+- [Search SharePoint Embedded containers and content](development__content-experiences__search-content.md): Overview on how to search SharePoint Embedded containers and content (scenarios: D11)
+- [Content Experiences Overview](development__content-experiences__user-experiences-overview.md): Experiences with SharePoint Embedded content (scenarios: D9)
+- [Set up SharePoint Embedded as a knowledge source in Microsoft Foundry](development__declarative-agent__sharepoint-embedded-knowledge-source.md): Instructions to configure SPE in Azure's knowledge retrieval (scenarios: D10)
+- [SharePoint Embedded agent (Deprecated)](development__declarative-agent__spe-da.md): Details usage and billing for SharePoint Embedded agents (scenarios: D10)
+- [SharePoint Embedded agent Advanced Topics](development__declarative-agent__spe-da-adv.md): Learn how the semantic index powers Retrieval-Augmented Generation (RAG) to provide accurate, context-aware AI responses in SharePoint Embedded agent. (scenarios: D10)
+- [Fluid Framework in SharePoint Embedded Applications](development__fluid.md): Details Fluid Integration with SharePoint Embedded Applications
+- [Limits and Calling Patterns](development__limits-calling.md): This article explains the limits of SharePoint Embedded. (scenarios: D3)
+- [Sharing and Permissions](development__sharing-and-perm.md): Outlines Permission Model for SharePoint Embedded (scenarios: D7, D8)
+- [Support archival of SharePoint Embedded containers](development__support-archival-of-containers.md): This article explains how archival functionality can be supported for a container type. (scenarios: A5)
+- [Document Processing with Azure Cognitive Services](development__tutorials__doc-processing-acs.md): Enabling document processing with Azure Cognitive Services. (scenarios: D12)
+- [Configure Default Launch Experience for your Office Files](development__tutorials__launch-experience.md): Configure Default Launch Experience for your Office Files
+- [SharePoint Embedded Container Metadata](development__tutorials__metadata.md): Add metadata in Containers and Files. (scenarios: D4)
+- [Tutorial to Migrate from Azure Blob Storage container to SharePoint Embedded container](development__tutorials__migrate-abs-to-spe.md): Tutorial in how to migrate from Azure Blob Storage container to SharePoint Embedded container Using C# (scenarios: A5)
+- [SharePoint Embedded agent Tutorial](development__tutorials__spe-da-vscode.md): SharePoint Embedded agent tutorial with the SDK and the VS Code SharePoint Embedded Extension
+- [File Previews](development__tutorials__using-file-preview.md): Preview SharePoint Embedded content (scenarios: D9)
+- [Using Webhooks](development__tutorials__using-webhooks.md): Use webhooks with SharePoint Embedded. (scenarios: D6)
+- [Install your SharePoint Embedded application for customers.](development__tutorials__vendor-install-app-customer.md): Seamlessly install your SharePoint Embedded application on your customers' tenant.
+
+## Administration
+- [SharePoint Embedded administrator](administration__adminrole.md): This article explains the new admin role for SharePoint Embedded. (scenarios: A1, A12)
+- [Pay-as-you-go billing for SharePoint Embedded](administration__billing__billing.md): This article explains the billing models and how to set up pay-as-you-go billing. (scenarios: A3)
+- [SharePoint Embedded Billing Management](administration__billing__billingmanagement.md): This article describes how to view SharePoint Embedded application consumption in Azure portal. (scenarios: A3, A4)
+- [SharePoint Embedded Billing Meters](administration__billing__meters.md): This article describes the meters in SharePoint Embedded. (scenarios: A4)
+- [Consuming Tenant Admin](administration__consuming-tenant-admin__cta.md): This article describes the role and responsibilities of Consuming Tenant Admin in SharePoint Embedded. (scenarios: A2)
+- [Manage containers in SharePoint Admin Center](administration__consuming-tenant-admin__ctaUX.md): This article describes how administrators can manage containers in the SharePoint Admin Center (SPAC). (scenarios: A2)
+- [Consuming Tenant Admin PowerShell](administration__consuming-tenant-admin__ctapowershell.md): This article describes how an admin can manage containers through SPO PowerShell. (scenarios: A2)
+- [SharePoint Embedded developer administrator](administration__developer-admin__dev-admin.md): This article describes the role and responsibilities of developer tenant admin in SharePoint Embedded. (scenarios: A1)
+
+## Compliance (Microsoft Purview)
+- [SharePoint Embedded audit log events](compliance__audit-events.md): Learn about audit log events for SharePoint Embedded container type operations in the Microsoft Purview unified audit log. (scenarios: A11)
+- [Security and Compliance](compliance__security-and-compliance.md): Details Security and Compliance methods provided by SharePoint Embedded (scenarios: A8, A9, A10, D13, D14)
+
+## Graph API reference (beta) — exact calls for Core Storage
+- [driveItem: createUploadSession](graph-api/driveitem-createuploadsession.md): Create an upload session to allow your app to upload files up to the maximum file size. (scenarios: D3)
+- [Create a new folder](graph-api/driveitem-post-children.md): Create a new folder or DriveItem in a Drive with a specified parent item or path. (scenarios: D3)
+- [Upload small files](graph-api/driveitem-put-content.md): Provide the contents of a new file or update the contents of an existing file in a single API call. (scenarios: D3)
+- [Delete permissions](graph-api/filestoragecontainer-delete-permissions.md): Delete permissions from a fileStorageContainer object. (scenarios: D7)
+- [Get fileStorageContainer](graph-api/filestoragecontainer-get.md): Retrieve the properties of a fileStorageContainer. (scenarios: D2)
+- [Get column](graph-api/filestoragecontainer-get-column.md): Get the properties of a column represented as a columnDefinition in a fileStorageContainer. (scenarios: D4)
+- [Get drive for fileStorageContainer](graph-api/filestoragecontainer-get-drive.md): Get the properties of a drive associated with a fileStorageContainer. (scenarios: D3)
+- [Get fileStorageContainer permission](graph-api/filestoragecontainer-get-permissions.md): Get a specific permission from a fileStorageContainer object. (scenarios: D7)
+- [List columns](graph-api/filestoragecontainer-list-columns.md): Get the collection of columns represented as columnDefinition resources in a fileStorageContainer. (scenarios: D4)
+- [List fileStorageContainer custom properties](graph-api/filestoragecontainer-list-customproperty.md): List the custom properties of a fileStorageContainer. (scenarios: D4)
+- [List fileStorageContainer permissions](graph-api/filestoragecontainer-list-permissions.md): Get the set of permissions for a fileStorageContainer. (scenarios: D7)
+- [List recycleBinItem](graph-api/filestoragecontainer-list-recyclebinitem.md): Get a list of recyclebinitem objects from a fileStorageContainer recycleBin. (scenarios: D5)
+- [Upsert permissions](graph-api/filestoragecontainer-patch-permissions.md): Upsert (create or update) up to 40 permissions on a fileStorageContainer in a single request. (scenarios: D7)
+- [Create fileStorageContainer](graph-api/filestoragecontainer-post.md): Create a new fileStorageContainer object. (scenarios: D2)
+- [Create column](graph-api/filestoragecontainer-post-columns.md): Create a column for a fileStorageContainer that specifies a columnDefinition. (scenarios: D4)
+- [Add custom properties to a fileStorageContainer](graph-api/filestoragecontainer-post-customproperty.md): Add custom properties to a fileStorageContainer. (scenarios: D4)
+- [Create permission](graph-api/filestoragecontainer-post-permissions.md): Add a permission to an existing fileStorageContainer. (scenarios: D7)
+- [Restore recycleBinItem](graph-api/filestoragecontainer-restore-recyclebinitem.md): Restore recycleBinItem to a fileStorageContainer. (scenarios: D5)

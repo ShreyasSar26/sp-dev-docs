@@ -1,0 +1,68 @@
+---
+title: SharePoint Embedded Billing Management
+slug: administration__billing__billingmanagement
+persona: admin
+scenario_ids: [A3, A4]
+source_of_truth: https://learn.microsoft.com/en-us/sharepoint/dev/embedded/administration/billing/billingmanagement
+source_date: 05/21/2024
+last_verified: 2026-06-23
+agent_ready: true
+---
+
+# SharePoint Embedded Billing Management
+
+> This article describes how to view SharePoint Embedded application consumption in Azure portal.
+
+**Agent task:** Answer SharePoint Embedded questions about "SharePoint Embedded Billing Management" using only this page. Use the exact Microsoft Graph calls, permissions, parameters, and steps below, respect the admin persona boundary, and cite this page.
+
+The Microsoft Cost Management portal provides a comprehensive overview of your costs, allowing you to track and analyze your spending for SharePoint Embedded application. This guide walks you through the steps to view your billing details and SharePoint Embedded consumption in the Microsoft Cost Management portal.
+
+## Step-by-Step Guide
+
+### Sign in to Azure portal
+
+1. Open your web browser and navigate to the [Azure portal](https://portal.azure.com/).
+1. Sign in using your Azure account credentials.
+
+### Navigate to Cost Management + Billing
+
+1. Once signed in, locate the left-hand navigation menu.
+1. Select on "Cost Management + Billing". If it's not visible, you can search for it using the search bar at the top of the portal.
+
+    ![Cost Management](https://learn.microsoft.com/en-us/sharepoint/dev/embedded/images/billmanag1.png)
+
+### Select Your Subscription
+
+1. In the Cost Management + Billing section, you see a list of your subscriptions.
+1. Select the subscription for which you want to view the billing details.
+
+### View Billing Overview
+
+1. After selecting your subscription, you'll be taken to the Overview page.
+1. Here, you can see a summary of your costs, including current spending, forecasted costs, and any spending anomalies.
+
+### Access Cost Analysis
+
+1. For a more detailed view, select "Cost analysis" under the Cost Management section.
+1. In the Cost Analysis page, you can customize the date range to view costs for specific periods.
+1. Use the filters to break down costs by tags - app ID, tenant ID or container type ID. Filters can also set by Meters, Resources etc. Refer to the [SharePoint Embedded meters](https://learn.microsoft.com/en-us/sharepoint/dev/embedded/administration/billing/meters) article to learn more about the pay-as-you-go meters supported.
+
+![Meters](https://learn.microsoft.com/en-us/sharepoint/dev/embedded/images/billmanag2.png)
+
+### Download Invoices
+
+1. To download invoices, go to the "Invoices" section under Billing.
+1. Here, you can view and download your billing invoices for any billing period.
+
+### Set Up Budgets and Alerts
+
+1. To better manage your spending, you can set up budgets and alerts.
+1. Select "Budgets" under the Cost Management section.
+
+    ![Budgets](https://learn.microsoft.com/en-us/sharepoint/dev/embedded/images/billmanag3.png)
+
+1. Create a new budget by specifying the amount and the time period.
+1. Set up alerts to notify you when spending approaches or exceeds your budget.
+
+---
+*Agent-first reformat of the official Microsoft Learn doc (content preserved). Source of truth: https://learn.microsoft.com/en-us/sharepoint/dev/embedded/administration/billing/billingmanagement*

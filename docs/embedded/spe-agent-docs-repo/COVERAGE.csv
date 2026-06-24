@@ -1,0 +1,36 @@
+Learn doc (your CSV),status,agent-ready file,source_of_truth
+SharePoint Embedded Overview | Microsoft Learn,READY,overview.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/overview
+What's new in SharePoint Embedded? | Microsoft Learn,READY,whats-new.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/whats-new
+Scenarios and Use Cases | Microsoft Learn,READY,scenarios-and-use-cases.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/scenarios-and-use-cases
+SharePoint Embedded for Visual Studio Code | Microsoft Learn,READY,getting-started__spembedded-for-vscode.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/getting-started/spembedded-for-vscode
+Create New SharePoint Embedded Container Types | Microsoft Learn,READY,getting-started__containertypes.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/getting-started/containertypes
+Register File Storage container Type Application Permissions | Microsoft Learn,READY,getting-started__register-api-documentation.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/getting-started/register-api-documentation
+App Architecture | Microsoft Learn,READY,development__app-architecture.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/app-architecture
+SharePoint Embedded Authentication and Authorization | Microsoft Learn,READY,development__auth.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/auth
+Sharing and Permissions | Microsoft Learn,READY,development__sharing-and-perm.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/sharing-and-perm
+Limits and Calling Patterns | Microsoft Learn,READY,development__limits-calling.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/limits-calling
+Fluid Framework in SharePoint Embedded Applications | Microsoft Learn,READY,development__fluid.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/fluid
+Office Experiences | Microsoft Learn,READY,development__content-experiences__office-experience.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/content-experiences/office-experience
+Content Experiences Overview | Microsoft Learn,READY,development__content-experiences__user-experiences-overview.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/content-experiences/user-experiences-overview
+Search SharePoint Embedded containers and content | Microsoft Learn,READY,development__content-experiences__search-content.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/content-experiences/search-content
+Configure Default Launch Experience for your Office Files | Microsoft Learn,READY,development__tutorials__launch-experience.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/tutorials/launch-experience
+SharePoint Embedded Container Metadata | Microsoft Learn,READY,development__tutorials__metadata.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/tutorials/metadata
+File Previews | Microsoft Learn,READY,development__tutorials__using-file-preview.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/tutorials/using-file-preview
+Document Processing with Azure Cognitive Services | Microsoft Learn,READY,development__tutorials__doc-processing-acs.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/tutorials/doc-processing-acs
+Using Webhooks | Microsoft Learn,READY,development__tutorials__using-webhooks.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/tutorials/using-webhooks
+Tutorial to Migrate from Azure Blob Storage container to SharePoint Embedded container | Microsoft Learn,READY,development__tutorials__migrate-abs-to-spe.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/tutorials/migrate-abs-to-spe
+Install your SharePoint Embedded application for customers. | Microsoft Learn,READY,development__tutorials__vendor-install-app-customer.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/tutorials/vendor-install-app-customer
+PAYG billing for SharePoint Embedded | Microsoft Learn,READY,administration__billing__billing.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/administration/billing/billing
+SharePoint Embedded Billing Management | Microsoft Learn,READY,administration__billing__billingmanagement.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/administration/billing/billingmanagement
+SharePoint Embedded Billing Meters | Microsoft Learn,READY,administration__billing__meters.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/administration/billing/meters
+Consuming Tenant Admin | Microsoft Learn,READY,administration__consuming-tenant-admin__cta.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/administration/consuming-tenant-admin/cta
+Consuming Tenant Admin PowerShell | Microsoft Learn,READY,administration__consuming-tenant-admin__ctapowershell.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/administration/consuming-tenant-admin/ctapowershell
+Manage containers in SharePoint Admin Center | Microsoft Learn,READY,administration__consuming-tenant-admin__ctaUX.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/administration/consuming-tenant-admin/ctaUX
+Developer Admin | Microsoft Learn,READY,administration__developer-admin__dev-admin.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/administration/developer-admin/dev-admin
+SharePoint Embedded administrator | Microsoft Learn,READY,administration__adminrole.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/administration/adminrole
+Security and Compliance | Microsoft Learn,READY,compliance__security-and-compliance.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/compliance/security-and-compliance
+SharePoint Embedded - overview & configuration - Training | Microsoft Learn,"NOT CONVERTED — Learn Training module (different repo, not docs/embedded)",,
+SharePoint Embedded - building applications - Training | Microsoft Learn,"NOT CONVERTED — Learn Training module (different repo, not docs/embedded)",,
+SharePoint Embedded agent | Microsoft Learn,READY,development__declarative-agent__spe-da.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/declarative-agent/spe-da
+SharePoint Embedded agent Tutorial | Microsoft Learn,READY,development__tutorials__spe-da-vscode.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/tutorials/spe-da-vscode
+SharePoint Embedded agent Advanced Topics | Microsoft Learn,READY,development__declarative-agent__spe-da-adv.md,https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/declarative-agent/spe-da-adv

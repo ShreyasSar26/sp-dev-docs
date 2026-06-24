@@ -1,0 +1,86 @@
+---
+title: SharePoint Embedded agent (Deprecated)
+slug: development__declarative-agent__spe-da
+persona: developer
+scenario_ids: [D10]
+source_of_truth: https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/declarative-agent/spe-da
+source_date: 03/17/2026
+last_verified: 2026-06-23
+agent_ready: true
+---
+
+# SharePoint Embedded agent (Deprecated)
+
+> Details usage and billing for SharePoint Embedded agents
+
+**Agent task:** Answer SharePoint Embedded questions about "SharePoint Embedded agent (Deprecated)" using only this page. Use the exact Microsoft Graph calls, permissions, parameters, and steps below, respect the developer persona boundary, and cite this page.
+
+> [!CAUTION]
+> SharePoint Embedded agent has been deprecated in its current form and replaced with [Microsoft Foundry Agent Service](https://learn.microsoft.com/azure/foundry/agents/overview) with a [SharePoint knowledge source (Preview)](https://learn.microsoft.com/azure/search/agentic-knowledge-source-how-to-sharepoint-remote) configured for SharePoint Embedded. Learn how to [set up SharePoint Embedded as a knowledge source in Microsoft Foundry](https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/declarative-agent/sharepoint-embedded-knowledge-source).
+
+This article will remain in place for a limited time for historical reference.
+
+> [!NOTE]
+>
+> The SharePoint Embedded agent SDK is not suitable for production use cases.
+>
+> SPE agent consumption-based model will be available in May 2025! Starting May 1st, standard billing model will be available to all private preview customers and this rollout is expected to complete by May 15th. This means that starting May 15th, to use SPE agent within an SPE application, you will need to use standard Container Type. SPE Agent interactions, including those from Microsoft 365 Copilot license users, will be billed to the Azure subscription associated with your Container Type. Learn more about [SharePoint Embedded billing management](https://learn.microsoft.com/sharepoint/dev/embedded/administration/billing/billingmanagement).
+
+SharePoint Embedded agent enables you to quickly demo AI capabilities into your application through a simple SDK, though it is not intended for production use. This chat control offers the following features:
+
+- Reason over documents in SharePoint Embedded containers using RAG.
+- Developers can configure the application code to limit the search scope to files, folders, and containers.
+- Developers can customize and configure chat control including starter prompts, suggested prompts, colors and more.
+
+Watch this demo to learn more about how to configure this functionality.
+
+> [!VIDEO https://www.youtube.com/embed/30i7q09EtQo?si=MwLtbrGKnzv7a6My]
+
+## Why use SharePoint Embedded agent
+
+SharePoint Embedded agent harness a semantic index to power Retrieval-Augmented Generation (RAG), securely referencing your data within the Microsoft 365 boundary at query time. This ensures accurate, grounded AI responses while reducing reliance on broad knowledge models. A pay-as-you-go billing model is on the horizon, aligning costs with actual usage.
+
+![Diagram illustrating SPE agent is AI ready](https://learn.microsoft.com/en-us/sharepoint/dev/embedded/images/speco-apparch.png)
+
+## How to use SharePoint Embedded agent
+
+### How to build your agent
+
+Currently, you can use the React SDK library written in TypeScript to build your application. Plans to support additional frameworks and environments will be announced. The SDK is configured with the containerId instance of your containerType, as well as the authorization and authentication token logic you provide through a callback. It will embed itself as an iFrame into your host application. By default, the iFrame is given a `frame-ancestors` property that prevents it from being embedded by any host until configured. Details are provided below.
+
+#### SPE TypeScript React Application
+
+Follow the [quick start guide](https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/tutorials/spe-da-vscode) to get started with a prebuilt sample application.
+
+### API Documentation
+
+The SharePoint Embedded React TypeScript NPM Package, available at [here](https://github.com/microsoft/SharePoint-Embedded-Samples/tree/feature/copilot-react-sdk/sharepointembedded-chatembedded-react/docs/index.md), provides the SDK for integrating SharePoint Embedded agent into your client applications.
+
+## Frequently Asked Questions
+
+### Is consumption-based billing available for SPE agent?
+
+Yes, starting May 15th you will need to use standard Container Type to use SPE agent within an SPE application. SharePoint Embedded agent interactions, including those from Microsoft 365 Copilot license users, will be billed to the Azure subscription associated with your Container Type. Learn more about [SharePoint Embedded billing management](https://learn.microsoft.com/sharepoint/dev/embedded/administration/billing/billingmanagement)
+
+***Trial Container Types expire after 30 days, for this reason we recommend starting off with Standard Container types. There is no upgrade path from Trial to Standard container types.***
+
+### Should I use a standard or trial Container Type?
+
+Once consumption-based billing is enabled, we will be disabling the use of this feature with Trial Container Types and it will only be enabled on Standard Container Types going forward. Please follow this [guide](https://learn.microsoft.com/en-us/sharepoint/dev/embedded/getting-started/containertypes) to get started on creating your Standard Container Type.
+
+## SharePoint Embedded agent Support
+
+### Chat Control Feedback Dialog
+
+If you encounter any issues with the chat control, please use the thumbs up or down feedback buttons to report the problem. This method is preferred for sending feedback because it provides us with telemetry data that helps us diagnose and troubleshoot the issue more effectively.
+
+When you click the thumbs down button, a feedback dialog will appear. Please include any relevant information in this dialog.
+
+![SPE agent Feedback Modal preview](https://learn.microsoft.com/en-us/sharepoint/dev/embedded/images/speco-feedbackcombined.png)
+
+## Advanced Topics Overview
+
+The [advanced topics](https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/declarative-agent/spe-da-adv) delve into how SharePoint Embedded agent use a semantic index to facilitate Retrieval-Augmented Generation (RAG), ensuring responses are accurately grounded in your stored content. You’ll also learn how to scope your agent to specific data sources, set up various file formats, and configure locale options to tailor the agent experience. By exploring concepts like grounding, semantic indexing, and RAG workflows, you can optimize your agent’s effectiveness and maintain security within the Microsoft 365 boundary.
+
+---
+*Agent-first reformat of the official Microsoft Learn doc (content preserved). Source of truth: https://learn.microsoft.com/en-us/sharepoint/dev/embedded/development/declarative-agent/spe-da*
