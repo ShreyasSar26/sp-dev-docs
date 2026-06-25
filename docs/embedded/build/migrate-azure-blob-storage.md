@@ -118,3 +118,7 @@ Use the optional blob list file for controlled batches and the optional output f
 Compare source blob counts with destination drive item counts. Check folder paths, file sizes, upload failures, duplicate handling, and required metadata. Open representative files through your SharePoint Embedded app, then validate search and metadata queries after indexing has had time to complete.
 
 Do not delete source blobs until business owners approve the migration result and retention requirements are satisfied.
+
+## Next steps
+
+- [Prepare your app for customer installation](../publish/prepare-customer-installation.md)

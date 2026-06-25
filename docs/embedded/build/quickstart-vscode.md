@@ -125,5 +125,5 @@ When you're finished testing:
 1. Permanently delete containers that count against the trial quota.
 1. Remove trial container types when no longer needed.
 1. Remove local sample secrets that are no longer needed.
-## Next step
+## Next steps
 Create a production-ready model in [Create and configure a container type](create-container-type.md).

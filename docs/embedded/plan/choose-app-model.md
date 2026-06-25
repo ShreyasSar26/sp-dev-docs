@@ -188,6 +188,5 @@ If you're building an ISV app:
 - Identify who configures billing.
 - Identify who manages compliance policies.
 
-## Next step
-
+## Next steps
 Review the storage model: [Understand container types and containers](../plan/container-types-and-containers.md).

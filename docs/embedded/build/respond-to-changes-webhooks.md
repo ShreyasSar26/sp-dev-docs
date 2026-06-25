@@ -96,3 +96,7 @@ Use webhooks for actions such as document processing, index refresh, user notifi
 
 ## Verify the flow
 Create a subscription, upload or update a file in the container, and confirm your endpoint logs the expected drive ID. If validation fails, check the public HTTPS URL, the `validationToken` response content type, and whether your server parses query parameters before route execution.
+
+## Next steps
+
+- [Archive and restore containers](archive-restore-containers.md)

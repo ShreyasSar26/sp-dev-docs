@@ -250,6 +250,5 @@ Follow these operational practices.
 - [Apply security and compliance controls](apply-security-compliance-controls.md)
 - [Consuming Tenant Admin PowerShell](../administration/consuming-tenant-admin/ctapowershell.md)
 
-## Next step
-
+## Next steps
 Monitor consumption in [Monitor usage, billing, and cost](monitor-usage-billing-cost.md).

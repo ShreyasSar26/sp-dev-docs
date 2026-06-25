@@ -190,6 +190,5 @@ Use these checks when consent succeeds but API calls fail.
 - [Register file storage container type application permissions](../getting-started/register-api-documentation.md)
 - [Consuming Tenant Admin](../administration/consuming-tenant-admin/cta.md)
 
-## Next step
-
+## Next steps
 Configure billing in [Set up billing in Microsoft 365 admin center](setup-billing-m365-admin-center.md).

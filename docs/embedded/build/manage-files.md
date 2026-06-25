@@ -121,5 +121,5 @@ Create a smoke test:
 | Preview fails | File type support and preview URL generation. |
 | Office launch opens wrong mode | Launch URL `action` parameter or Office URI scheme. |
 | Access differs by user | Delegated access intersects app permissions with membership. |
-## Next step
+## Next steps
 Enable Office launch experiences in [Open Office files from your app](open-office-files.md).

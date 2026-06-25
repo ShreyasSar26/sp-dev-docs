@@ -180,6 +180,5 @@ Establish a recurring review process.
 - [SharePoint Embedded Billing Management](../administration/billing/billingmanagement.md)
 - [SharePoint Embedded Billing Meters](../administration/billing/meters.md)
 
-## Next step
-
+## Next steps
 Review compliance activity in [Review audit events](review-audit-events.md).

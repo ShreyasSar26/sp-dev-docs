@@ -41,3 +41,7 @@ Use this reference to identify likely causes and fixes. For end-to-end setup, se
 - [PowerShell reference](powershell.md)
 - [Microsoft Graph API reference links](graph-api-links.md)
 
+## Related resources
+
+- [Configure authentication and authorization](../build/configure-authentication-authorization.md)
+- [Plan authentication and permissions](../plan/authentication-permissions.md)

@@ -140,5 +140,5 @@ Use a safe update process:
 1. Run smoke tests for each app role.
 > [!IMPORTANT]
 > Don't send a partial payload unless you intend the resulting registration to contain only that set of applications and permissions.
-## Next step
+## Next steps
 Configure tokens and authorization flows in [Configure authentication and authorization](configure-authentication-authorization.md).

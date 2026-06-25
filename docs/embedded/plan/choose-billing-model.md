@@ -191,6 +191,5 @@ Use these setup references after you choose a model:
 - Plan storage lifecycle to control storage consumption.
 - Plan calling patterns to manage API transaction cost.
 
-## Next step
-
+## Next steps
 Plan governance responsibilities for tenant content: [Plan security, compliance, and governance](../plan/security-compliance-governance.md).

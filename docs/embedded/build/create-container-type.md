@@ -129,5 +129,5 @@ Use this sequence for each consuming tenant:
 1. Register container type application permissions.
 1. Configure pass-through billing when the consuming tenant pays.
 1. Validate container creation and access.
-## Next step
+## Next steps
 Register permissions in [Register application permissions](register-application-permissions.md).

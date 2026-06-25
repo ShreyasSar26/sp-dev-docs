@@ -90,3 +90,7 @@ Set-SPOApplication
 ```
 
 Report policy failures in user-facing language. Distinguish inherited container access from direct item access in permission panels so users understand why a person can still open a file.
+
+## Next steps
+
+- [Respond to file and container changes with webhooks](respond-to-changes-webhooks.md)

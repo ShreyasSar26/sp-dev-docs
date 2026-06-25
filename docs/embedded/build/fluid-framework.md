@@ -53,3 +53,7 @@ Your app still needs the SharePoint Embedded client ID and container type ID to 
 
 ## Move from sample to app design
 Use the item counter sample to prove tenant setup, consent, and client connectivity. In your own app, plan reconnect behavior, token refresh, offline transitions, container switching, and cleanup for collaborative sessions that users abandon.
+
+## Next steps
+
+- [Add Microsoft 365 Copilot and agent experiences](agent-experiences.md)

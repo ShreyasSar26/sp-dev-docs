@@ -219,6 +219,5 @@ Keep records according to your compliance and legal process.
 - [Security and Compliance](../compliance/security-and-compliance.md)
 - [Auditing solutions in Microsoft Purview](/purview/audit-solutions-overview)
 
-## Next step
-
+## Next steps
 Apply broader controls in [Apply security and compliance controls](apply-security-compliance-controls.md).

@@ -110,3 +110,7 @@ Use `$expand=listitem($expand=fields)` when the result needs field values in the
 
 ## Keep schema consistent
 Create required columns during container provisioning. Store the expected schema version in your app data, and run migrations when new columns are introduced. Avoid deleting columns until you know no workflows, queries, exports, or search experiences depend on their values.
+
+## Next steps
+
+- [Share files and manage permissions](share-files-manage-permissions.md)

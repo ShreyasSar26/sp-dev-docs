@@ -229,8 +229,7 @@ Include a checklist the customer can complete with you after installation:
 
 For detailed validation, see [Validate customer app installation](validate-customer-installation.md).
 
-## Next step
-
+## Next steps
 Choose the correct billing option before you send installation instructions to a customer.
 
 > [!div class="nextstepaction"]

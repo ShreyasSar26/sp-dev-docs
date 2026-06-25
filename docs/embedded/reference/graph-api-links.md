@@ -60,3 +60,8 @@ All file system objects in a `fileStorageContainer` are returned as `driveItem` 
 ## Authentication
 
 SharePoint Embedded uses Microsoft Graph permissions plus container type application permissions. Start with [SharePoint Embedded authentication and authorization](../development/auth.md) before implementing the API calls.
+
+## Related resources
+
+- [Create and manage containers](../build/create-manage-containers.md)
+- [Upload, download, and manage files](../build/manage-files.md)

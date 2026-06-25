@@ -118,3 +118,7 @@ GET https://graph.microsoft.com/v1.0/drives/{container-id}/items?$filter=startsw
 ```
 
 When a container has more than 5,000 items and you enumerate with `$orderby`, include the `Prefer: HonorNonIndexedQueriesWarningMayFailRandomly` header shown in the source article.
+
+## Next steps
+
+- [Store and query container metadata](container-metadata.md)

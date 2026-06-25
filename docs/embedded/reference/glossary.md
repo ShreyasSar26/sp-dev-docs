@@ -29,3 +29,8 @@ next: ../plan/choose-app-model.md
 | Pass-through (customer) billing | A billing model where consumption charges are billed directly to the consuming tenant registered to use the app. See [choose a billing model](../plan/choose-billing-model.md). |
 | Owning application | The Microsoft Entra ID application registration strongly coupled with a container type; each owning app can own one container type at a time. See [app architecture](../development/app-architecture.md). |
 | Partition | The API-only SharePoint storage partition created in a consumer's Microsoft 365 tenant for SharePoint Embedded app documents. See [SharePoint Embedded overview](../overview.md). |
+
+## Related resources
+
+- [What is SharePoint Embedded?](../overview.md)
+- [Understand app and tenant architecture](../plan/app-tenant-architecture.md)

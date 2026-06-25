@@ -51,3 +51,8 @@ Deleted containers can be restored from the deleted container collection within 
 
 > [!NOTE]
 > To enumerate Microsoft Loop containers, the source article specifies owning app ID `a187e399-0c36-4b98-8f04-1edc167a0996`.
+
+## Related resources
+
+- [Manage containers with PowerShell](../admin/manage-containers-powershell.md)
+- [Create and configure a container type](../build/create-container-type.md)

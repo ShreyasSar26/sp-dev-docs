@@ -232,6 +232,5 @@ After applying a control:
 - [Security and Compliance](../compliance/security-and-compliance.md)
 - [Troubleshooting](../reference/troubleshooting.md)
 
-## Next step
-
+## Next steps
 Review troubleshooting guidance in [Troubleshooting](../reference/troubleshooting.md).

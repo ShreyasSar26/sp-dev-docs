@@ -200,8 +200,7 @@ Use this table to route early setup problems.
 | Admin can't run management cmdlets | Role or tooling | Confirm SharePoint Embedded Administrator role and latest SharePoint PowerShell. |
 | App works for members but not guests | Identity or sharing | Confirm guest identities and customer sharing policies. |
 
-## Next step
-
+## Next steps
 After setup, validate the installation with the customer administrator.
 
 > [!div class="nextstepaction"]

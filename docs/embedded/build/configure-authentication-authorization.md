@@ -116,5 +116,5 @@ Validate the flow before feature code:
 | App-only call has too much access | Container type permission is broader than necessary. |
 | Registration call fails | Use SharePoint `Container.Selected` and app-only flow. |
 | Search call fails | Review search-specific exceptional access patterns. |
-## Next step
+## Next steps
 Use your configured flow to [Create and manage containers](create-manage-containers.md).

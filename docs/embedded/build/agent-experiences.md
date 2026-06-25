@@ -106,3 +106,7 @@ You can also grant this permission during initial container type registration.
 
 ## Test user experience
 Sign in with a user who has a Microsoft 365 Copilot license when required. Upload supported files to a container, wait for indexing, open the chat, and ask questions that can be answered from known file content. If answers omit expected files, check discoverability, supported file formats, app access, user access, scope selection, and indexing delay.
+
+## Next steps
+
+- [Migrate from Azure Blob Storage](migrate-azure-blob-storage.md)

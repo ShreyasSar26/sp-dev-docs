@@ -221,6 +221,5 @@ For full details, see [Register file storage container type application permissi
 - Plan which container type settings are required.
 - Plan container lifecycle and deletion.
 
-## Next step
-
+## Next steps
 Plan authentication and authorization: [Plan authentication and permissions](../plan/authentication-permissions.md).

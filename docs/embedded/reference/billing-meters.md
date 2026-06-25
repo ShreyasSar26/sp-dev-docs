@@ -54,3 +54,8 @@ The private preview SharePoint Embedded agent meter uses the Copilot Studio mess
 - [SharePoint Embedded product page](https://adoption.microsoft.com/sharepoint/embedded/)
 - [Azure Cost Management](https://ms.portal.azure.com/)
 - [Monitor usage, billing, and cost](../admin/monitor-usage-billing-cost.md)
+
+## Related resources
+
+- [Choose a billing model](../plan/choose-billing-model.md)
+- [Monitor usage, billing, and cost](../admin/monitor-usage-billing-cost.md)

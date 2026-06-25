@@ -171,6 +171,5 @@ Deleted containers can be restored from the deleted container collection within 
 - [Monitor usage, billing, and cost](monitor-usage-billing-cost.md)
 - [Apply security and compliance controls](apply-security-compliance-controls.md)
 
-## Next step
-
+## Next steps
 Create an owned app in [Create apps in SharePoint admin center](create-apps-sharepoint-admin-center.md).

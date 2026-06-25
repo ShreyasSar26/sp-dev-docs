@@ -207,6 +207,5 @@ Continue with [Manage containers with PowerShell](manage-containers-powershell.m
 - [Apply security and compliance controls](apply-security-compliance-controls.md)
 - [Manage SharePoint Embedded containers in SharePoint Admin Center](../administration/consuming-tenant-admin/ctaUX.md)
 
-## Next step
-
+## Next steps
 Automate container management in [Manage containers with PowerShell](manage-containers-powershell.md).

@@ -241,8 +241,7 @@ After validation succeeds:
 
 If validation fails, keep the customer in onboarding and resolve the failing area before you enable broad user access.
 
-## Next step
-
+## Next steps
 After customer validation, continue to the SharePoint Embedded admin overview.
 
 > [!div class="nextstepaction"]

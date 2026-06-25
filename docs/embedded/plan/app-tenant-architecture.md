@@ -185,6 +185,5 @@ For model selection, see [Choose an app model: single-tenant or multitenant](../
 - Plan authentication and admin consent.
 - Plan security and compliance responsibilities.
 
-## Next step
-
+## Next steps
 Choose the app model that matches your tenant and customer relationship: [Choose an app model: single-tenant or multitenant](../plan/choose-app-model.md).

@@ -140,5 +140,5 @@ Test each launch path:
 | Mentions don't find a user | Microsoft 365 license and tenant membership limitations. |
 | Breadcrumb doesn't look right | Container properties and Office update channel. |
 | Redirect returns to wrong route | `ApplicationRedirectUrl` and app route handling. |
-## Next step
+## Next steps
 Add embedded previews in [Preview files in your app](preview-files.md).

@@ -189,8 +189,7 @@ Before you proceed, record:
 
 Use these values in [Prepare your app for customer installation](prepare-customer-installation.md) and [Guide customers through tenant setup](customer-tenant-setup-guide.md).
 
-## Next step
-
+## Next steps
 After you choose a billing model, prepare customer-facing tenant setup instructions.
 
 > [!div class="nextstepaction"]

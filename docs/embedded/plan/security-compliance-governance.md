@@ -220,6 +220,5 @@ Design for policy enforcement results, blocked operations, and user-facing messa
 - Decide whether Conditional Access settings are required.
 - Validate licensing requirements for advanced policies.
 
-## Next step
-
+## Next steps
 Review scale, throttling, and retry behavior: [Understand limits and calling patterns](../plan/limits-calling-patterns.md).

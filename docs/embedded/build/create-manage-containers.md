@@ -132,5 +132,5 @@ Create a smoke test:
 | Delete fails | `Delete` permission and user Owner role. |
 | Trial create fails | Active plus recycled containers may have reached the limit. |
 | Container type delete fails | All active and deleted containers must be removed first. |
-## Next step
+## Next steps
 Add file operations in [Upload, download, and manage files](manage-files.md).

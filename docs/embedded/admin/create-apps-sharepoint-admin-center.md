@@ -194,6 +194,5 @@ Use these checks if creation fails or the app is not usable.
 - [SharePoint Embedded administrator](../administration/adminrole.md)
 - [Manage containers in SharePoint Admin Center](../administration/consuming-tenant-admin/ctaUX.md)
 
-## Next step
-
+## Next steps
 Install the app by using [Install a SharePoint Embedded app](install-sharepoint-embedded-app.md).

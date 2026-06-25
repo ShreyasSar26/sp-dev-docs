@@ -170,6 +170,5 @@ After setup, establish a billing operations process.
 - [SharePoint Embedded Billing Meters](../administration/billing/meters.md)
 - [Consuming Tenant Admin](../administration/consuming-tenant-admin/cta.md)
 
-## Next step
-
+## Next steps
 Manage containers in [Manage containers in SharePoint admin center](manage-containers-sharepoint-admin-center.md).

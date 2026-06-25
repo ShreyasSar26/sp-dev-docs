@@ -214,6 +214,5 @@ Review these before designing privileged or search-heavy features.
 - Identify any guest apps and their permissions.
 - Review exceptional access patterns.
 
-## Next step
-
+## Next steps
 Review scale and performance constraints: [Understand limits and calling patterns](../plan/limits-calling-patterns.md).

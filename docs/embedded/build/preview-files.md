@@ -164,3 +164,7 @@ Test with multiple file types and users:
 ## Connect to the next build task
 After preview is working, add discovery experiences so users can find content across containers and files.
 Continue to [Search containers and files](../build/search-containers-files.md).
+
+## Next steps
+
+- [Search containers and files](search-containers-files.md)

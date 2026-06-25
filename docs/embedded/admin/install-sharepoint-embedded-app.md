@@ -182,6 +182,5 @@ Use these checks when installation does not complete.
 - [Consuming Tenant Admin](../administration/consuming-tenant-admin/cta.md)
 - [Create a SharePoint Embedded app in the SharePoint admin center](../administration/consuming-tenant-admin/SPE_app_installation_on_SPAC.md)
 
-## Next step
-
+## Next steps
 Grant consent and verify permissions in [Grant admin consent and permissions](grant-admin-consent-permissions.md).

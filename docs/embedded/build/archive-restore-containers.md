@@ -71,3 +71,9 @@ Reactivation is instantaneous during the first seven days after archival. After 
 Require explicit user intent before archive and unarchive requests. Record the container ID, actor, timestamp, and Graph request correlation data in your application logs. Do not treat archive as deletion; retention, eDiscovery, audit, and compliance requirements still apply to archived data.
 
 If a lifecycle operation fails, check the caller role, app write permission, container type archival setting, and whether the target container is already in the requested state.
+
+## Next steps
+
+- [Upload, download, and manage files](manage-files.md)
+- [Respond to file and container changes with webhooks](respond-to-changes-webhooks.md)
+- [Manage containers with PowerShell](../admin/manage-containers-powershell.md)
