@@ -60,6 +60,8 @@ The source article lists the following size limits.
 
 `*` indicates that the limit can be increased per request in the source documentation.
 
+Of the container types a tenant creates, one can be a free **trial container type** for development and testing, and the rest are **standard** (billed) container types. New tenants start with a lower default that can be raised on request. For trial-versus-standard details, see [Create and configure a container type](../build/create-container-type.md).
+
 ## Design for container type limits
 
 An app can own one container type.

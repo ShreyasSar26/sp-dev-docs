@@ -43,8 +43,8 @@ In your app:
 1. Avoid reconstructing IDs from URLs.
 ## Upload files
 Use Microsoft Graph upload patterns for DriveItems.
-For small files, use the simple upload API documented for DriveItems.
-For larger files, use an upload session as documented by Microsoft Graph.
+For small files (up to 250 MB), use the simple upload API documented for DriveItems with a single `PUT` to the item's content.
+For larger files (over 250 MB), use an upload session as documented by Microsoft Graph and send the file in byte-range chunks (for example, 320 KB multiples) until the upload completes.
 In your upload flow:
 1. Validate write access.
 1. Choose a destination folder in the container.

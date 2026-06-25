@@ -152,7 +152,7 @@ The source article lists:
 Set-SPOContainer -Identity <ContainerID/ContainerSiteURL> -SensitivityLabel <SensitivityLabelGUID>
 ```
 
-For more information, see [Learn about sensitivity labels](/purview/sensitivity-labels).
+The label is applied at the **container level**: it sets the container's sensitivity and governs container settings such as conditional access and guest sharing. It does not retroactively relabel files that already exist in the container, and each file carries its own sensitivity label. For item-level labeling behavior, see [Learn about sensitivity labels](/purview/sensitivity-labels).
 
 ## Block download policy
 

@@ -9,6 +9,8 @@ ms.localizationpriority: high
 
 Microsoft SharePoint Embedded is a cloud-based, API-only file and document management system you can use in any application. It lets app developers harness the Microsoft 365 file and document storage platform, and is suitable for enterprises building line-of-business applications and ISVs building multitenant applications.
 
+SPE has no standalone end-user UI and no no-code option. You access it programmatically through Microsoft Graph, so using SharePoint Embedded always involves building or deploying an application.
+
 SharePoint Embedded brings advanced Microsoft 365 capabilities into your app, including Office collaboration, Microsoft Purview security and compliance, and Copilot.
 
 > [!IMPORTANT]

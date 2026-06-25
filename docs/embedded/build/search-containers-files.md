@@ -15,7 +15,7 @@ next: container-metadata.md
 Use Microsoft Search in Microsoft Graph when your app needs keyword search across SharePoint Embedded containers or content. The search API ranks matching results and returns `drive` resources for containers or `driveItem` resources for files and folders. For the full query reference and more examples, see [Search SharePoint Embedded content](../development/content-experiences/search-content.md).
 
 > [!NOTE]
-> SharePoint Embedded search is in preview. The source article states that search supports delegated permissions only and follows the [exceptional access pattern](../development/auth.md#operations-involving-searching-sharepoint-embedded-content).
+> SharePoint Embedded search is in preview and is available only on the Microsoft Graph **`/beta`** endpoint — there is no `v1.0` search API for containers. The source article states that search supports delegated permissions only and follows the [exceptional access pattern](../development/auth.md#operations-involving-searching-sharepoint-embedded-content).
 
 ## Choose the search scope
 Scope every request to the container type or container that belongs to your app. Search runs in the context of the signed-in user, so the service trims results to content the user can access. Your app must also have access to the corresponding container type before it can open returned containers or files.
@@ -111,7 +111,7 @@ For container custom properties, append `OWSTEXT` to the custom property name in
 customPropertyNametOWSTEXT:customPropertyValue AND ContainerTypeId:498c6855-8f0e-0de7-142e-4e9ff86af9ae
 ```
 
-Use direct enumeration instead of search when your app must filter on known metadata values without relevance ranking. For example, query drive items with `$filter`, `$expand`, and `$orderby`:
+Use full-text **search** (the `/beta/search/query` endpoint above) when users type free-text terms and you want relevance ranking across containers. Use direct enumeration instead of search when your app must filter on known metadata values without relevance ranking. For example, query drive items with `$filter`, `$expand`, and `$orderby`:
 
 ```http
 GET https://graph.microsoft.com/v1.0/drives/{container-id}/items?$filter=startswith(listitem/fields/{column}, '{value}')&$expand=listitem($expand=fields)
