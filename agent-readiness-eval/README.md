@@ -20,6 +20,7 @@ doc fixes that closed them.
 | [`03-qa-round1-21-queries.md`](03-qa-round1-21-queries.md) | First Q&A campaign: 21 persona queries, two rounds |
 | [`04-qa-stress-test-54-queries.md`](04-qa-stress-test-54-queries.md) | Stress test: 54 edge-case queries (incl. negative probes), full prompts + raw outputs + grading |
 | [`06-scenario-evaluations.md`](06-scenario-evaluations.md) | Top-5 agent scenarios: ranking, input prompts, ground truths, and 0/1/2 eval rubrics |
+| [`07-scenario-audit-results.md`](07-scenario-audit-results.md) | Live audit: doc-restricted agents run the top-5 scenarios; outputs graded vs. ground truth (98/100) |
 
 ## Headline results
 
@@ -28,6 +29,7 @@ doc fixes that closed them.
 | Structural scorer (43 articles × 4 dims) | 100.00 / 100 | 100.00 / 100 |
 | Q&A campaign (21 persona queries) | 21/21 correct, ~93.7% quality | 21/21, **100%** |
 | Stress test (54 edge-case queries) | 153 / 162 (**94.4%**) | 162 / 162 (**100%**) |
+| Scenario audit (top-5 tasks, doc-restricted agents) | — | **98 / 100** (5/5 Excellent) |
 | Relative-link integrity (`docs/embedded`) | — | 0 broken / 297 checked |
 
 ## Grading scale (Q&A campaigns)
