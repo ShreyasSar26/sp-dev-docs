@@ -15,8 +15,6 @@ outcome: Confirm that a customer tenant can administer and use an installed Shar
 next: ../admin/admin-overview.md
 -->
 
-<!-- TODO: canonical source doc pending -->
-
 Use this article after a customer administrator completes SharePoint Embedded app setup.
 Validation confirms that the tenant registration, consent, billing, administration visibility, and basic container operations are working.
 Run these checks with the customer admin before you announce the app to users.

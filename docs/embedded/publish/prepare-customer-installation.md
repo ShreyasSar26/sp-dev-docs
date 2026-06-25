@@ -15,8 +15,6 @@ outcome: Package customer-ready installation requirements and handoff materials 
 next: choose-app-billing-model.md
 -->
 
-<!-- TODO: canonical source doc pending -->
-
 Use this article before you send a SharePoint Embedded (SPE) application to a customer tenant.
 SharePoint Embedded is API-only, so customer installation depends on tenant registration, consent, permissions, and billing configuration instead of a traditional SharePoint site deployment.
 Your goal is to give the customer administrator a complete, repeatable onboarding package.
@@ -74,9 +72,7 @@ Developer admins can use SharePoint PowerShell to:
 - Manage billing settings for standard billing container types.
 - Remove container types after all containers are removed.
 
-> [!NOTE]
-> The source planning article `../plan/choose-app-model.md` isn't available in this repository.
-> Use the closest current planning content and the container type documentation until a canonical planning article is published.
+For model and tenant decisions, see [Choose an app model](../plan/choose-app-model.md).
 
 ## Package the application configuration
 
@@ -159,7 +155,24 @@ For customer-facing steps, see [Guide customers through tenant setup](customer-t
 
 Document the permissions your app requests and why each permission is needed.
 Use product-specific descriptions instead of copying permission display names without context.
-For example, explain what user action or background job requires each consent grant.
+
+At minimum, an SPE app installed on a consuming tenant requests these Microsoft Graph permissions:
+
+| Permission | Type | Purpose |
+| --- | --- | --- |
+| [`FileStorageContainerTypeReg.Selected`](/graph/permissions-reference#filestoragecontainertyperegselected) | Delegated or application | Register your container type in the consuming tenant. With the delegated permission, the user performing registration must be a [SharePoint Embedded Administrator](/entra/identity/role-based-access-control/permissions-reference#sharepoint-embedded-administrator) or Global Administrator. The application permission requires admin consent; the delegated permission doesn't. |
+| [`FileStorageContainer.Selected`](/graph/permissions-reference#filestoragecontainerselected) | Delegated or application | Interact with SPE content for the container type. Requires admin consent. |
+
+> [!IMPORTANT]
+> Using SharePoint Embedded on behalf of a user (delegated access) is the recommended approach. It improves both the security and the auditability of actions performed by your application.
+
+For single-tenant apps, you can [construct an admin consent URL](/entra/identity-platform/v2-admin-consent#request-the-permissions-from-a-directory-admin) and provide it to the tenant's Microsoft Entra administrator, for example:
+
+```http
+https://login.microsoftonline.com/{tenant}/v2.0/adminconsent?client_id={client_id}&redirect_uri={redirect_uri}
+```
+
+Ensure your app's [redirect URI](/entra/identity-platform/reply-url) can handle admin consent flows. For the full permission model, see [Authentication and authorization](../development/auth.md).
 
 If your app uses guest application access, explain that the consuming tenant admin can view guest application permissions with SharePoint PowerShell.
 Link the customer to [SharePoint Embedded container management in PowerShell](../administration/consuming-tenant-admin/ctapowershell.md) instead of duplicating cmdlet reference content.

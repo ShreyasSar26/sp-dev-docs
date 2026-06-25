@@ -61,14 +61,16 @@ The billing setup requires:
 - A SharePoint Embedded Administrator or Global Administrator to operate billing cmdlets.
 - Owner or contributor permissions on the Azure subscription for the admin who sets up billing.
 
-The source article shows this standard billing creation pattern:
+The standard billing pattern creates the container type and then attaches an Azure billing profile (see [Create and configure a container type](../build/create-container-type.md)):
 
 ```powershell
-New-SPOContainerType -ContainerTypeName <ContainerTypeName>
-                     -OwningApplicationId <OwningApplicationId>
-                     -AzureSubscriptionId <AzureSubscriptionId>
-                     -ResourceGroup <ResourceGroup>
-                     -Region <Region>
+New-SPOContainerType -ContainerTypeName <ContainerTypeName> -OwningApplicationId <OwningApplicationId> -ApplicationRedirectUrl <ApplicationRedirectUrl>
+```
+
+Attach the Azure billing profile:
+
+```powershell
+Add-SPOContainerTypeBilling -ContainerTypeId <ContainerTypeId> -AzureSubscriptionId <AzureSubscriptionId> -ResourceGroup <ResourceGroup> -Region <Region>
 ```
 
 > [!IMPORTANT]

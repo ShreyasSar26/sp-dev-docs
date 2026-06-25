@@ -15,8 +15,6 @@ outcome: Select the SharePoint Embedded billing model that matches the commercia
 next: customer-tenant-setup-guide.md
 -->
 
-<!-- TODO: canonical source doc pending -->
-
 SharePoint Embedded is a consumption-based pay-as-you-go service.
 As an ISV, you choose the billing model when you create the production container type for your app.
 That choice affects who pays for storage, API transactions, and egress, and it changes what the customer administrator must do during onboarding.

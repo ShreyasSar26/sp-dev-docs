@@ -14,8 +14,7 @@ next: register-application-permissions.md
 -->
 Create a SharePoint Embedded container type before your application creates containers or stores files. A container type defines access, billing accountability, and selected behaviors for containers created by your app.
 If you're just starting, complete [Quickstart: Build your first app with VS Code](quickstart-vscode.md). Then use this article for trial, standard, and pass-through decisions.
-<!-- TODO: canonical source doc pending -->
-The requested planning source `../plan/choose-app-model.md` isn't present. This article uses [container type guidance](../getting-started/containertypes.md) and [app architecture](../development/app-architecture.md).
+To decide between single-tenant and multitenant models first, see [Choose an app model](../plan/choose-app-model.md).
 ## Understand the container type relationship
 A container type is strongly coupled with one Microsoft Entra ID application, called the owning application.
 SharePoint Embedded requires a one-to-one relationship between one owning application and one container type.

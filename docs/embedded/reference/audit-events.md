@@ -1,51 +1,54 @@
 ---
 title: Audit Events
-description: Reference scaffold for SharePoint Embedded audit events in Microsoft Purview.
+description: Reference for SharePoint Embedded container type audit events in the Microsoft Purview unified audit log.
 ms.date: 06/25/2026
 ms.localizationpriority: high
 ---
 
 # Audit Events
 
-**Applies to:** Compliance
+**Applies to**: Compliance admin
 
 <!-- agent:
 task_type: reference
 audience: compliance
-outcome: Locate SharePoint Embedded audit activity records and properties in Microsoft Purview.
+outcome: Look up SharePoint Embedded container type audit event names and properties in Microsoft Purview.
 next: ../admin/review-audit-events.md
 -->
 
-<!-- TODO: canonical source doc pending -->
+SharePoint Embedded (SPE) operations on container types are captured in the Microsoft 365 unified audit log through [Microsoft Purview](/purview/audit-solutions-overview). These events let compliance administrators and developers track changes to container type definitions. File and folder activity inside containers is captured by standard SharePoint file audit events.
 
-SharePoint Embedded content is stored in the consuming tenant's Microsoft 365 boundary and is subject to Microsoft Purview auditing in the same manner as supported Microsoft 365 content. For investigation steps, see [review audit events](../admin/review-audit-events.md).
+For step-by-step investigation guidance, see [Review audit events](../admin/review-audit-events.md).
 
-## Event names
+## Container type activities
 
-The canonical SharePoint Embedded audit event source wasn't available when this reference was authored. Don't hard-code event display names until Microsoft publishes the canonical list. Use Microsoft Purview audit search to confirm the activity names emitted in your tenant.
+These events are logged when a container type is created, updated, or deleted. They use the **Workload** value **SharePoint** and appear under the **SharePoint Embedded Container Type activities** category in Microsoft Purview audit.
 
-| Area | Event names | How to validate |
+| Friendly name | Operation | Description |
 | --- | --- | --- |
-| Container lifecycle | Canonical names pending. | Filter Purview audit records by date, user or app, and affected SharePoint Embedded workload or item. |
-| File activity | Canonical names pending. | Perform a controlled create, read, update, delete, or share action and review the resulting audit records. |
-| Permission activity | Canonical names pending. | Add, update, or remove container membership, then confirm the emitted activity in Purview. |
-| Administrative activity | Canonical names pending. | Run a supported SharePoint Admin Center or SPO PowerShell admin action and review the audit record. |
+| Created container type | `ContainerTypeCreated` | A new SharePoint Embedded container type definition was created. |
+| Deleted container type | `ContainerTypeDeleted` | A SharePoint Embedded container type owned by the tenant was deleted. |
+| Updated container type | `ContainerTypeUpdated` | Properties of a container type, such as name or configuration, were changed. |
+| Updated container type owners | `ContainerTypeOwnersUpdated` | Owners were added to or removed from a container type. |
+
+For the full list of audit activities, see [Audit log activities](/purview/audit-log-activities#sharepoint-embedded-container-type-activities).
 
 ## Properties
 
-Purview audit records generally include the activity, actor, timestamp, workload, result, target object, and extended properties. For SharePoint Embedded investigations, capture these values when available:
+Container type audit events include the `ContainerTypeId` property to identify the relevant container type. Unlike container-level file events, they don't include `ContainerInstanceId` because they apply at the type level, not to an individual container instance.
 
-| Property | Use |
-| --- | --- |
-| Activity | Identifies the audited action. |
-| User or app identity | Identifies the delegated user or application associated with the action. |
-| Date and time | Establishes the event timeline. |
-| Workload or service | Helps distinguish SharePoint Embedded activity from other Microsoft 365 activity. |
-| Object or item identifiers | Correlates the record to a container, file, or other target. |
-| Client IP and user agent | Supports access and anomaly investigations when present. |
-| Extended properties | Contains service-specific details; schema can vary by event. |
+Container type audit events use the SharePoint base schema. For the full schema definition and enum values, see the [Office 365 Management Activity API schema](/office/office-365-management-api/office-365-management-activity-api-schema#sharepoint-base-schema).
 
-## Related guidance
+## Search for events
+
+Use the [Microsoft Purview audit log search](/purview/audit-search) and set the activity category filter to **SharePoint Embedded Container Type activities**. You can also search with PowerShell:
+
+```powershell
+Search-UnifiedAuditLog -Operations ContainerTypeCreated,ContainerTypeDeleted,ContainerTypeUpdated,ContainerTypeOwnersUpdated -StartDate (Get-Date).AddDays(-7) -EndDate (Get-Date)
+```
+
+## Related content
 
 - [Review audit events](../admin/review-audit-events.md)
-- [Microsoft Purview auditing solutions](/purview/audit-solutions-overview)
+- [Apply security and compliance controls](../admin/apply-security-compliance-controls.md)
+- [Search the audit log](/purview/audit-search)

@@ -1,6 +1,6 @@
 ---
 title: Search Containers and Files
-description: Search SharePoint Embedded containers and files with Microsoft Search and safe scoping.
+description: Search SharePoint Embedded containers and files with Microsoft Search in Microsoft Graph.
 ms.date: 06/25/2026
 ms.localizationpriority: high
 ---
@@ -9,25 +9,37 @@ ms.localizationpriority: high
 <!-- agent:
 task_type: how-to
 audience: developer
-outcome: Use Microsoft Search to find SPE containers and files safely.
+outcome: Scope Microsoft Search requests to SPE containers and files.
 next: container-metadata.md
 -->
-Use Microsoft Search in Microsoft Graph when your app needs keyword search across SharePoint Embedded containers or files.
-Search complements direct enumeration APIs: search ranks content by relevance, while enumeration filters known drive items by metadata.
-For complete query examples and advanced managed property syntax, see [Search SharePoint Embedded content](../development/content-experiences/search-content.md).
+Use Microsoft Search in Microsoft Graph when your app needs keyword search across SharePoint Embedded containers or content. The search API ranks matching results and returns `drive` resources for containers or `driveItem` resources for files and folders. For the full query reference and more examples, see [Search SharePoint Embedded content](../development/content-experiences/search-content.md).
+
 > [!NOTE]
-> SharePoint Embedded search is in preview and supports delegated permissions only.
-> If your app opted out of Microsoft 365 content discoverability, set `sharePointOneDriveOptions.includeHiddenContent` to `true`.
-> [!IMPORTANT]
-> Always scope queries by `ContainerTypeId` or `ContainerId` so results stay aligned with your app.
-## Search container content
-Send requests to Microsoft Graph search:
+> SharePoint Embedded search is in preview. The source article states that search supports delegated permissions only and follows the [exceptional access pattern](../development/auth.md#operations-involving-searching-sharepoint-embedded-content).
+
+## Choose the search scope
+Scope every request to the container type or container that belongs to your app. Search runs in the context of the signed-in user, so the service trims results to content the user can access. Your app must also have access to the corresponding container type before it can open returned containers or files.
+
+Use these managed properties in the `queryString`:
+
+| Scope | Entity type | Query pattern |
+| --- | --- | --- |
+| All containers of a type | `drive` | `ContainerTypeId:{containerTypeId}` |
+| One container by title | `drive` | `Title:'contoso' AND ContainerTypeId:{containerTypeId}` |
+| One container by description | `drive` | `Description:'Everything' AND ContainerTypeId:{containerTypeId}` |
+| Files in one container | `driveItem` | `Title:'contoso' AND ContainerId:{containerId}` |
+| Files across a container type | `driveItem` | `'contoso' AND ContainerTypeId:{containerTypeId}` |
+
+If your application opted out of Microsoft 365 content discoverability, set `sharePointOneDriveOptions.includeHiddenContent` to `true` in the request body.
+
+## Search containers
+Send a `POST` request to Microsoft Graph search and request `drive` resources.
+
 ```http
 POST https://graph.microsoft.com/beta/search/query
 Content-Type: application/json
 ```
-Use `entityTypes: ["drive"]` to return container instances.
-Filter by the container type ID in the query string.
+
 ```json
 {
   "requests": [
@@ -36,15 +48,21 @@ Filter by the container type ID in the query string.
       "query": {
         "queryString": "ContainerTypeId:498c6855-8f0e-0de7-142e-4e9ff86af9ae"
       },
-      "sharePointOneDriveOptions": { "includeHiddenContent": true }
+      "sharePointOneDriveOptions": {
+        "includeHiddenContent": true
+      },
+      "from": 0,
+      "size": 25
     }
   ]
 }
 ```
-Use title or description terms with the same container type scope, for example `Title:'contoso' AND ContainerTypeId:{id}`.
-## Query files
-Use `entityTypes: ["driveItem"]` for files and folders.
-Scope an in-container search with `ContainerId`.
+
+The response includes `hitsContainers`. Each hit contains a `hitId`, `rank`, `summary`, and a `resource` whose `@odata.type` is `#microsoft.graph.drive`.
+
+## Search files and folders
+Request `driveItem` resources when the user searches file names or file content. Scope to a specific container with `ContainerId` when the user is already inside a workspace.
+
 ```json
 {
   "requests": [
@@ -53,70 +71,50 @@ Scope an in-container search with `ContainerId`.
       "query": {
         "queryString": "Title:'contoso' AND ContainerId:b!UBoDBcfpTEeInnz0Rlmlsp6EC-DsPN5Kj3uW0fD1mPp9ptYmB71GRpxbhbDlGdb0"
       },
-      "sharePointOneDriveOptions": { "includeHiddenContent": true }
+      "sharePointOneDriveOptions": {
+        "includeHiddenContent": true
+      },
+      "from": 0,
+      "size": 25
     }
   ]
 }
 ```
-For cross-container app search, use text terms with `ContainerTypeId`.
-Return selected properties with `fields` and sort only on sortable managed properties.
-## Permissions and security trimming
-Search results are trimmed to the signed-in user.
-Your app must also be authorized for the returned container type before it can open or modify a result.
-Treat search as discovery, then validate access through Graph before file operations.
-- Include `ContainerTypeId` when searching containers or all content for an app.
-- Include `ContainerId` when searching a specific workspace.
-- Do not cache search results as durable proof of access.
-- Keep result cards minimal until the item is opened through an authorized path.
-## Paging
-When `moreResultsAvailable` is `true`, request the next page using Microsoft Search paging options.
-Keep the original query, entity type, and scoping conditions unchanged.
-Load more results only when the user scrolls or selects **Show more**.
-Avoid preloading every page in large tenants.
-## Troubleshooting results
-| Symptom | Check |
-| --- | --- |
-| No results | Confirm user access, indexing, and delegated permissions. |
-| Wrong app results | Add or verify `ContainerTypeId`. |
-| Hidden content missing | Set `includeHiddenContent` when discoverability is disabled. |
-| Open fails | Confirm app access to the container type and item. |
-| Sort fails | Use only sortable properties. |
-> [!TIP]
-> For exact metadata filters, use [Store and query container metadata](container-metadata.md).
-## Next step
-Continue with [Store and query container metadata](container-metadata.md).
-## Implementation checklist
-- Recheck permissions before write operations.
-- Log Graph request IDs and operation outcomes for support.
-- Document rollback steps for administrators.
 
-## Production readiness checklist
+A `driveItem` result can include file metadata such as `id`, `name`, `size`, `createdDateTime`, `lastModifiedDateTime`, `parentReference`, `createdBy`, `lastModifiedBy`, and `webUrl`.
 
-Before you release this capability, verify the following items for your app and tenant:
+## Return selected fields and sort results
+Use the `fields` collection to request specific managed properties in the response. Use `sortProperties` only with sortable properties.
 
-- Confirm the tenant has SharePoint Embedded enabled.
-- Confirm the application registration matches the deployed environment.
-- Confirm admin consent is granted for required Microsoft Graph permissions.
-- Confirm the container type is registered in the consuming tenant.
-- Confirm users have the expected container roles.
-- Confirm guest access behavior with the tenant sharing policy.
-- Confirm sensitivity labels and compliance settings are respected.
-- Confirm the app handles Microsoft Graph throttling.
-- Confirm retry logic uses exponential backoff.
-- Confirm write operations are idempotent or guarded against duplicates.
-- Confirm long-running work is resumable.
-- Confirm logs include correlation IDs and timestamps.
-- Confirm logs do not include access tokens or secrets.
-- Confirm telemetry distinguishes user errors from service errors.
-- Confirm the UI explains policy-blocked actions.
-- Confirm disabled actions remain keyboard accessible with explanatory text.
-- Confirm localization does not change technical identifiers.
-- Confirm feature flags can disable the capability if needed.
-- Confirm documentation links point to the installed app version.
-- Confirm operational runbooks describe common recovery steps.
-- Confirm support teams know which tenant role can resolve configuration issues.
-- Confirm test data does not include real customer secrets.
-- Confirm cleanup tasks remove temporary migration or processing artifacts.
-- Confirm related articles in this build path remain linked together.
-- Confirm this scenario is covered by automated or manual regression tests.
-- Confirm this scenario is covered by automated or manual regression tests.
+```json
+{
+  "requests": [
+    {
+      "entityTypes": ["driveItem"],
+      "query": { "queryString": "Everything about contoso" },
+      "sharePointOneDriveOptions": { "includeHiddenContent": true },
+      "fields": ["SampleOWSText", "id", "name", "parentReference", "webUrl", "createdDateTime", "lastModifiedDateTime", "size"],
+      "sortProperties": [
+        { "name": "Created", "isDescending": false }
+      ]
+    }
+  ]
+}
+```
+
+Use `from` and `size` to page through ranked results. Read `hitsContainers[].total` and `hitsContainers[].moreResultsAvailable` to decide whether to request another page.
+
+## Search custom properties
+For container custom properties, append `OWSTEXT` to the custom property name in the query string.
+
+```text
+customPropertyNametOWSTEXT:customPropertyValue AND ContainerTypeId:498c6855-8f0e-0de7-142e-4e9ff86af9ae
+```
+
+Use direct enumeration instead of search when your app must filter on known metadata values without relevance ranking. For example, query drive items with `$filter`, `$expand`, and `$orderby`:
+
+```http
+GET https://graph.microsoft.com/v1.0/drives/{container-id}/items?$filter=startswith(listitem/fields/{column}, '{value}')&$expand=listitem($expand=fields)
+```
+
+When a container has more than 5,000 items and you enumerate with `$orderby`, include the `Prefer: HonorNonIndexedQueriesWarningMayFailRandomly` header shown in the source article.

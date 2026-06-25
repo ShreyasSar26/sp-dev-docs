@@ -19,11 +19,6 @@ next: apply-security-compliance-controls.md
 Review SharePoint Embedded (SPE) audit activity in Microsoft Purview audit when investigating user, admin, file, or container activity.
 SPE audit capabilities mirror existing SharePoint audit capabilities, and user and admin operations performed in SPE applications are captured in the organization's unified audit log.
 
-<!-- TODO: canonical source doc pending -->
-
-The requested source `docs\embedded\compliance\audit-events.md` wasn't present in this repository.
-This article uses the available [Security and Compliance](../compliance/security-and-compliance.md) source and general Microsoft Purview audit guidance.
-
 > [!IMPORTANT]
 > Use Microsoft Purview audit as the authoritative investigation surface for audit records.
 > Use SPE app and container identifiers to narrow results to embedded content.
@@ -69,6 +64,27 @@ The source article identifies these fields:
 
 Use these fields with app and user context to scope an investigation.
 If a result set includes regular SharePoint and SPE activity, filter or inspect these fields to isolate embedded content.
+
+## Container type activities
+
+Operations on container types are captured in the unified audit log under the **SharePoint Embedded Container Type activities** category. These events use the **Workload** value **SharePoint**.
+
+| Friendly name | Operation | Description |
+| --- | --- | --- |
+| Created container type | `ContainerTypeCreated` | A new SharePoint Embedded container type definition was created. |
+| Deleted container type | `ContainerTypeDeleted` | A container type owned by the tenant was deleted. |
+| Updated container type | `ContainerTypeUpdated` | Properties of a container type, such as name or configuration, were changed. |
+| Updated container type owners | `ContainerTypeOwnersUpdated` | Owners were added to or removed from a container type. |
+
+Container type events include the `ContainerTypeId` property. Unlike container-level file events, they don't include `ContainerInstanceId` because they apply at the type level, not to an individual container instance.
+
+You can search these events with PowerShell:
+
+```powershell
+Search-UnifiedAuditLog -Operations ContainerTypeCreated,ContainerTypeDeleted,ContainerTypeUpdated,ContainerTypeOwnersUpdated -StartDate (Get-Date).AddDays(-7) -EndDate (Get-Date)
+```
+
+For the full reference, see [Audit events](../reference/audit-events.md).
 
 ## Get container context
 

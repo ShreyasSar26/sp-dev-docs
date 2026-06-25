@@ -32,11 +32,14 @@ SharePoint Embedded applications store and manage containers and container conte
 
 ## Container type APIs
 
+> [!NOTE]
+> Container type and registration management is also available through PowerShell (`New-SPOContainerType`, `Set-SPOContainerType`, `Get-SPOContainerType`). The Microsoft Graph APIs below are currently in the **beta** endpoint and aren't supported for production use.
+
 | Area | Microsoft Graph reference |
 | --- | --- |
-| `fileStorageContainerType` resource | [fileStorageContainerType resource type](/graph/api/resources/filestoragecontainertype) |
-| Container type registration | [fileStorageContainerTypeRegistration resource type](/graph/api/resources/filestoragecontainertyperegistration) |
-| List container types | [List fileStorageContainerTypes](/graph/api/filestorage-list-containertypes) |
+| `fileStorageContainerType` resource | [fileStorageContainerType resource type](/graph/api/resources/filestoragecontainertype?view=graph-rest-beta) |
+| Container type registration | [fileStorageContainerTypeRegistration resource type](/graph/api/resources/filestoragecontainertyperegistration?view=graph-rest-beta) |
+| List container types | [List fileStorageContainerTypes](/graph/api/filestorage-list-containertypes?view=graph-rest-beta) |
 
 ## Drive and DriveItem APIs
 

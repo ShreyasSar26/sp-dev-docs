@@ -15,8 +15,6 @@ outcome: Provide a customer administrator with a complete SharePoint Embedded te
 next: validate-customer-installation.md
 -->
 
-<!-- TODO: canonical source doc pending -->
-
 Use this article to create the customer-facing setup guide for a multitenant SharePoint Embedded app.
 The customer administrator is the consuming tenant admin.
 This admin manages SPE applications registered in the Microsoft 365 tenant and the containers that hold customer content.

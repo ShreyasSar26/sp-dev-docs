@@ -160,7 +160,7 @@ Use the deleted container view to:
 1. Confirm that a deleted container is recoverable.
 1. Review storage and ownership.
 1. Sort by supported columns such as storage, created date, or deleted date.
-1. Filter by app, publisher, ownership type, owner count, created date, or deleted date.
+1. Filter by app, publisher, ownership type, principal owner, owner count, created date, or deleted date.
 1. Decide whether to restore or permanently delete the container.
 
 Deleted containers are permanently purged after 93 days unless a retention policy changes the outcome.

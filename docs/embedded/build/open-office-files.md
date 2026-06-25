@@ -100,9 +100,7 @@ ms-word:ofe|u|https://contoso.sharepoint.com/contentstorage/CSP_1234765465/Docum
 ```
 For scheme details, see [Office URI Schemes](/office/client-developer/office-uri-schemes).
 ## Configure redirect behavior
-<!-- TODO: canonical source doc pending -->
-A dedicated configure-redirect-behavior source wasn't present. The closest source is the `ApplicationRedirectUrl` setting in [Create New SharePoint Embedded Container Types](../getting-started/containertypes.md#configuring-container-types).
-Use `ApplicationRedirectUrl` to specify the URL to which files for your application are redirected.
+Use the `ApplicationRedirectUrl` container type setting to specify the URL to which files for your application are redirected. For configuration steps, see [Create New SharePoint Embedded Container Types](../getting-started/containertypes.md#configuring-container-types).
 When designing redirects:
 - Use a stable production URL for your app.
 - Use development URLs only for local or trial work.

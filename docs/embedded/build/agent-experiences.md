@@ -1,6 +1,6 @@
 ---
 title: Add Microsoft 365 Copilot and Agent Experiences
-description: Add SharePoint Embedded agent chat experiences grounded in container content.
+description: Ground Copilot-style agents in SharePoint Embedded content and expose SPE to Microsoft Foundry.
 ms.date: 06/25/2026
 ms.localizationpriority: high
 ---
@@ -9,114 +9,100 @@ ms.localizationpriority: high
 <!-- agent:
 task_type: how-to
 audience: developer
-outcome: Configure Copilot-backed agent chat over SPE container content.
+outcome: Configure embedded agent chat and Foundry knowledge over SPE containers.
 next: migrate-azure-blob-storage.md
 -->
-<!-- TODO: canonical source doc pending -->
-SharePoint Embedded agent lets you add AI chat experiences to your application and ground answers in files stored in SharePoint Embedded containers.
-The available sources describe a private preview React SDK, advanced configuration, and a Visual Studio Code sample path.
-The requested knowledge source article was not present in this repository.
+SharePoint Embedded agent experiences let your app answer questions over files stored in SharePoint Embedded containers. The source articles describe a private preview React SDK, advanced configuration for grounding and scoping, and a Visual Studio Code sample path. See [SharePoint Embedded agent](../development/declarative-agent/spe-da.md), [advanced topics](../development/declarative-agent/spe-da-adv.md), and [the getting started tutorial](../development/tutorials/spe-da-vscode.md).
+
 > [!NOTE]
-> SharePoint Embedded agent is described in the source docs as private preview. Validate current terms, package versions, and billing before production use.
-## Agent scenarios
-Use agent experiences for document Q&A, summaries, workspace discovery, support answers, starter prompts, and scoped conversations.
-The advanced source describes Retrieval-Augmented Generation over a semantic index.
-The agent retrieves relevant content at query time and grounds responses in Microsoft 365 content boundaries.
-## Create SPE agent experiences
-Prerequisites include a SharePoint Embedded application, a standard container type, current SharePoint Online PowerShell, allowed embedded chat hosts, discoverability enabled, Microsoft 365 Copilot availability, and a Copilot-licensed test user.
-Set `DiscoverabilityDisabled` to `false` and allow up to 24 hours for propagation when updating an existing container type.
-Configure allowed chat iframe hosts with `Set-SPOContainerTypeConfiguration` and consuming tenant overrides with `Set-SPOApplication` when needed.
-## Knowledge source setup
-Scope the agent to the smallest useful content set.
-Use file scope for document Q&A, folder scope for a case section, and container scope for the whole workspace.
-Show the current scope in the UI.
-The effective permissions are the intersection of the user's access and the app's access.
-Confirm file type support before promising answers over specific formats.
-## Advanced configuration
-The React SDK source uses an auth provider with `hostname` and `getToken()`.
-The tutorial shows the token scope `{hostname}/Container.Selected`.
-Add the `ChatEmbedded` component with `authProvider` and `containerId`, store the API from `onApiReady`, and call `openChat()`.
-Launch configuration can include header, starter prompts, suggested prompts, instruction, and locale.
-Language behavior depends on Microsoft 365 and SharePoint language settings.
-## Current deprecations and preview status
-The overview states private preview status and consumption-based billing guidance for standard container types.
-Trial container types expire after 30 days and are not recommended for agent scenarios.
-Preview SDK package URLs and checksums can change; use the latest source before installing.
-Some Visual Studio Code extension actions for standard container types may require SharePoint Online PowerShell.
-## Troubleshooting
-| Symptom | Check |
-| --- | --- |
-| Iframe does not load | Configure embedded chat hosts. |
-| Files are not found | Check discoverability, indexing, scope, and permissions. |
-| Sign-in fails | Check cookies and popup fallback. |
-| Answers omit files | Verify supported formats and scope. |
-| Trial type fails | Use a standard container type when required. |
-## Related sources
-- [SharePoint Embedded agent](../development/declarative-agent/spe-da.md)
-- [SharePoint Embedded agent Advanced Topics](../development/declarative-agent/spe-da-adv.md)
-- [Tutorial for getting started with SharePoint Embedded agent](../development/tutorials/spe-da-vscode.md)
-## Next step
-Continue with [Migrate from Azure Blob Storage](migrate-azure-blob-storage.md).
-## Implementation checklist
-- Log Graph request IDs and operation outcomes for support.
-- Document rollback steps for administrators.
-- Keep user-facing messages specific to the current container.
-- Validate tenant configuration before enabling this capability.
-- Recheck permissions before write operations.
-- Log Graph request IDs and operation outcomes for support.
-- Document rollback steps for administrators.
-- Keep user-facing messages specific to the current container.
-- Validate tenant configuration before enabling this capability.
-- Recheck permissions before write operations.
-- Log Graph request IDs and operation outcomes for support.
-- Document rollback steps for administrators.
-- Keep user-facing messages specific to the current container.
-- Validate tenant configuration before enabling this capability.
-## Operational checklist
-Use this checklist before you enable the capability for customers:
-- Confirm the consuming tenant configuration supports the scenario.
-- Confirm the signed-in user and application have the required access.
-- Test the workflow with an empty container and a populated container.
-- Test the workflow with external sharing disabled if sharing is involved.
-- Capture Microsoft Graph request IDs in logs.
-- Show actionable errors instead of raw service responses.
-- Keep long-running work outside request handlers.
-- Reconcile app state with SharePoint Embedded state after retries.
-- Document administrator steps in your customer installation guide.
-- Review related next-step articles before publishing the app experience.
+> The SharePoint Embedded agent source describes private preview behavior. Confirm current SDK, billing, licensing, and container type requirements before you deploy.
 
-## Production readiness checklist
+## Configure the container type
+Use a standard container type for agent scenarios when required by current billing guidance. Trial container types expire after 30 days and cannot be converted to standard container types.
 
-Before you release this capability, verify the following items for your app and tenant:
+Set `DiscoverabilityDisabled` to `false` so the agent can find files in the container type. If you update an existing container type, allow up to 24 hours for propagation before you create containers, upload files, or test agent chat.
 
-- Confirm the tenant has SharePoint Embedded enabled.
-- Confirm the application registration matches the deployed environment.
-- Confirm admin consent is granted for required Microsoft Graph permissions.
-- Confirm the container type is registered in the consuming tenant.
-- Confirm users have the expected container roles.
-- Confirm guest access behavior with the tenant sharing policy.
-- Confirm sensitivity labels and compliance settings are respected.
-- Confirm the app handles Microsoft Graph throttling.
-- Confirm retry logic uses exponential backoff.
-- Confirm write operations are idempotent or guarded against duplicates.
-- Confirm long-running work is resumable.
-- Confirm logs include correlation IDs and timestamps.
-- Confirm logs do not include access tokens or secrets.
-- Confirm telemetry distinguishes user errors from service errors.
-- Confirm the UI explains policy-blocked actions.
-- Confirm disabled actions remain keyboard accessible with explanatory text.
-- Confirm localization does not change technical identifiers.
-- Confirm feature flags can disable the capability if needed.
-- Confirm documentation links point to the installed app version.
-- Confirm operational runbooks describe common recovery steps.
-- Confirm support teams know which tenant role can resolve configuration issues.
-- Confirm test data does not include real customer secrets.
-- Confirm cleanup tasks remove temporary migration or processing artifacts.
-- Confirm related articles in this build path remain linked together.
-- Confirm this scenario is covered by automated or manual regression tests.
-- Confirm this scenario is covered by automated or manual regression tests.
-- Confirm this scenario is covered by automated or manual regression tests.
-- Confirm this scenario is covered by automated or manual regression tests.
-- Confirm this scenario is covered by automated or manual regression tests.
-- Confirm this scenario is covered by automated or manual regression tests.
-- Confirm this scenario is covered by automated or manual regression tests.
+```powershell
+Set-SPOContainerTypeConfiguration -ContainerTypeId 4f0af585-8dcc-0000-223d-661eb2c604e4 -DiscoverabilityDisabled $false
+```
+
+Configure the hosts that can embed the chat iframe. The advanced source states that the default `frame-ancestors` policy is `none` when this setting is not configured.
+
+```powershell
+Set-SPOContainerTypeConfiguration -ContainerTypeId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX -CopilotEmbeddedChatHosts @("http://localhost:3000", "https://contoso.sharepoint.com", "https://fabrikam.com")
+```
+
+A consuming tenant SharePoint Embedded Administrator can override `CopilotEmbeddedChatHosts` with `Set-SPOApplication`, but the override must be a subset of the owning tenant configuration.
+
+```powershell
+Set-SPOApplication -OwningApplicationId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX -CopilotEmbeddedChatHosts @("https://contoso.sharepoint.com", "https://fabrikam.com")
+```
+
+## Add the React chat SDK
+Install the package shown in the tutorial or the current package published for your preview program.
+
+```console
+npm install "https://download.microsoft.com/download/970802a5-2a7e-44ed-b17d-ad7dc99be312/microsoft-sharepointembedded-copilotchat-react-1.0.9.tgz"
+```
+
+Create an auth provider that returns a SharePoint token for the tenant host. The tutorial's required scope is `${hostname}/Container.Selected`.
+
+```typescript
+const authProvider: IChatEmbeddedApiAuthProvider = {
+  hostname: 'https://m365x10735106.sharepoint.com',
+  getToken: requestSPOAccessToken,
+};
+```
+
+Add the `ChatEmbedded` component, pass the target container ID, and store the API from `onApiReady`.
+
+```typescript
+<ChatEmbedded
+  onApiReady={setChatApi}
+  authProvider={authProvider}
+  containerId={container.id}
+  style={{ width: 'calc(100% - 4px)', height: 'calc(100vh - 8px)' }}
+/>
+```
+
+Open the chat with the API. A launch configuration can set the header, starter prompts, suggested prompts, instruction, and locale.
+
+```typescript
+await chatApi.openChat({
+  header: 'My Awesome Chat',
+  suggestedPrompts: ['What are my files?'],
+  instruction: 'Answer using only the selected container content.',
+  locale: 'en'
+});
+```
+
+## Scope the agent response
+The effective permissions for an agent session are the intersection of the user's access and the SharePoint Embedded application's access. Scope the experience to the smallest useful content set. The advanced source lists these data source types: `File`, `Folder`, `DocumentLibrary`, `Site`, `WorkingSet`, and `Meeting`.
+
+Use file or folder scope for focused Q&A. Use the container or document library scope when users expect answers across a whole workspace. Show the active scope in the UI so users understand what content grounds the answer.
+
+## Use SPE as a knowledge source in Microsoft Foundry (Preview)
+Microsoft Foundry Agent Service can be configured with a SharePoint knowledge source that points at SharePoint Embedded content. This Foundry integration is in Preview.
+
+Prerequisites are an SPE app with at least one container and at least one Copilot license on the tenant. During preview, the Copilot license is required; after preview, the feature is expected to move to metered billing.
+
+Configure the SharePoint knowledge source with `remoteSharePointParameters.containerTypeId` set to your SharePoint Embedded container type.
+
+Grant the Foundry app permission to your container type by updating the container type registration in consuming tenants. The Foundry application ID is `880da380-985e-4198-81b9-e05b1cc53158`.
+
+```http
+PUT /storage/fileStorage/containerTypeRegistrations/{fileStorageContainerTypeId}/applicationPermissionGrants/880da380-985e-4198-81b9-e05b1cc53158
+Content-Type: application/json
+```
+
+```json
+{
+  "delegatedPermissions": ["readContent"],
+  "applicationPermissions": ["none"]
+}
+```
+
+You can also grant this permission during initial container type registration.
+
+## Test user experience
+Sign in with a user who has a Microsoft 365 Copilot license when required. Upload supported files to a container, wait for indexing, open the chat, and ask questions that can be answered from known file content. If answers omit expected files, check discoverability, supported file formats, app access, user access, scope selection, and indexing delay.

@@ -67,7 +67,7 @@ The source article lists this PowerShell discovery flow:
 1. Retrieve details for a container, including the container site URL.
 
    ```powershell
-   Get-SPOContainer -OwningApplicationId <ApplicationID> -Identity<ContainerID>
+   Get-SPOContainer -OwningApplicationId <ApplicationID> -Identity <ContainerID>
    ```
 
 For cmdlet details, see [Get-SPOContainer](/powershell/module/sharepoint-online/get-spocontainer).

@@ -109,6 +109,7 @@ Replace both app IDs with your applications.
 | `DeletePermissions` | Delete other members. |
 | `DeleteOwnPermissions` | Remove the caller's own membership. |
 | `ManagePermissions` | Manage container role assignments. |
+| `ManageContent` | Manage the content of containers of this type. |
 | `Full` | Grant all permissions. |
 > [!NOTE]
 > `WriteContent` can't be granted without `ReadContent`.
