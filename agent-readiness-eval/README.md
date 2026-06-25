@@ -21,6 +21,7 @@ doc fixes that closed them.
 | [`04-qa-stress-test-54-queries.md`](04-qa-stress-test-54-queries.md) | Stress test: 54 edge-case queries (incl. negative probes), full prompts + raw outputs + grading |
 | [`06-scenario-evaluations.md`](06-scenario-evaluations.md) | Top-5 agent scenarios: ranking, input prompts, ground truths, and 0/1/2 eval rubrics |
 | [`07-scenario-audit-results.md`](07-scenario-audit-results.md) | Live audit: doc-restricted agents run the top-5 scenarios; outputs graded vs. ground truth (98/100) |
+| [`08-revamp-playbook.md`](08-revamp-playbook.md) | Reference playbook: the logic, IA, source→target mapping, and steps to regenerate the task-based structure |
 
 ## Headline results
 
