@@ -25,6 +25,11 @@ next: plan/app-tenant-architecture.md
 
 This page is a router. Pick the row that matches what you're trying to do.
 
+> [!TIP]
+> **Not sure which path?** Ask one question: *do you write code, or manage a tenant?*
+> **Developers** write and deploy applications that call SPE APIs — start with **Build an app**.
+> **Administrators** install, consent to, and manage SPE apps inside a Microsoft 365 tenant — start with **Install or manage apps**.
+
 | I want to… | Start here |
 |---|---|
 | **Understand SPE and decide if it fits** | [Scenarios and use cases](scenarios-and-use-cases.md) · keep reading below |
