@@ -13,13 +13,13 @@ audience: developer
 outcome: Enable archival and call Graph beta archive or unarchive operations.
 next: fluid-framework.md
 -->
-Use SharePoint Embedded container archival when a workspace must be retained but no longer needs active collaboration. Archival uses Microsoft 365 Archive (Preview), a cold-storage tier that reduces storage cost while keeping the same security, compliance, and search standards. For the Microsoft 365 Archive overview, see [Microsoft 365 Archive](/microsoft-365/archive/archive-overview).
+Use SharePoint Embedded container archival when a container must be retained but no longer needs to be active accessed or used for collaboration. Archival uses Microsoft 365 Archive, a cold-storage tier that reduces storage cost while keeping the same security, compliance, and search standards. For the Microsoft 365 Archive overview, see [Microsoft 365 Archive](/microsoft-365/archive/archive-overview).
 
 > [!IMPORTANT]
-> Microsoft 365 Archive is in Preview. Validate tenant availability, billing, and API behavior before you expose archive actions to users.
+> Microsoft 365 Archive is in Preview for SharePoint Embedded. Validate tenant availability, billing, and API behavior before you expose archive actions to users.
 
 ## Enable archival on a container type
-Archival must be enabled on the container type. Use SharePoint Embedded admin PowerShell for an existing type.
+Archival must be enabled on the container type. Use SharePoint Embedded admin PowerShell for an existing container type.
 
 ```powershell
 Set-SPOContainerTypeConfiguration -ContainerTypeId <id> -IsArchiveEnabled $true
