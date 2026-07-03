@@ -71,7 +71,7 @@ For trial development, the Visual Studio Code extension can create containers.
 1. Confirm the container appears under the container type.
 See [Quickstart: Build your first app with VS Code](quickstart-vscode.md) for the extension flow.
 ## List containers
-List containers to show available workspaces, validate provisioning, or run maintenance.
+List containers to show available containers, validate provisioning, or run maintenance.
 For the canonical API shape, see [List containers](/graph/api/filestorage-list-containers?tabs=http).
 When listing containers:
 - Use app-only access for service inventory scenarios.
@@ -99,6 +99,7 @@ Before deletion:
 - Confirm your app has archived business references.
 - Decide whether the container should be recycled first.
 - Explain restore options.
+
 The Visual Studio Code extension includes recycle and recovery capabilities for trial development.
 ## Restore a recycled container
 A restore flow should:
