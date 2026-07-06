@@ -17,7 +17,7 @@ next: manage-containers-powershell.md
 -->
 
 Use the SharePoint admin center to manage SharePoint Embedded (SPE) containers through a graphical experience.
-The SPE container pages help consuming tenant admins view active containers, inspect details, manage membership, apply sensitivity labels, delete containers, restore deleted containers, and permanently delete containers.
+The SPE container pages help consuming tenant admins view active containers, inspect details, manage membership, apply sensitivity labels, archive and reactivate containers, delete containers, restore deleted containers, and permanently delete containers.
 
 > [!IMPORTANT]
 > To manage SPE containers, assign the **SharePoint Embedded Administrator** role.
@@ -40,6 +40,7 @@ For role context, see [Admin overview](admin-overview.md).
 1. Sign in to the [SharePoint admin center](https://admin.microsoft.com/sharepoint).
 1. In the left navigation, expand **SharePoint Embedded**.
 1. Select **Active containers** to view active containers.
+1. Select **Archived containers** to view containers in the archived state.
 1. Select **Deleted containers** to view containers in the deleted container collection.
 
 A SharePoint Embedded Administrator sees only the SPE-specific pages that apply to the role.
@@ -124,7 +125,63 @@ Before applying a label, confirm:
 
 For broader controls, see [Apply security and compliance controls](apply-security-compliance-controls.md).
 
-## Delete a container
+## Archive a container
+
+Archive a container when it's no longer actively used but must be retained for legal, compliance, or business purposes. Documents in an archived container can't be accessed by any user or application until the container is reactivated.
+
+1. Open **Active containers**.
+1. Select the container.
+1. Select **Archive**.
+1. Review the side panel that explains the archival implications and reactivation options.
+1. Select **Archive** to confirm, or cancel to return to active containers.
+
+The container moves to the **Archived containers** page.
+
+## View archived containers
+
+The **Archived containers** page lists containers in the tenant's archived container collection. It shows the following metadata:
+
+- Container name
+- Application name
+- Publisher
+- Status
+- Time archived
+- Archived by
+- Storage (GB)
+- Ownership type
+- Principal owner
+
+Use this page to review archived containers, decide on reactivation timing, and manage their lifecycle. The Archived containers page also provides the same delete experience as active containers for selecting and deleting containers.
+
+## Reactivate archived containers
+
+Archived containers aren't accessible to users or applications until reactivated. Reactivation time depends on how long the container has been archived.
+
+### Reactivate recently archived containers
+
+Containers archived within the last seven days are in the **Recently archived** state and reactivate quickly.
+
+1. Open **Archived containers**.
+1. Select a Recently archived container.
+1. Select **Reactivate**.
+1. Review the side panel with reactivation timing.
+1. Select **Reactivate** to confirm, or cancel to return.
+
+The container moves to the **Active containers** page.
+
+### Reactivate fully archived containers
+
+Containers archived longer than seven days are in the **Fully archived** state and require a 24-hour reactivation window.
+
+1. Open **Archived containers**.
+1. Select a Fully archived container.
+1. Select **Reactivate**.
+1. Review the side panel that states the **24 hours** reactivation time.
+1. Select **Reactivate** to submit the request, or cancel to return.
+
+The request displays as "Reactivating" on the Archived containers page. After 24 hours, the container moves to the **Active containers** page.
+
+## Delete an active or archived container
 
 Delete a container only when there is a clear business reason.
 Container deletion can affect the SPE app that owns the container.

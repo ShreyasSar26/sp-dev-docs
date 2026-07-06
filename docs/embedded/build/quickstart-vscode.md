@@ -98,7 +98,7 @@ Use this capability to:
 ## Run the sample app
 Open a terminal and run the sample app from the generated sample directory.
 ```console
-cd [your-path]\SharePoint-Embedded-Samples\Samples\spe-typescript-react-azurefunction
+cd [your-path]\SharePoint-Embedded-Samples\Custom Apps\boilerplate-typescript-react
 npm run start
 ```
 The sample starts:

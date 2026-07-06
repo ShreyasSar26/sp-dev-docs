@@ -170,6 +170,10 @@ The actual requests per minute depends on the APIs you call and their resource u
 
 The source article suggests estimating request rate by averaging about two resource units per request and dividing application resource unit limits by 2.
 
+## Container creation rate limiting
+
+Per consuming tenant, and during the tenant's peak hours, container creation is limited to 5 new containers per second. Requests beyond this limit are rate limited. Outside of peak hours, containers can be created at a faster rate.
+
 ## Permission operation costs
 
 Permission resource operations have a higher resource unit cost in the source article.

@@ -76,7 +76,7 @@ SPE audit events include additional data that helps isolate embedded content:
 
 Use Microsoft Purview audit to search activity and investigate file, user, app, and admin operations.
 
-For audit review steps, see [Review audit events](review-audit-events.md).
+For audit review steps, see [Review audit events](review-audit-events.md). For a detailed list of container type and container type registration audit events, see [SharePoint Embedded audit log events](../reference/audit-events.md).
 
 ## Apply eDiscovery
 

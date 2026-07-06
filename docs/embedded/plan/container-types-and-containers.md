@@ -66,7 +66,7 @@ It affects:
 - Configurable behavior.
 
 > [!IMPORTANT]
-> Plan the container type carefully. Some creation choices, such as trial versus production and standard versus pass-through billing, can't be converted after creation.
+> Plan the container type carefully. Some creation choices, such as trial versus production and standard versus passthrough billing, can't be converted after creation. To switch, you must delete and re-create the container type.
 
 ## Containers
 
@@ -119,13 +119,9 @@ For trial container types:
 
 A trial container type can't be converted to production.
 
-To create a trial container type, developers can use the SharePoint Embedded Visual Studio Code extension or SharePoint PowerShell.
+To create a trial container type, developers can use the SharePoint Embedded Visual Studio Code extension or the Microsoft Graph container type API.
 
-The PowerShell cmdlet shown in the source article is:
-
-```powershell
-New-SPOContainerType [–TrialContainerType] [-ContainerTypeName] <String> [-OwningApplicationId] <String> [-ApplicationRedirectUrl] <String> [<CommonParameters>]
-```
+Container types are created with the Microsoft Graph `POST /beta/storage/fileStorage/containerTypes` endpoint, using the `trial` billing classification. This call requires the `FileStorageContainerType.Manage.All` delegated permission; app-only access isn't supported. The calling user must be a non-guest member of the owning tenant (no admin role required) and is automatically assigned as an owner of the new container type.
 
 ## Standard container types
 
@@ -137,8 +133,8 @@ Standard container types are billable and must use a billing model.
 
 SharePoint Embedded supports:
 
-- Standard billing.
-- Pass-through billing.
+- Standard billing (`standard` billing classification).
+- Passthrough billing (`directToCustomer` billing classification).
 
 For billing selection, see [Choose a billing model](../plan/choose-billing-model.md).
 
@@ -146,28 +142,34 @@ For billing selection, see [Choose a billing model](../plan/choose-billing-model
 
 With standard billing, consumption-based charges are billed to the tenant that owns or develops the application.
 
-The developer tenant admin establishes a billing profile when creating the standard container type.
+The developer tenant admin establishes a billing profile after creating the standard container type.
 
-The source article shows creation followed by billing profile configuration:
+Create the container type with the Microsoft Graph `POST /beta/storage/fileStorage/containerTypes` endpoint using the `standard` billing classification, then attach an Azure billing profile:
 
-```powershell
-New-SPOContainerType [-ContainerTypeName] <String> [-OwningApplicationId] <String> [-ApplicationRedirectUrl] <String> [<CommonParameters>]
+```http
+POST https://graph.microsoft.com/beta/storage/fileStorage/containerTypes
 ```
 
-```powershell
-Add-SPOContainerTypeBilling –ContainerTypeId <ContainerTypeId> -AzureSubscriptionId <AzureSubscriptionId> -ResourceGroup <ResourceGroup> -Region <Region>
+```json
+{
+  "name": "{ContainerTypeName}",
+  "owningAppId": "{OwningApplicationId}",
+  "billingClassification": "standard"
+}
 ```
 
-## Pass-through billing container type
+## Passthrough billing container type
 
-With pass-through billing, charges are billed directly to the consuming tenant.
+With passthrough billing, charges are billed directly to the consuming tenant.
 
-The developer tenant admin creates the container type with pass-through billing enabled and doesn't attach a billing profile in the developer tenant.
+The developer tenant admin creates the container type with the `directToCustomer` billing classification and doesn't attach a billing profile in the developer tenant.
 
-The source article shows:
-
-```powershell
-New-SPOContainerType [-ContainerTypeName] <String> [-OwningApplicationId] <String> [-ApplicationRedirectUrl] <String> [-IsPassThroughBilling] [<CommonParameters>]
+```json
+{
+  "name": "{ContainerTypeName}",
+  "owningAppId": "{OwningApplicationId}",
+  "billingClassification": "directToCustomer"
+}
 ```
 
 After registration, the consuming tenant admin sets up billing in the consuming tenant.
@@ -212,7 +214,7 @@ For full details, see [Register file storage container type application permissi
 ## Planning checklist
 
 - Choose trial or standard.
-- Choose standard billing or pass-through billing for production.
+- Choose standard billing or passthrough billing for production.
 - Identify the owning application.
 - Confirm the container type name.
 - Confirm the consuming tenant or tenants.

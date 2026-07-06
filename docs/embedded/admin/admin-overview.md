@@ -94,7 +94,7 @@ Monitor usage with [Monitor usage, billing, and cost](monitor-usage-billing-cost
 ### Container administration
 
 Containers hold the content used by SPE apps.
-Admins can view active containers, inspect metadata, set sensitivity labels, manage membership in the admin center, delete containers, restore deleted containers, and permanently delete deleted containers.
+Admins can view active containers, archive containers, reactivate archived containers, inspect metadata, set sensitivity labels, manage membership in the admin center, delete containers, restore deleted containers, and permanently delete deleted containers.
 
 Use the graphical experience in [Manage containers in SharePoint admin center](manage-containers-sharepoint-admin-center.md).
 Use cmdlets and scripting in [Manage containers with PowerShell](manage-containers-powershell.md).

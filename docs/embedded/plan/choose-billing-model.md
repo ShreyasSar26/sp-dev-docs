@@ -35,6 +35,9 @@ Both models use the same billing meters.
 
 The model determines which tenant is billed and which admin configures the billing profile.
 
+> [!IMPORTANT]
+> Once a container type is created, its billing model can't be changed. To switch models, you must delete and re-create the container type with the desired billing model.
+
 | Billing model | Who is billed | Who configures billing |
 | --- | --- | --- |
 | Standard | Tenant that owns or develops the application. | Admin in the developer tenant. |
@@ -111,6 +114,7 @@ The supported meters are described in [SharePoint Embedded billing meters](../ad
 The current meters include:
 
 - Storage.
+- Archived storage.
 - API transactions.
 - Egress.
 
@@ -118,11 +122,15 @@ Both standard billing container types and pass-through billing container types u
 
 ## Storage meter
 
-Storage consumption includes files and documents with their metadata and versions.
+Storage consumption includes files and documents with their metadata and versions, in both active and archived states.
 
 Storage consumption also includes content in the recycle bin and deleted container collection within SharePoint Embedded.
 
 Plan lifecycle and deletion policies with storage cost in mind.
+
+## Archived storage meter
+
+The archived storage meter measures storage consumed by archived containers. Archiving a container moves its data to the cold storage tier, which offers lower storage costs than active storage.
 
 ## API transactions meter
 
@@ -139,7 +147,7 @@ Examples of nonchargeable transactions in the source article include:
 
 ## Egress meter
 
-Egress is data downloaded from the SharePoint Embedded platform to a customer client device.
+Egress is data that exits the SharePoint Embedded platform, such as a document downloaded to a customer client device or data transferred to a server operated by the customer. Charges are based on the total volume of data transferred out (GB).
 
 The source article identifies exemptions for certain Microsoft service integrations, including downloads from the SharePoint Embedded application server to Office Desktop client or Web Application Companion.
 

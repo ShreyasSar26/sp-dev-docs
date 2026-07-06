@@ -28,44 +28,41 @@ Only the owning application of the container type can invoke the registration AP
 The owning application must have:
 - A service principal installed on the consuming tenant.
 - Admin consent to perform registration in the consuming tenant.
-- The SharePoint `Container.Selected` app-only permission.
-- A valid app-only token for the SharePoint resource.
+- The `FileStorageContainerTypeReg.Selected` Microsoft Graph permission (user-delegated or app-only).
+- A valid token for the Microsoft Graph resource.
 > [!NOTE]
-> The registration API is a SharePoint API, not a Microsoft Graph API.
+> The container type registration API is a Microsoft Graph API. It's currently in preview and subject to change.
+When the owning application calls the registration API on behalf of a user (delegated), that user must be assigned the [SharePoint Embedded Administrator](/entra/identity/role-based-access-control/permissions-reference#sharepoint-embedded-administrator) or [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator) role. When it calls without a user context (app-only), it uses the client credentials grant flow.
 ## Grant admin consent
 Ask a consuming tenant administrator to grant admin consent to the owning application.
 Use the Microsoft identity platform admin consent endpoint:
 ```http
-https://login.microsoftonline.com/<ConsumingTenantID>/adminconsent?client_id=<OwningTenantClientID>
+https://login.microsoftonline.com/{ConsumingTenantId}/v2.0/adminconsent?client_id={OwningAppId}&scope=https://graph.microsoft.com/.default
 ```
 Configure success and error handling for your onboarding flow.
 For national cloud endpoints, see [Microsoft identity platform endpoints on national clouds](/entra/identity-platform/authentication-national-cloud#microsoft-entra-authentication-endpoints).
-> [!IMPORTANT]
-> SharePoint `Container.Selected` is separate from Microsoft Graph `FileStorageContainer.Selected`.
 ## Acquire a token for registration
-Use app-only authentication for registration.
+Use either delegated or app-only authentication for registration.
 The source guidance requires:
-- The [client credentials grant flow](/entra/identity-platform/v2-oauth2-client-creds-grant-flow).
-- A token requested with a certificate.
-- The SharePoint `Container.Selected` app-only permission.
-Don't use a delegated user token for the registration API.
+- The `FileStorageContainerTypeReg.Selected` Microsoft Graph permission.
+- For app-only calls, the [client credentials grant flow](/entra/identity-platform/v2-oauth2-client-creds-grant-flow).
+- For delegated calls, a signed-in user with the SharePoint Embedded Administrator or Global Administrator role.
 ## Register container type permissions
 Call the registration endpoint in the consuming tenant.
 ```http
-PUT {RootSiteUrl}/_api/v2.1/storageContainerTypes/{containerTypeId}/applicationPermissions
+PUT https://graph.microsoft.com/beta/storage/fileStorage/containerTypeRegistrations/{containerTypeId}
 ```
-`{RootSiteUrl}` is the SharePoint URL of the consuming tenant, such as `https://contoso.sharepoint.com`.
 `{containerTypeId}` is the container type ID created in the owning tenant.
-In the request body, provide the application permissions for the container type.
+In the request body, provide the application permission grants for the container type.
 ## Grant permissions to the owning app
 A common first registration grants the owning app full permissions for delegated and app-only calls.
 ```json
 {
-  "value": [
+  "applicationPermissionGrants": [
     {
       "appId": "71392b2f-1765-406e-86af-5907d9bdb2ab",
-      "delegated": ["full"],
-      "appOnly": ["full"]
+      "delegatedPermissions": ["full"],
+      "applicationPermissions": ["full"]
     }
   ]
 }
@@ -78,16 +75,16 @@ The owning app can also register permissions for another application.
 Use this pattern when a guest app needs a defined workload, such as backup or processing.
 ```json
 {
-  "value": [
+  "applicationPermissionGrants": [
     {
       "appId": "71392b2f-1765-406e-86af-5907d9bdb2ab",
-      "delegated": ["full"],
-      "appOnly": ["full"]
+      "delegatedPermissions": ["full"],
+      "applicationPermissions": ["full"]
     },
     {
       "appId": "89ea5c94-7736-4e25-95ad-3fa95f62b6",
-      "delegated": ["read", "write"],
-      "appOnly": ["none"]
+      "delegatedPermissions": ["read", "write"],
+      "applicationPermissions": ["none"]
     }
   ]
 }
@@ -114,7 +111,7 @@ Replace both app IDs with your applications.
 > [!NOTE]
 > `WriteContent` can't be granted without `ReadContent`.
 ## Validate registration
-A successful registration returns `200 OK` and configured permissions in the response body.
+A successful registration returns `201 Created` and the configured permissions in the response body.
 After registration succeeds:
 1. Confirm the response includes expected app IDs.
 1. Confirm delegated and app-only arrays match your intended grants.
@@ -125,7 +122,7 @@ After registration succeeds:
 | Symptom | Likely cause | Action |
 |---|---|---|
 | `401 Unauthorized` | Missing or invalid token | Request a valid app-only token. |
-| `403 Forbidden` | App lacks permission or isn't owning app | Confirm `Container.Selected`, consent, and app ID. |
+| `403 Forbidden` | App lacks permission or isn't owning app | Confirm `FileStorageContainerTypeReg.Selected`, consent, and app ID. |
 | `404 Not Found` | Container type doesn't exist | Verify ID and tenant. |
 | Access denied on Graph calls | Registration missing or insufficient | Re-register with needed permissions. |
 | Admin can't find hidden permission | Portal doesn't expose it | Use an admin consent URL. |

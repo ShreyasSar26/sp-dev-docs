@@ -27,6 +27,8 @@ Supported experiences include:
 - Comments and mentions, with documented limitations.
 - Breadcrumbs in Office clients that associate a file with your app.
 For the full overview, see [Office file experiences for SharePoint Embedded](../development/content-experiences/office-experience.md).
+> [!NOTE]
+> Documents stored in an archived container can't be viewed or accessed. Your app must handle the archived state by showing an appropriate error and guiding users on next steps, such as reactivating the container.
 ## Prerequisites
 Before launching Office files, make sure:
 - The file is stored in a SharePoint Embedded container.

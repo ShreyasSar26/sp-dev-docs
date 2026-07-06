@@ -38,6 +38,7 @@ For task guidance, see [manage containers with PowerShell](../admin/manage-conta
 | --- | --- | --- | --- |
 | List active containers for an application | [Get-SPOContainer](/powershell/module/sharepoint-online/get-spocontainer) | `-OwningApplicationId` | `Get-SPOContainer -OwningApplicationId <OwningApplicationId> \| FT` |
 | List containers sorted by storage | [Get-SPOContainer](/powershell/module/sharepoint-online/get-spocontainer) | `-OwningApplicationId`, `-SortByStorage` | `Get-SPOContainer -OwningApplicationId <OwningApplicationId> -SortByStorage <AscendingOrDescending> \| FT` |
+| List archived containers for an application | [Get-SPOContainer](/powershell/module/sharepoint-online/get-spocontainer) | `-OwningApplicationId`, `-ArchiveStatus` | `Get-SPOContainer -OwningApplicationId <OwningApplicationId> -ArchiveStatus Archived \| FT` |
 | Get container details | [Get-SPOContainer](/powershell/module/sharepoint-online/get-spocontainer) | `-Identity` | `Get-SPOContainer -Identity <ContainerId>` |
 | Get container details by site URL | [Get-SPOContainer](/powershell/module/sharepoint-online/get-spocontainer) | `-Identity` | `Get-SPOContainer -Identity <siteURL>` |
 | Set a sensitivity label | Set-SPOContainer | `-Identity`, `-SensitivityLabel` | `Set-SPOContainer -Identity <ContainerID> -SensitivityLabel <SensitivityLabel>` |
@@ -47,7 +48,7 @@ For task guidance, see [manage containers with PowerShell](../admin/manage-conta
 | Restore a deleted container | Restore-SPODeletedContainer | `-Identity` | `Restore-SPODeletedContainer -Identity <ContainerId>` |
 | Permanently delete a deleted container | [Remove-SPODeletedContainer](/powershell/module/sharepoint-online/remove-spodeletedcontainer) | `-Identity` | `Remove-SPODeletedContainer -Identity <ContainerId>` |
 
-Deleted containers can be restored from the deleted container collection within 93 days. Permanently deleting a container deletes all documents and files in it.
+Deleted containers can be restored from the deleted container collection within 93 days. Permanently deleting a container deletes all documents and files in it. If a container was in the archived state when it was deleted, restoring it returns it to the archived state.
 
 > [!NOTE]
 > To enumerate Microsoft Loop containers, the source article specifies owning app ID `a187e399-0c36-4b98-8f04-1edc167a0996`.

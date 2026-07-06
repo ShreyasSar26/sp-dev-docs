@@ -16,7 +16,7 @@ outcome: Identify SharePoint Embedded billing meters and where charges are revie
 next: ../admin/monitor-usage-billing-cost.md
 -->
 
-SharePoint Embedded uses pay-as-you-go (PAYG) billing through an Azure subscription. Both Standard Billing container types and Pass-through Billing container types use the same meters.
+SharePoint Embedded uses pay-as-you-go (PAYG) billing through an Azure subscription. SharePoint Embedded has four billing meters. Both Standard Billing container types and Passthrough Billing container types use the same meters.
 
 For setup guidance, see [choose a billing model](../plan/choose-billing-model.md). For monitoring, see [monitor usage, billing, and cost](../admin/monitor-usage-billing-cost.md).
 
@@ -24,18 +24,19 @@ For setup guidance, see [choose a billing model](../plan/choose-billing-model.md
 
 | Meter | Unit | What is metered | Notes |
 | --- | --- | --- | --- |
-| Storage | $/GB | Files, documents, metadata, versions, recycle bin content, and deleted container collection content. | Storage is based on data stored in SharePoint Embedded. |
+| Storage | $/GB | Files, documents, metadata, versions, recycle bin content, and deleted container collection content, in both active and archived states. | Storage is based on data stored in SharePoint Embedded. |
+| Archived Storage | $/GB | Storage consumed by archived containers within a tenant. | Archiving moves data to the cold storage tier, which offers lower storage costs than active storage. |
 | API Transactions | $/Transactions | Each Microsoft Graph call made explicitly by the SharePoint Embedded application. | Internal service calls, such as eDiscovery queries and admin actions in SharePoint Admin Center or SPO PowerShell, aren't charged as application transactions. |
-| Egress | $/GB | Data downloaded from SharePoint Embedded to a customer's client device. | Downloads from the SharePoint Embedded application server to Office Desktop clients or Web Application Companion aren't charged as egress. |
-| Pay as you go message (private preview) | Message | SharePoint Embedded agent interactions. | SharePoint Embedded agents use the Copilot Studio meter. The source article states each agent interaction uses 12 messages. |
+| Egress | $/GB | Data that exits the SharePoint Embedded platform, such as documents downloaded to a customer's client device or data transferred to a server operated by the customer. Charges are based on total volume transferred out (GB). | Downloads from the SharePoint Embedded application server to Office Desktop clients or Web Application Companion aren't charged as egress. |
+| Pay-as-you-go message (private preview) | Message | SharePoint Embedded agent interactions. | SharePoint Embedded agents use the Copilot Studio meter. The source article states each agent interaction uses 12 messages. |
 
 ## Storage
 
-Storage consumption includes files and documents plus their metadata and versions. Content in the recycle bin and deleted container collection also contributes to storage consumption.
+Storage consumption includes files and documents plus their metadata and versions, in both active and archived states. Content in the recycle bin and deleted container collection also contributes to storage consumption.
 
 ## Archived storage
 
-The source billing meter article doesn't name a separate archived storage meter. Treat archived, recycled, or deleted-container content as storage unless Microsoft publishes a distinct meter.
+The Archived Storage meter measures storage consumed by archived containers within a tenant. Archiving a container moves its data to the cold storage tier, which offers lower storage costs compared to active storage. Archived content is still billed, but at the archived-storage rate.
 
 ## API transactions
 
@@ -43,7 +44,7 @@ Each explicit Microsoft Graph request from the SharePoint Embedded application c
 
 ## Egress
 
-Egress is data downloaded from SharePoint Embedded to a customer client device. Some Microsoft-integrated transfers are exempt, including downloads to Office Desktop clients and Web Application Companion.
+Egress is data that exits the SharePoint Embedded platform, such as a document downloaded to a customer's client device or data transferred to a server operated by the customer. Egress charges are based on the total volume of data transferred out, measured in GB. Some Microsoft-integrated transfers are exempt, including downloads to Office Desktop clients and Web Application Companion.
 
 ## Agent message meter
 

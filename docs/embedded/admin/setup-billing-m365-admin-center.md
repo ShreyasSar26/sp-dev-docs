@@ -20,7 +20,7 @@ Set up SharePoint Embedded (SPE) billing in the Microsoft 365 admin center when 
 No user can access a pass-through SPE app before valid billing is configured for the SPE platform in the consuming tenant.
 
 SPE billing is pay-as-you-go through Azure.
-Charges are based on supported meters such as storage, API transactions, and egress.
+Charges are based on supported meters such as storage, archived storage, API transactions, and egress.
 
 > [!IMPORTANT]
 > If SharePoint Embedded is turned off or the linked Azure subscription is disconnected, users immediately lose access to apps built on the service.
@@ -57,13 +57,14 @@ This article focuses on the consuming tenant pass-through path.
 ## Understand cost meters
 
 SPE uses a consumption-based model.
-The source meter documentation identifies three primary meters.
+The source meter documentation identifies four primary meters.
 
 | Meter | What it measures |
 | --- | --- |
-| Storage | Data stored in files, documents, metadata, versions, recycle bin, and deleted container collection. |
+| Storage | Data stored in files, documents, metadata, versions, recycle bin, and deleted container collection, in active and archived states. |
+| Archived Storage | Storage consumed by archived containers. Archiving moves data to the cold storage tier, which costs less than active storage. |
 | API transactions | Microsoft Graph calls made explicitly by the SPE application. |
-| Egress | Data downloaded from SPE to client devices, subject to documented exemptions. |
+| Egress | Data that exits SPE, such as documents downloaded to customer client devices or data transferred to customer-operated servers, subject to documented exemptions. |
 
 For cost monitoring, see [Monitor usage, billing, and cost](monitor-usage-billing-cost.md).
 

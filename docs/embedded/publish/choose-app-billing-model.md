@@ -171,7 +171,7 @@ Avoid these publishing mistakes:
 ## Communicate metering boundaries
 
 SharePoint Embedded billing uses consumption meters.
-The consuming tenant admin source describes storage, API transactions, and egress as the major service meters.
+The consuming tenant admin source describes storage, archived storage, API transactions, and egress as the major service meters.
 Customers using pass-through billing should understand that the meter usage appears through their Azure billing relationship.
 For pricing details, link to the product pricing page and the current [SharePoint Embedded meters](../administration/billing/meters.md) article.
 

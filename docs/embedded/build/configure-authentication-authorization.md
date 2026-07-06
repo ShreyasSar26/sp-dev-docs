@@ -29,7 +29,7 @@ Configure it for your application type:
 1. Add redirect URIs for development and production clients.
 1. Add credentials for app-only flows when needed.
 1. Add Microsoft Graph permissions for SharePoint Embedded access.
-1. Add SharePoint permissions required for registration scenarios.
+1. Add the Microsoft Graph permission required for registration scenarios.
 1. Ask an administrator to grant consent where required.
 For general steps, see [Register an application with the Microsoft identity platform](/graph/auth-register-app-v2).
 ## Request Microsoft Graph permissions
@@ -39,12 +39,13 @@ Use application `FileStorageContainer.Selected` for app-only access.
 Both forms require admin consent in the consuming tenant.
 > [!NOTE]
 > The combination of Microsoft Graph permissions and container type application permissions determines what the application can actually do.
-## Request SharePoint permission for registration
-Container type registration currently uses a SharePoint API, not Microsoft Graph.
-For registration, request SharePoint `Container.Selected` application permission on the `Office 365 SharePoint Online` resource.
-| Scope name | Scope ID | Type | Use |
-|---|---|---|---|
-| `Container.Selected` | `19766c1b-905b-43af-8756-06526ab42875` | Application | Enables container type registration on a consuming tenant. |
+## Request the permission for registration
+Container type registration uses the Microsoft Graph container type registration API (currently in preview).
+For registration, request the `FileStorageContainerTypeReg.Selected` Microsoft Graph permission (delegated or app-only).
+| Scope name | Type | Use |
+|---|---|---|
+| `FileStorageContainerTypeReg.Selected` | Delegated or Application | Enables container type registration on a consuming tenant. |
+For delegated registration calls, the signed-in user must have the SharePoint Embedded Administrator or Global Administrator role.
 Use this permission with [Register application permissions](register-application-permissions.md).
 ## Prefer delegated access when possible
 Use access on behalf of a user whenever possible.
@@ -81,9 +82,9 @@ Continue with [Create and manage containers](create-manage-containers.md) for li
 ## Handle operations not exposed through Graph
 Some operations have exceptional access patterns.
 The source article identifies:
-- Container type management in the owning tenant through PowerShell cmdlets.
-- Container type registration in the consuming tenant through SharePoint REST API v2.
-- SharePoint Embedded agent experiences through SharePoint REST API v2 permissions.
+- Container type management in the owning tenant through the Microsoft Graph container type API (`FileStorageContainerType.Manage.All` delegated permission).
+- Container type registration in the consuming tenant through the Microsoft Graph container type registration API (`FileStorageContainerTypeReg.Selected`).
+- SharePoint Embedded agent experiences through their own permission requirements.
 - Search scenarios with additional requirements.
 - Operations that currently require a user license.
 > [!IMPORTANT]
@@ -114,7 +115,7 @@ Validate the flow before feature code:
 | Graph call returns forbidden | Consent, Graph permission, or container type permission is missing. |
 | Delegated call fails for one user | User isn't a container member or lacks the needed role. |
 | App-only call has too much access | Container type permission is broader than necessary. |
-| Registration call fails | Use SharePoint `Container.Selected` and app-only flow. |
+| Registration call fails | Use `FileStorageContainerTypeReg.Selected`; for delegated calls the user needs the SharePoint Embedded Administrator or Global Administrator role. |
 | Search call fails | Review search-specific exceptional access patterns. |
 ## Next steps
 Use your configured flow to [Create and manage containers](create-manage-containers.md).
