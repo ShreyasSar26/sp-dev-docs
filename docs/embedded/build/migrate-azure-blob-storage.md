@@ -14,6 +14,9 @@ next: ../publish/prepare-customer-installation.md
 -->
 Use this guide when you move content from Azure Blob Storage to SharePoint Embedded. The source tutorial demonstrates a C# sample that reads blobs with the Azure Storage SDK and uploads them to a SharePoint Embedded container with Microsoft Graph. For full sample details, see [Tutorial to migrate from Azure Blob Storage container to SharePoint Embedded container](../development/tutorials/migrate-abs-to-spe.md).
 
+> [!TIP]
+> For migrating from SharePoint or OneDrive sources, SharePoint Embedded also provides dedicated [migration APIs](/graph/api/resources/sharepointmigration-api-overview) that are generally available on the **v1.0** Microsoft Graph endpoint (November 2025) and support migrating **file version history** (February 2026). The manual sample in this article is best when copying from Azure Blob Storage specifically.
+
 ## Prepare authentication
 For Azure Blob Storage, the sample uses a container-level SAS URL with `Read` and `List` permissions.
 

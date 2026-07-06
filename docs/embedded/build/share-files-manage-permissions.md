@@ -91,6 +91,16 @@ Set-SPOApplication
 
 Report policy failures in user-facing language. Distinguish inherited container access from direct item access in permission panels so users understand why a person can still open a file.
 
+## Manage membership from the consuming tenant
+
+Consuming-tenant administrators can manage container membership directly with the [SharePoint Embedded Containers Management Shell](/powershell/sharepoint/sharepoint-online/introduction-sharepoint-online-management-shell) cmdlets (September 2025):
+
+- [`Add-SPOContainerUser`](/powershell/module/microsoft.online.sharepoint.powershell/add-spocontaineruser) — add a user to a container.
+- [`Remove-SPOContainerUser`](/powershell/module/microsoft.online.sharepoint.powershell/remove-spocontaineruser) — remove a user from a container.
+- [`Set-SPOContainerUser`](/powershell/module/microsoft.online.sharepoint.powershell/set-spocontaineruser) — change a user's container role.
+
+These complement the app-driven Microsoft Graph permission APIs and are useful for administrative or break-glass membership changes.
+
 ## Next steps
 
 - [Respond to file and container changes with webhooks](respond-to-changes-webhooks.md)

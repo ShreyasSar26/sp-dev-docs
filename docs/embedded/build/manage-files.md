@@ -93,6 +93,9 @@ Before deleting:
 ## Restore files
 Use Microsoft Graph and SharePoint file restore capabilities documented for DriveItems and the service experience.
 A restore flow should identify the deleted item or version, confirm permission, perform the restore, refresh the item list, and communicate the restored location.
+
+> [!NOTE]
+> [recycleBinItem: restore](/graph/api/filestoragecontainer-restore-recyclebinitem) supports `driveItemId` as an alternate key (October 2025). If you know the ID of the original **driveItem**, you can restore the corresponding **recycleBinItem** directly without first enumerating the recycle bin.
 > [!NOTE]
 > For exact file operation request and response details, use Microsoft Graph DriveItem documentation.
 ## Connect to Office and preview experiences

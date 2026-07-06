@@ -60,12 +60,17 @@ By default, content stored by a SharePoint Embedded app is accessible only throu
 
 - Core content management — any file type, folders, search, sharing, versioning, recycle bin.
 - Office collaboration — view, edit, and co-author Word, Excel, and PowerPoint on the web and desktop.
+- Low-code integration — the [SharePoint Embedded connector](/connectors/sharepointembedded/) for [Power Platform](/power-platform/) (generally available February 2026).
 
 SharePoint Embedded is used by Microsoft products (such as Loop and Designer), by ISVs embedding content management in their apps, and by enterprises storing content outside their regular Microsoft 365 entitlements.
 
 ### Compliance and billing follow the tenant
 
 Because content lives in the customer's Microsoft 365 tenant, it's subject to that tenant's settings — including Microsoft Purview compliance (eDiscovery, auditing, DLP, retention, sensitivity labels, conditional access). The SPE partition doesn't count against Microsoft 365 storage entitlements; it's billed separately through an Azure subscription on a pay-as-you-go, metered model based on storage and API usage. See [Choose a billing model](plan/choose-billing-model.md) and [Billing meters](reference/billing-meters.md).
+
+### Availability
+
+SharePoint Embedded is available in the Microsoft 365 commercial cloud, in [Microsoft 365 GCC](/office365/servicedescriptions/office-365-platform-service-description/office-365-us-government/gcc) (November 2025, not yet GCC High or DoD), and in [Microsoft 365 operated by 21Vianet](/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-operated-by-21vianet) for customers in China (February 2026). See [Microsoft Graph national cloud deployments](/graph/deployments).
 
 ## Next steps
 

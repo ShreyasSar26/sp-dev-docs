@@ -38,6 +38,9 @@ Examples include:
 For the current list, see [File types supported for previewing files in OneDrive, SharePoint, and Teams](https://support.microsoft.com/office/file-types-supported-for-previewing-files-in-onedrive-sharepoint-and-teams-e054cd0f-8ef2-4ccb-937e-26e37419c5e4).
 > [!NOTE]
 > File type support can vary by service capability, tenant policy, and client experience. Always handle preview failures gracefully.
+
+## Native PDF viewing
+The SharePoint Embedded native PDF viewing experience supports **searching within the file**, **viewing comments and sticky notes** embedded on the file, and **printing** (added March 2026). These capabilities are available through the [driveItem: preview](/graph/api/driveitem-preview) API in **both the beta and v1.0** Microsoft Graph endpoints.
 ## Prerequisites
 Before creating previews, make sure:
 - The file is stored in a SharePoint Embedded container.

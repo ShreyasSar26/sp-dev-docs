@@ -51,6 +51,9 @@ Content-Type: application/json
 
 The source notes that `type` is not supported in this request and that text `maxLength` must be less than or equal to 255.
 
+> [!NOTE]
+> As of January 2026, the container column APIs (list, create, update, delete columns) are also generally available on the **v1.0** Microsoft Graph endpoint. You can replace `/beta/` with `/v1.0/` in the column requests below. The beta endpoint remains available.
+
 ## Manage columns
 Use the column ID returned by the create or list operation.
 

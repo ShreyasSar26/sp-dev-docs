@@ -186,6 +186,12 @@ Set-SPOContainer -Identity <ContainerSiteURL> -ConditionalAccessPolicy <SPOCondi
 
 For more information, see [Control access from unmanaged devices](/sharepoint/control-access-from-unmanaged-devices).
 
+## Information barriers
+
+The `fileStorageContainer` resource has an **informationBarrier** property that lets you manage a container's information barrier (beta Microsoft Graph endpoint, March 2026). Use information barrier segments to restrict communication and collaboration between groups of users where required by compliance policy.
+
+For more information, see [Information barriers in SharePoint](/purview/information-barriers-sharepoint).
+
 ## Tenant settings
 
 Consumer Microsoft 365 settings apply to app documents stored by SharePoint Embedded.

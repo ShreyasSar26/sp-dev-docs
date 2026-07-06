@@ -29,17 +29,20 @@ SharePoint Embedded applications store and manage containers and container conte
 | Update container | [Update fileStorageContainer](/graph/api/filestoragecontainer-update) |
 | Delete container | [Delete fileStorageContainer](/graph/api/filestoragecontainer-delete) |
 | Container permissions | [Create permission](/graph/api/filestoragecontainer-post-permissions) |
+| Container columns (metadata) | [List columns](/graph/api/filestoragecontainer-list-columns) · [Create column](/graph/api/filestoragecontainer-post-columns) (v1.0, January 2026) |
+| Restore from recycle bin | [recycleBinItem: restore](/graph/api/filestoragecontainer-restore-recyclebinitem) |
 
 ## Container type APIs
 
 > [!NOTE]
-> Container type and registration management is also available through PowerShell (`New-SPOContainerType`, `Set-SPOContainerType`, `Get-SPOContainerType`). The Microsoft Graph APIs below are currently in the **beta** endpoint and aren't supported for production use.
+> Container type and registration management is also available through PowerShell (`New-SPOContainerType`, `Set-SPOContainerType`, `Get-SPOContainerType`). As of **December 2025**, the `fileStorageContainerType` and `fileStorageContainerTypeRegistration` APIs are **generally available on the v1.0** Microsoft Graph endpoint.
 
 | Area | Microsoft Graph reference |
 | --- | --- |
-| `fileStorageContainerType` resource | [fileStorageContainerType resource type](/graph/api/resources/filestoragecontainertype?view=graph-rest-beta) |
-| Container type registration | [fileStorageContainerTypeRegistration resource type](/graph/api/resources/filestoragecontainertyperegistration?view=graph-rest-beta) |
-| List container types | [List fileStorageContainerTypes](/graph/api/filestorage-list-containertypes?view=graph-rest-beta) |
+| `fileStorageContainerType` resource | [fileStorageContainerType resource type](/graph/api/resources/filestoragecontainertype) |
+| Container type registration | [fileStorageContainerTypeRegistration resource type](/graph/api/resources/filestoragecontainertyperegistration) |
+| List container types | [List fileStorageContainerTypes](/graph/api/filestorage-list-containertypes) |
+| Create container type | [Create fileStorageContainerType](/graph/api/filestorage-post-containertypes) |
 
 ## Drive and DriveItem APIs
 

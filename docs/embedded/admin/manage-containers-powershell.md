@@ -165,6 +165,18 @@ Set-SPOContainer -Identity <ContainerID> -RemoveLabel
 Coordinate sensitivity label changes with compliance administrators.
 For compliance guidance, see [Apply security and compliance controls](apply-security-compliance-controls.md).
 
+## Manage container membership
+
+Consuming-tenant administrators can add, remove, or change a user's role on a container directly (September 2025):
+
+```powershell
+Add-SPOContainerUser -Identity <ContainerId> -User <UserPrincipalName> -Role <Reader|Writer|Manager|Owner>
+Set-SPOContainerUser -Identity <ContainerId> -User <UserPrincipalName> -Role <Reader|Writer|Manager|Owner>
+Remove-SPOContainerUser -Identity <ContainerId> -User <UserPrincipalName>
+```
+
+For command details, see [Add-SPOContainerUser](/powershell/module/microsoft.online.sharepoint.powershell/add-spocontaineruser), [Set-SPOContainerUser](/powershell/module/microsoft.online.sharepoint.powershell/set-spocontaineruser), and [Remove-SPOContainerUser](/powershell/module/microsoft.online.sharepoint.powershell/remove-spocontaineruser).
+
 ## Delete a container
 
 Move a container to the deleted container collection.
