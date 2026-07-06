@@ -12,10 +12,10 @@ audience: developer
 outcome: Configure embedded agent chat and Foundry knowledge over SPE containers.
 next: migrate-azure-blob-storage.md
 -->
-SharePoint Embedded agent experiences let your app answer questions over files stored in SharePoint Embedded containers. The source articles describe a private preview React SDK, advanced configuration for grounding and scoping, and a Visual Studio Code sample path. See [SharePoint Embedded agent](../development/declarative-agent/spe-da.md), [advanced topics](../development/declarative-agent/spe-da-adv.md), and [the getting started tutorial](../development/tutorials/spe-da-vscode.md).
+SharePoint Embedded agent experiences let your app answer questions over files stored in SharePoint Embedded containers. The recommended path is to use **Microsoft Foundry Agent Service** with a **SharePoint knowledge source** configured for SharePoint Embedded (see [Use SPE as a knowledge source in Microsoft Foundry](#use-spe-as-a-knowledge-source-in-microsoft-foundry-preview) below).
 
-> [!NOTE]
-> The SharePoint Embedded agent source describes private preview behavior. Confirm current SDK, billing, licensing, and container type requirements before you deploy.
+> [!CAUTION]
+> The earlier **SharePoint Embedded agent SDK** (the React `ChatEmbedded` control) was **deprecated in March 2026** and replaced by [Microsoft Foundry Agent Service](/azure/foundry/agents/overview) with a [SharePoint knowledge source (Preview)](/azure/search/agentic-knowledge-source-how-to-sharepoint-remote) configured for SharePoint Embedded. Use the Foundry knowledge source for new work. The React SDK material below remains only for historical reference for existing integrations. See [SharePoint Embedded agent (Deprecated)](../development/declarative-agent/spe-da.md) and [Set up SPE as a knowledge source in Microsoft Foundry](../development/declarative-agent/sharepoint-embedded-knowledge-source.md).
 
 ## Configure the container type
 Use a standard container type for agent scenarios when required by current billing guidance. Trial container types expire after 30 days and cannot be converted to standard container types.
@@ -38,7 +38,11 @@ A consuming tenant SharePoint Embedded Administrator can override `CopilotEmbedd
 Set-SPOApplication -OwningApplicationId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX -CopilotEmbeddedChatHosts @("https://contoso.sharepoint.com", "https://fabrikam.com")
 ```
 
-## Add the React chat SDK
+## Add the React chat SDK (Deprecated — historical reference)
+
+> [!CAUTION]
+> This React `ChatEmbedded` SDK was deprecated in March 2026 and is not suitable for production. Use the [Foundry knowledge source](#use-spe-as-a-knowledge-source-in-microsoft-foundry-preview) instead. The steps below are retained only for existing integrations.
+
 Install the package shown in the tutorial or the current package published for your preview program.
 
 ```console

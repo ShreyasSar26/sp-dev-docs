@@ -98,22 +98,20 @@ Container type registration also requires consent for the owning application to 
 
 For tenant registration, see [Register file storage container type application permissions](../getting-started/register-api-documentation.md).
 
-## Container type registration permission
+## Container type permissions (Microsoft Graph)
 
-Container type registration isn't currently a Microsoft Graph API in the source documentation.
+Container type creation, management, and registration are now Microsoft Graph operations. Plan for these permissions:
 
-It is exposed through SharePoint REST API v2.
+| Permission | Purpose | Tenant |
+| --- | --- | --- |
+| `FileStorageContainerType.Manage.All` | Create and manage container types on the owning tenant. | Owning only |
+| `FileStorageContainerTypeReg.Selected` | Register the container type on consuming tenants. | Consuming |
+| `FileStorageContainer.Selected` | Access containers of the container type on consuming tenants. | Consuming |
 
-To register a container type, the app requests the `Container.Selected` application permission on the `Office 365 SharePoint Online` resource.
+`FileStorageContainerType.Manage.All` is a **delegated** permission and **doesn't require admin consent**. Any non-guest user in the owning tenant can consent to it, use it to create a container type, and is then automatically assigned as an [owner of that container type](#container-type-owners). (Before June 2026 this required the SharePoint Embedded Administrator or Global Administrator role.)
 
-The source authentication article lists:
-
-| Scope name | Scope ID | Type | Operation |
-| --- | --- | --- | --- |
-| `Container.Selected` | `19766c1b-905b-43af-8756-06526ab42875` | Application | Enables container type registration on a consuming tenant. |
-
-> [!NOTE]
-> The source documentation states that container type management and registration are expected to become Microsoft Graph operations in the future.
+> [!IMPORTANT]
+> `FileStorageContainerType.Manage.All` is only needed on the **owning** tenant to create the container type. Remove it from your application manifest before distributing to consuming tenants so customers aren't asked for excessive permissions. On consuming tenants request only `FileStorageContainerTypeReg.Selected` and `FileStorageContainer.Selected`.
 
 ## Container type application permissions
 
@@ -164,6 +162,16 @@ The source authentication article lists these roles:
 
 When a user creates a new container through delegated calls, that user is automatically assigned the Owner role.
 
+## Container type owners
+
+Container type owners are distinct from container owners. They govern the container type itself, in the **owning** tenant.
+
+- **Automatic assignment**: The user who creates a container type is automatically assigned as an owner.
+- **Add or remove owners**: Use the container type `permissions` relationship (`POST`/`DELETE /storage/fileStorage/containerTypes/{id}/permissions`, beta) to manage up to **three** owners per container type.
+- **Capabilities**: With `FileStorageContainerType.Manage.All` in delegated mode, owners can create, read, update, and delete the container type they own, manage its owners, and create containers of that type (delegated calls only).
+- **Restrictions**: External identities (guest users) can't be container type owners. Owner information exists **only** in the owning tenant and isn't propagated to consuming tenants on registration.
+- **Effective access**: Owner capabilities are user permissions; effective access is the intersection of the app's Graph permissions and the owner role.
+
 ## Tenant registration implications
 
 For the owning application to act on a consuming tenant:
@@ -182,9 +190,9 @@ Plan for operations that don't follow the normal Microsoft Graph authorization p
 
 The source authentication article identifies:
 
-- Container type management on owning tenants through PowerShell cmdlets.
-- Container type registration on consuming tenants through SharePoint REST API v2.
-- SharePoint Embedded agent permissions through SharePoint REST API v2.
+- Container type management on owning tenants through Microsoft Graph and PowerShell cmdlets.
+- Container type registration on consuming tenants through Microsoft Graph (`FileStorageContainerTypeReg.Selected`).
+- Administrative container operations that require `FileStorageContainer.Manage.All` and a SharePoint Embedded Administrator or Global Administrator signed-in user.
 - Microsoft Search scenarios that require additional permissions during preview.
 - Operations that currently require a user license.
 
@@ -207,7 +215,7 @@ Review these before designing privileged or search-heavy features.
 - Decide which operations use delegated access.
 - Decide which operations use app-only access.
 - Request Microsoft Graph `FileStorageContainer.Selected` permissions.
-- Request SharePoint `Container.Selected` for container type registration when required.
+- Request Microsoft Graph `FileStorageContainerType.Manage.All` (owning tenant) and `FileStorageContainerTypeReg.Selected` (consuming tenants) for container type creation and registration.
 - Plan admin consent in each consuming tenant.
 - Define container type application permissions.
 - Define user container roles.

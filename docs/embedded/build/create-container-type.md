@@ -21,6 +21,9 @@ SharePoint Embedded requires a one-to-one relationship between one owning applic
 The container type ID is stored on each container as an immutable property.
 The ID is used for access authorization, trial exploration, billing, and configurable behaviors.
 For full details, see [Create New SharePoint Embedded Container Types](../getting-started/containertypes.md).
+
+> [!NOTE]
+> There are two creation surfaces. The current Microsoft Graph API — [Create fileStorageContainerType](/graph/api/filestorage-post-containertypes) — is delegated-only and can be called by any non-guest owning-tenant user (no admin role). The SharePoint Online Management Shell cmdlets shown below (`New-SPOContainerType`) remain supported and are used for billing configuration.
 ## Choose trial or production
 Choose the container type purpose when you create it.
 You can't convert a trial container type to production later.
@@ -36,10 +39,13 @@ You can't convert a standard billing type to pass-through billing later.
 Before you create a container type, make sure you have:
 - A Microsoft 365 tenant with SharePoint available.
 - A Microsoft Entra ID app registration for the owning app.
-- The SharePoint Embedded Administrator or Global Administrator role.
+- A non-guest member account in the owning tenant.
 - The latest SharePoint Online Management Shell.
 - For standard billing, an Azure subscription and resource group.
-- For billing setup, owner or contributor permissions on the Azure subscription.
+- For billing setup, owner or contributor permissions on the Azure subscription **and** the SharePoint Embedded Administrator or Global Administrator role.
+
+> [!NOTE]
+> Since June 2026, creating a container type through Microsoft Graph requires only the `FileStorageContainerType.Manage.All` delegated permission — **no administrator role**. Any non-guest user in the owning tenant can create one and is automatically assigned as an [owner of that container type](../plan/authentication-permissions.md#container-type-owners). The SharePoint Embedded Administrator or Global Administrator role is still required for **billing** operations and tenant-wide container type management.
 > [!NOTE]
 > Users who authenticate into containers must exist in Microsoft Entra ID as members or guests. An Office license isn't required to collaborate on Office documents stored in a container, except for documented exceptional experiences such as mentions.
 ## Create a trial container type
@@ -90,7 +96,7 @@ New-SPOContainerType -ContainerTypeName <String> -OwningApplicationId <String> -
 ## Configure the owning Entra app
 Configure the app so it can own exactly one container type.
 Request Microsoft Graph permissions for SharePoint Embedded access.
-Request SharePoint `Container.Selected` application permission for registration scenarios when required.
+Request Microsoft Graph `FileStorageContainerTypeReg.Selected` application permission for container type registration on consuming tenants.
 Use redirect URIs that match your development and production clients.
 Use credentials appropriate for delegated or app-only flows.
 For auth details, see [Configure authentication and authorization](configure-authentication-authorization.md).
@@ -115,7 +121,7 @@ The source article includes examples for discoverability, sharing, and Copilot E
 ## View and update container types
 Use [Get-SPOContainerType](/powershell/module/sharepoint-online/Get-SPOContainerType) to list container types.
 Use [Set-SPOContainerType](/powershell/module/sharepoint-online/Set-SPOContainerType) to update supported properties.
-You need SharePoint Embedded Administrator permission for basic updates.
+You need SharePoint Embedded Administrator permission for tenant-wide updates. A non-administrator container type owner can update the container types they own.
 You need owner or contributor access to billing subscriptions for billing changes.
 ## Understand billing dependency
 For app-owner billing, the developer tenant attaches an Azure subscription and resource group.
