@@ -14,7 +14,7 @@ SPE has no standalone end-user UI and no no-code option. You access it programma
 SharePoint Embedded brings advanced Microsoft 365 capabilities into your app, including Office collaboration, Microsoft Purview security and compliance, and Copilot.
 
 > [!IMPORTANT]
-> Help us shape the future of SharePoint Embedded! Take our [quick survey](https://forms.microsoft.com/r/1YpGd2pAUS) and share your experience.
+> Help us shape the future of SharePoint Embedded! Take our [quick survey](https://forms.microsoft.com/r/1YpGd2pAUS) and share your thoughts.
 
 <!-- agent:
 task_type: concept
