@@ -2,6 +2,7 @@
 title: Microsoft Graph API Reference Links
 description: Curated Microsoft Graph reference links for SharePoint Embedded containers and files.
 ms.date: 06/25/2026
+ms.reviewer: pemtaira
 ms.localizationpriority: high
 ---
 

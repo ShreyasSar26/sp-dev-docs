@@ -2,6 +2,7 @@
 title: Understand App and Tenant Architecture
 description: Plan how SharePoint Embedded apps, tenants, container types, and containers relate across owning and consuming tenants.
 ms.date: 06/25/2026
+ms.reviewer: dilucesr
 ms.localizationpriority: high
 ---
 

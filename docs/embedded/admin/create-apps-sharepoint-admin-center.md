@@ -2,6 +2,7 @@
 title: Create Apps in SharePoint Admin Center
 description: Create a SharePoint Embedded app from the SharePoint admin center and validate the new app registration.
 ms.date: 06/25/2026
+ms.reviewer: shsaravanan
 ms.localizationpriority: high
 ---
 

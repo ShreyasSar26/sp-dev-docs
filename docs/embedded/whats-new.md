@@ -2,6 +2,7 @@
 title: What's new in SharePoint Embedded?
 description: Updates about Microsoft SharePoint Embedded.
 ms.date: 07/06/2026
+ms.reviewer: dilucesr
 ms.localizationpriority: medium
 ---
 

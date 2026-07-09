@@ -2,6 +2,7 @@
 title: Add Microsoft 365 Copilot and Agent Experiences
 description: Ground Copilot-style agents in SharePoint Embedded content and expose SPE to Microsoft Foundry.
 ms.date: 06/25/2026
+ms.reviewer: pemtaira
 ms.localizationpriority: high
 ---
 # Add Microsoft 365 Copilot and Agent Experiences

@@ -2,6 +2,7 @@
 title: Upload, Download, and Manage Files
 description: Use Microsoft Graph DriveItem APIs to upload, download, organize, update, delete, and restore SharePoint Embedded files.
 ms.date: 06/25/2026
+ms.reviewer: cindylay
 ms.localizationpriority: high
 ---
 # Upload, Download, and Manage Files

@@ -2,6 +2,7 @@
 title: Guide Customers Through Tenant Setup
 description: Give customer admins the SharePoint Embedded setup, consent, billing, and validation steps needed to install an ISV app.
 ms.date: 06/25/2026
+ms.reviewer: pemtaira
 ms.localizationpriority: high
 ---
 # Guide Customers Through Tenant Setup

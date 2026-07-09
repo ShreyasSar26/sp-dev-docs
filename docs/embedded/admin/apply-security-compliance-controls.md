@@ -2,6 +2,7 @@
 title: Apply Security and Compliance Controls
 description: Apply Microsoft Purview and SharePoint controls to protect and govern SharePoint Embedded content.
 ms.date: 06/25/2026
+ms.reviewer: dilucesr
 ms.localizationpriority: high
 ---
 

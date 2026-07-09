@@ -2,6 +2,7 @@
 title: Understand Limits and Calling Patterns
 description: Plan SharePoint Embedded service limits, throttling behavior, retry handling, and performance-sensitive calling patterns.
 ms.date: 06/25/2026
+ms.reviewer: mawin
 ms.localizationpriority: high
 ---
 

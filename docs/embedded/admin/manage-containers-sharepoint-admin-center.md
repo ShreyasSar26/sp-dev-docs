@@ -2,6 +2,7 @@
 title: Manage Containers in SharePoint Admin Center
 description: View, inspect, delete, restore, and manage SharePoint Embedded containers in the SharePoint admin center.
 ms.date: 06/25/2026
+ms.reviewer: shsaravanan
 ms.localizationpriority: high
 ---
 

@@ -2,6 +2,7 @@
 title: Monitor Usage, Billing, and Cost
 description: Monitor SharePoint Embedded usage and pay-as-you-go costs with billing meters and Azure Cost Management.
 ms.date: 06/25/2026
+ms.reviewer: shsaravanan
 ms.localizationpriority: high
 ---
 

@@ -2,6 +2,7 @@
 title: Create and Configure a Container Type
 description: Create a trial or production SharePoint Embedded container type and configure its owning app and billing model.
 ms.date: 06/25/2026
+ms.reviewer: stpuceli
 ms.localizationpriority: high
 ---
 # Create and Configure a Container Type

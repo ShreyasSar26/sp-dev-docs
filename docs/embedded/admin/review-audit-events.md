@@ -2,6 +2,7 @@
 title: Review Audit Events
 description: Find and interpret SharePoint Embedded audit activity in Microsoft Purview audit.
 ms.date: 06/25/2026
+ms.reviewer: dilucesr
 ms.localizationpriority: high
 ---
 

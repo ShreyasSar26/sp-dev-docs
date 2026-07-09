@@ -2,6 +2,7 @@
 title: Respond to File and Container Changes with Webhooks
 description: Subscribe to SharePoint Embedded drive changes and handle Microsoft Graph webhook notifications.
 ms.date: 06/25/2026
+ms.reviewer: jaeccles
 ms.localizationpriority: high
 ---
 # Respond to File and Container Changes with Webhooks

@@ -2,6 +2,7 @@
 title: Share Files and Manage Permissions
 description: Grant targeted SharePoint Embedded file access with additive permissions and role-based sharing.
 ms.date: 06/25/2026
+ms.reviewer: cindylay
 ms.localizationpriority: high
 ---
 # Share Files and Manage Permissions

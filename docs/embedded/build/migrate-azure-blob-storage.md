@@ -2,6 +2,7 @@
 title: Migrate from Azure Blob Storage
 description: Move files from Azure Blob Storage into SharePoint Embedded containers with Microsoft Graph.
 ms.date: 06/25/2026
+ms.reviewer: stpuceli
 ms.localizationpriority: high
 ---
 # Migrate from Azure Blob Storage

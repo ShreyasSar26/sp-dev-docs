@@ -2,6 +2,7 @@
 title: Add Real-Time Collaboration with Fluid Framework
 description: Use Fluid Framework with SharePoint Embedded for synchronized collaborative application state.
 ms.date: 06/25/2026
+ms.reviewer: jaeccles
 ms.localizationpriority: high
 ---
 # Add Real-Time Collaboration with Fluid Framework

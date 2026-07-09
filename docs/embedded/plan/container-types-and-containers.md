@@ -2,6 +2,7 @@
 title: Understand Container Types and Containers
 description: Learn how SharePoint Embedded container types define app access and how containers store files in consuming tenants.
 ms.date: 07/09/2026
+ms.reviewer: shsaravanan
 ms.localizationpriority: high
 ---
 

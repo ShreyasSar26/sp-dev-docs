@@ -2,6 +2,7 @@
 title: Scenarios and Use Cases
 description: Scenarios and Use Cases for SharePoint Embedded
 ms.date: 07/09/2026
+ms.reviewer: stpuceli
 ms.localizationpriority: high
 ---
 

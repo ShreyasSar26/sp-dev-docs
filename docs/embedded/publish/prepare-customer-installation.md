@@ -2,6 +2,7 @@
 title: Prepare Your App for Customer Installation
 description: Prepare a multitenant SharePoint Embedded app, container type, permissions, billing choice, and admin handoff for customer tenants.
 ms.date: 06/25/2026
+ms.reviewer: stpuceli
 ms.localizationpriority: high
 ---
 # Prepare Your App for Customer Installation

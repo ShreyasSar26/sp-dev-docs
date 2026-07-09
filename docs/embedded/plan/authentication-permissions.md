@@ -2,6 +2,7 @@
 title: Plan Authentication and Permissions
 description: Plan SharePoint Embedded authentication, admin consent, delegated access, app-only access, and container permissions.
 ms.date: 06/25/2026
+ms.reviewer: mawin
 ms.localizationpriority: high
 ---
 

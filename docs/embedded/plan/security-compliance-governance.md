@@ -2,6 +2,7 @@
 title: Plan Security, Compliance, and Governance
 description: Plan how Microsoft Purview, audit, DLP, retention, labels, and access policies apply to SharePoint Embedded content.
 ms.date: 06/25/2026
+ms.reviewer: mawin
 ms.localizationpriority: high
 ---
 

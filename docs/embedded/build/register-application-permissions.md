@@ -2,6 +2,7 @@
 title: Register Application Permissions
 description: Register SharePoint Embedded container type application permissions in a consuming tenant.
 ms.date: 06/25/2026
+ms.reviewer: stpuceli
 ms.localizationpriority: high
 ---
 # Register Application Permissions

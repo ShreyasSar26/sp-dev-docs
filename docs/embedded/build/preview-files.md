@@ -2,6 +2,7 @@
 title: Preview Files in Your App
 description: Create Microsoft Graph preview links and embed supported SharePoint Embedded file previews in your app.
 ms.date: 06/25/2026
+ms.reviewer: cindylay
 ms.localizationpriority: high
 ---
 # Preview Files in Your App

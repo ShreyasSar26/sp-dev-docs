@@ -2,6 +2,7 @@
 title: Manage Containers with PowerShell
 description: Use SharePoint Online Management Shell to inventory and manage SharePoint Embedded apps and containers.
 ms.date: 06/25/2026
+ms.reviewer: shsaravanan
 ms.localizationpriority: high
 ---
 

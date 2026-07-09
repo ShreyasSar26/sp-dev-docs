@@ -2,6 +2,7 @@
 title: Choose a Billing Model for Your App
 description: Compare standard and pass-through billing for SharePoint Embedded apps before onboarding customer tenants.
 ms.date: 06/25/2026
+ms.reviewer: cindylay
 ms.localizationpriority: high
 ---
 # Choose a Billing Model for Your App

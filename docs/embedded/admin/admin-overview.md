@@ -2,6 +2,7 @@
 title: Admin Overview
 description: Learn how administrators manage SharePoint Embedded apps, containers, billing, and compliance in Microsoft 365.
 ms.date: 06/25/2026
+ms.reviewer: shsaravanan
 ms.localizationpriority: high
 ---
 

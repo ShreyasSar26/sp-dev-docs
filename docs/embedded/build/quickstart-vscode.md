@@ -2,6 +2,7 @@
 title: "Quickstart: Build Your First App With VS Code"
 description: Create a trial SharePoint Embedded app in Visual Studio Code and run the sample application locally.
 ms.date: 06/25/2026
+ms.reviewer: mawin
 ms.localizationpriority: high
 ---
 # Quickstart: Build Your First App With VS Code
