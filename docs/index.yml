@@ -46,8 +46,8 @@ landingContent:
         links:
           - text: Overview of SharePoint Embedded
             url: /sharepoint/dev/embedded/overview
-          - text: Enable SharePoint Embedded
-            url: /sharepoint/dev/embedded/getting-started/enable-sharepoint-embedded
+          - text: Build your first app with SharePoint Embedded
+            url: /sharepoint/dev/embedded/build/quickstart-vscode
       - linkListType: tutorial
         links:
           - text: SharePoint Embedded - Overview & Configuration
