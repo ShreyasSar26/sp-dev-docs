@@ -46,7 +46,7 @@ This page is a router. Pick the row that matches what you're trying to do.
 
 ### App documents stay in the customer's Microsoft 365 tenant
 
-When a customer uses a SharePoint Embedded application, SPE creates a dedicated storage partition inside that customer's Microsoft 365 tenant. The partition has no user experience of its own — its documents are reachable only through Microsoft Graph APIs. Content is accessible to the developer's application, but it physically resides in the customer's tenant.
+When a customer uses a SharePoint Embedded application, SharePoint Embedded creates a dedicated storage partition inside that customer's Microsoft 365 tenant. The partition has no user experience of its own — its documents are reachable only through Microsoft Graph APIs. Content is accessible to the developer's application, but it physically resides in the customer's tenant.
 
 ### File Storage Containers
 
