@@ -1,7 +1,7 @@
 ---
 title: SharePoint Embedded Overview
 description: Microsoft SharePoint Embedded is an API-only file and document management platform built on Microsoft 365. Start here and route to the right task.
-ms.date: 06/25/2026
+ms.date: 07/09/2026
 ms.localizationpriority: high
 ---
 
@@ -14,7 +14,7 @@ SPE has no standalone end-user UI and no no-code option. You access it programma
 SharePoint Embedded brings advanced Microsoft 365 capabilities into your app, including Office collaboration, Microsoft Purview security and compliance, and Copilot.
 
 > [!IMPORTANT]
-> Help us shape the future of SharePoint Embedded! Take our [quick survey](https://forms.microsoft.com/r/1YpGd2pAUS) and share your experience.
+> Help us shape the future of SharePoint Embedded! Take our [quick survey](https://forms.microsoft.com/r/1YpGd2pAUS) and share your thoughts.
 
 <!-- agent:
 task_type: concept
@@ -46,7 +46,7 @@ This page is a router. Pick the row that matches what you're trying to do.
 
 ### App documents stay in the customer's Microsoft 365 tenant
 
-When a customer uses a SharePoint Embedded application, SPE creates a dedicated storage partition inside that customer's Microsoft 365 tenant. The partition has no user experience of its own — its documents are reachable only through Microsoft Graph APIs. Content is accessible to the developer's application, but it physically resides in the customer's tenant.
+When a customer uses a SharePoint Embedded application, SharePoint Embedded creates a dedicated storage partition inside that customer's Microsoft 365 tenant. The partition has no user experience of its own — its documents are reachable only through Microsoft Graph APIs. Content is accessible to the developer's application, but it physically resides in the customer's tenant.
 
 ### File Storage Containers
 
