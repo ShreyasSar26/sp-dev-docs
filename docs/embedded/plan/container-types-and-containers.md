@@ -199,9 +199,9 @@ The source article lists these settings:
 - `DiscoverabilityDisabled`
 - `SharingRestricted`
 
-The `Set-SPOContainerType` cmdlet updates the application redirect URL.
+The [`Set-SPOContainerType`](https://learn.microsoft.com/powershell/module/microsoft.online.sharepoint.powershell/set-spocontainertype) cmdlet updates the application redirect URL.
 
-The `Set-SPOContainerTypeConfiguration` cmdlet updates selected configuration such as host URLs, discoverability, and sharing settings.
+The [`Set-SPOContainerTypeConfiguration`](https://learn.microsoft.com/powershell/module/microsoft.online.sharepoint.powershell/set-spocontainertypeconfiguration) cmdlet updates selected configuration such as host URLs, discoverability, and sharing settings.
 
 ## Registration
 
