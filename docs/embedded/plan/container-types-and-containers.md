@@ -1,7 +1,7 @@
 ---
 title: Understand Container Types and Containers
 description: Learn how SharePoint Embedded container types define app access and how containers store files in consuming tenants.
-ms.date: 06/25/2026
+ms.date: 07/09/2026
 ms.localizationpriority: high
 ---
 
@@ -30,7 +30,7 @@ A container type is created before containers can be created for an application.
 
 | Object | What it represents | Who usually manages it |
 | --- | --- | --- |
-| Container type | Relationship between an app and a set of containers, including access, behavior, and billing accountability. | Developer admin or SharePoint Embedded Administrator. |
+| Container type | Relationship between an app and a set of containers, including access, behavior, and billing accountability. | Developer admin (SharePoint Embedded Administrator role). |
 | Container | The storage and security boundary for files and folders. | Application through Microsoft Graph, and admins for governance operations. |
 
 ## Container type concept
