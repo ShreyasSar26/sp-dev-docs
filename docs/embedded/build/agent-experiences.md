@@ -13,10 +13,10 @@ audience: developer
 outcome: Configure Foundry knowledge sources over SPE containers.
 next: migrate-azure-blob-storage.md
 -->
-SharePoint Embedded agent experiences let your app answer questions over files stored in SharePoint Embedded containers. The recommended path is to use **Microsoft Foundry Agent Service** with a **SharePoint knowledge source** configured for SharePoint Embedded (see [Use SPE as a knowledge source in Microsoft Foundry](#use-spe-as-a-knowledge-source-in-microsoft-foundry-preview) below).
+SharePoint Embedded agent experiences let your app answer questions over files stored in SharePoint Embedded containers. The recommended path is to use **Microsoft Foundry Agent Service** with a **SharePoint knowledge source** configured for SharePoint Embedded (see [Use SPE as a knowledge source in Microsoft Foundry](#use-spe-as-a-knowledge-source-in-microsoft-foundry) below).
 
 > [!CAUTION]
-> The earlier **SharePoint Embedded agent SDK** (the React `ChatEmbedded` control) was **deprecated in March 2026** and replaced by [Microsoft Foundry Agent Service](/azure/foundry/agents/overview) with a [SharePoint knowledge source (preview)](/azure/search/agentic-knowledge-source-how-to-sharepoint-remote) configured for SharePoint Embedded. Use the Foundry knowledge source for new work; see [Use SPE as a knowledge source in Microsoft Foundry](#use-spe-as-a-knowledge-source-in-microsoft-foundry-preview) below. For existing integrations, see [SharePoint Embedded agent (deprecated)](../development/declarative-agent/spe-da.md).
+> The earlier **SharePoint Embedded agent SDK** (the React `ChatEmbedded` control) was **deprecated in March 2026** and replaced by [Microsoft Foundry Agent Service](/azure/foundry/agents/overview) with a [SharePoint knowledge source (preview)](/azure/search/agentic-knowledge-source-how-to-sharepoint-remote) configured for SharePoint Embedded. Use the Foundry knowledge source for new work; see [Use SPE as a knowledge source in Microsoft Foundry](#use-spe-as-a-knowledge-source-in-microsoft-foundry) below. For existing integrations, see [SharePoint Embedded agent (deprecated)](../development/declarative-agent/spe-da.md).
 
 ## Use SPE as a knowledge source in Microsoft Foundry
 Microsoft Foundry Agent Service can be configured with a SharePoint knowledge source that points at SharePoint Embedded content. This Foundry integration is in preview.
