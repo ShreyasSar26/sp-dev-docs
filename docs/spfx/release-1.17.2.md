@@ -6,7 +6,7 @@ ms.localizationpriority: high
 ---
 # SharePoint Framework v1.17.2 release notes
 
-This is a _minor bump_ that fixes the issues around SharePoint Framework solution packaging, provides improved default scaffolding and few other minor adjustments, which were in the previous released [1.17 version](release-1.17.md) and [1.17.1 version](release-1.17.1.md).
+This is a _minor bump_ that fixes the issues around SharePoint Framework solution packaging, provides improved default scaffolding and few other minor adjustments, which were in the previous released [1.17 version](release-1.17.0.md) and [1.17.1 version](release-1.17.1.md).
 
 We are looking into release more frequent smaller release to be available also in future to address new findings or to address any other known issues which have been fixed.
 
@@ -40,7 +40,18 @@ npm install @microsoft/generator-sharepoint@latest --global
         npm install @microsoft/{spfx-package-name}@latest --save --save-exact
         ```
 
-[!INCLUDE [spfx-release-upgrade-tip](../../includes/snippets/spfx-release-upgrade-tip.md)]
+[!INCLUDE [spfx-release-upgrade-warning](../../includes/snippets/spfx-release-upgrade-warning.md)]
+
+> [!TIP]
+> To upgrade this project, run:
+>
+> ```console
+> npx -p @pnp/cli-microsoft365@latest m365 spfx project upgrade --toVersion 1.17.2 --output md
+> ```
+>
+> This analyzes your project and outputs all required changes, including a single script to apply them in one go.
+
+[!INCLUDE [pnp-o365cli](../../includes/snippets/open-source/pnp-o365cli.md)]
 
 ## Fixed Issues
 

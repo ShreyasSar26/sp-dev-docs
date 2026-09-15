@@ -114,6 +114,8 @@
       href: apis/webhooks/webhooks-reference-implementation.md
     - name: Use Azure Functions
       href: apis/webhooks/sharepoint-webhooks-using-azure-functions.md
+    - name: Use Azure Functions through azd
+      href: apis/webhooks/sharepoint-webhooks-using-azd-template.md
     - name: List webhooks
       href: apis/webhooks/lists/overview-sharepoint-list-webhooks.md
       items:
@@ -151,6 +153,8 @@
       href: spfx/set-up-your-developer-tenant.md
     - name: Set up development environment
       href: spfx/set-up-your-development-environment.md
+    - name: Set up development environment (Gulp)
+      href: spfx/set-up-your-development-environment-gulp-toolchain.md
   - name: Web parts
     items:
     - name: Overview
@@ -179,6 +183,8 @@
           href: spfx/web-parts/guidance/build-custom-property-pane-controls.md
         - name: Use cascading dropdowns
           href: spfx/web-parts/guidance/use-cascading-dropdowns-in-web-part-properties.md
+        - name: Property pane control theming implementation
+          href: spfx/web-parts/guidance/property-pane-theme-principles.md
     - name: Concepts & scenarios
       items:
       - name: Preconfigure web parts
@@ -241,6 +247,8 @@
       href: spfx/extensions/get-started/building-simple-field-customizer.md
     - name: ListView Command Set extension
       href: spfx/extensions/get-started/building-simple-cmdset-with-dialog-api.md
+    - name: Grouping of ListView Command Set extensions
+      href: spfx/extensions/guidance/list-view-command-set-grouping.md
     - name: Search Query extension
       href: spfx/building-search-extensions.md
     - name: Form customizer
@@ -251,6 +259,16 @@
         href: spfx/extensions/basics/tenant-wide-deployment-extensions.md
       - name: Pre-allocated placeholders
         href: spfx/extensions/basics/preallocated-space-placeholders.md
+  - name: Copilot Apps
+    items:
+    - name: Overview
+      href: spfx/copilot/overview-copilot-apps.md
+    - name: Getting started
+      items:
+      - name: Build your first Copilot App
+        href: spfx/copilot/get-started/build-your-first-copilot-app.md
+    - name: Display Mode
+      href: spfx/copilot/displayMode.md
   - name: Library components
     items:
     - name: Overview
@@ -263,11 +281,13 @@
       href: spfx/publish-to-marketplace-overview.md
     - name: App validation checklist
       href: spfx/publish-to-marketplace-checklist.md
+    - name: Common Marketplace validation errors to avoid
+      href: spfx/publish-to-marketplace-common-validation-errors.md
     - name: After publishing your app
       href: spfx/publish-to-marketplace-after-publishing.md
     - name: Frequently asked questions
       href: spfx/publish-to-marketplace-faq.yml
-  - name: Migrate existing customizations
+  - name: Migrate pre-SPFx & classic mode customizations
     items:
     - name: Script Editor web part
       href: spfx/web-parts/guidance/migrate-script-editor-web-part-customizations.md
@@ -307,14 +327,14 @@
       href: spfx/hyperlinking.md
     - name: Intercepting query string changes
       href: spfx/web-parts/guidance/intercepting-query-changes-in-webparts.md
-    - name: Tools and libraries compatibility
-      href: spfx/compatibility.md
   - name: External libraries
     items:
     - name: Add external libraries
       href: spfx/web-parts/basics/add-an-external-library.md
     - name: JavaScript libraries
       href: spfx/web-parts/guidance/use-existing-javascript-libraries.md
+    - name: SharePoint Online Support for Content Security Policy (CSP)
+      href: spfx/content-securty-policy-trusted-script-sources.md
     - name: CSS styles
       href: spfx/web-parts/guidance/reference-third-party-css-styles.md
   - name: Connect to APIs
@@ -351,10 +371,6 @@
       href: spfx/web-parts/get-started/deploy-web-part-to-cdn.md
     - name: Deployment options for SPFx solutions & Microsoft Teams
       href: /sharepoint/dev/spfx/deployment-spfx-teams-solutions
-    - name: Custom build tasks
-      href: spfx/toolchain/integrate-gulp-tasks-in-build-pipeline.md
-    - name: Extend Webpack
-      href: spfx/toolchain/extending-webpack-in-build-pipeline.md
     - name: Tenant-scoped solution deployment
       href: spfx/tenant-scoped-deployment.md
     - name: Optimize builds for production
@@ -424,28 +440,60 @@
       href: design/themes-colors.md
     - name: Use themes
       href: spfx/use-theme-colors-in-your-customizations.md
-    - name: Office UI Fabric integration
-      href: spfx/office-ui-fabric-integration.md
+    - name: Fluent UI integration
+      href: spfx/fluent-ui-integration.md
     - name: Image Helper API
       href: spfx/image-helper-api.md
-  - name: Tools & libraries
+    - name: Microsoft Graph Toolkit
+      href: spfx/use-microsoft-graph-toolkit.md
+  - name: Build toolchain & dependencies
     items:
     - name: Overview
       href: spfx/tools-and-libraries.md
-    - name: Toolchain
-      href: spfx/toolchain/sharepoint-framework-toolchain.md
+    - name: SPFx development skill for AI coding agents
+      href: spfx/agent-skills.md
+    - name: Heft-based toolchain (SPFx v1.22.0+)
+      items:
+        - name: Overview
+          href: spfx/toolchain/sharepoint-framework-toolchain-rushstack-heft.md
+        - name: Understanding how the Heft toolchain works
+          href: spfx/toolchain/customize-heft-toolchain-overview.md
+        - name: Customize the build toolchain with Heft plugins
+          href: spfx/toolchain/customize-heft-toolchain-heft-included-plugins.md
+        - name: Customize the build with the Heft Run script plugin
+          href: spfx/toolchain/customize-heft-toolchain-heft-script-plugin.md
+        - name: Customize webpack with the Heft webpack-patch plugin
+          href: spfx/toolchain/customize-heft-toolchain-customize-webpack-config.md
+        - name: Ejecting the webpack configuration
+          href: spfx/toolchain/customize-heft-toolchain-eject-webpack.md
+        - name: Migrate from the Gulp-based to the Heft-based toolchain
+          href: spfx/toolchain/migrate-gulptoolchain-hefttoolchain.md
+    - name: Gulp-based Toolchain (legacy)
+      items:
+        - name: Overview
+          href: spfx/toolchain/sharepoint-framework-toolchain.md
+        - name: Customize the build toolchain with Gulp tasks
+          href: spfx/toolchain/integrate-gulp-tasks-in-build-pipeline.md
+        - name: Extending Webpack in the Gulp-based toolchain
+          href: spfx/toolchain/extending-webpack-in-build-pipeline.md
     - name: Yeoman generator for the SharePoint Framework
       href: spfx/yeoman-generator-for-spfx-intro.md
-    - name: Configure SASS processing during builds
+    - name: SharePoint Framework CLI (spfx-cli)
+      href: spfx/toolchain/sharepoint-framework-cli.md
+    - name: Platform & platform dependency compatibility reference
+      href: spfx/compatibility.md
+    - name: How to configure SASS processing
       href: spfx/toolchain/configure-sass.md
-    - name: Microsoft Graph Toolkit
-      href: spfx/use-microsoft-graph-toolkit.md
+    - name: Understanding npm audit vulnerabilities in SPFx projects
+      href: spfx/npm-vulnerabilities.md
   - name: Debugging
     items:
     - name: Debug in Visual Studio Code
       href: spfx/debug-in-vscode.md
     - name: Debug on modern pages
       href: spfx/debug-modern-pages.md
+    - name: Use the debug toolbar
+      href: spfx/debug-toolbar.md
     - name: Use the developer dashboard
       href: spfx/use-developer-dashboard.md
     - name: Maintenance mode for client-side web parts
@@ -470,16 +518,32 @@
     items:
     - name: Overview
       href: spfx/roadmap.md
-    - name: SPFx v1.20 - September 26, 2024
-      href: spfx/release-1.20.md
-    - name: SPFx v1.19 - April 25, 2024
-      href: spfx/release-1.19.md
+    - name: SPFx v1.24 - August 27, 2026
+      href: spfx/release-1.24.0.md            
+    - name: SPFx v1.23.2 - June 30, 2026
+      href: spfx/release-1.23.2.md
+    - name: SPFx v1.23.0 - May 13, 2026
+      href: spfx/release-1.23.0.md
+    - name: SPFx v1.22.2 - January 28, 2026
+      href: spfx/release-1.22.2.md
+    - name: SPFx v1.22.1 - December 15, 2025
+      href: spfx/release-1.22.1.md
+    - name: SPFx v1.22.0 - December 10, 2025
+      href: spfx/release-1.22.0.md
+    - name: SPFx v1.21.1 - May 3, 2025
+      href: spfx/release-1.21.1.md
+    - name: SPFx v1.21.0 - April 23, 2025
+      href: spfx/release-1.21.0.md
+    - name: SPFx v1.20.0 - September 26, 2024
+      href: spfx/release-1.20.0.md
+    - name: SPFx v1.19.0 - April 25, 2024
+      href: spfx/release-1.19.0.md
     - name: SPFx v1.18.2 - November 21, 2023
       href: spfx/release-1.18.2.md
     - name: SPFx v1.18.1 - November 7, 2023
       href: spfx/release-1.18.1.md
-    - name: SPFx v1.18 - September 12, 2023
-      href: spfx/release-1.18.md
+    - name: SPFx v1.18.0 - September 12, 2023
+      href: spfx/release-1.18.0.md
     - name: SPFx v1.17.4 - June 21, 2023
       href: spfx/release-1.17.4.md
     - name: SPFx v1.17.3 - May 31, 2023
@@ -488,22 +552,22 @@
       href: spfx/release-1.17.2.md
     - name: SPFx v1.17.1 - April 12, 2023
       href: spfx/release-1.17.1.md
-    - name: SPFx v1.17 - April 4, 2023
-      href: spfx/release-1.17.md
+    - name: SPFx v1.17.0 - April 4, 2023
+      href: spfx/release-1.17.0.md
     - name: SPFx v1.16.1 - November 30, 2022
       href: spfx/release-1.16.1.md
     - name: SPFx v1.16.0 - November 15, 2022
-      href: spfx/release-1.16.md
+      href: spfx/release-1.16.0.md
     - name: SPFx v1.15.2 - August 2, 2022
       href: spfx/release-1.15.2.md
     - name: SPFx v1.15.0 - June 21, 2022
-      href: spfx/release-1.15.md
+      href: spfx/release-1.15.0.md
     - name: SPFx v1.14.0 - February 17, 2022
-      href: spfx/release-1.14.md
+      href: spfx/release-1.14.0.md
     - name: SPFx v1.13.1 - November 23, 2021
       href: spfx/release-1.13.1.md
     - name: SPFx v1.13.0 - October 21, 2021
-      href: spfx/release-1.13.md
+      href: spfx/release-1.13.0.md
     - name: SPFx v1.12.1 - April 28, 2021
       href: spfx/release-1.12.1.md
     - name: SPFx v1.11.0 - July 16, 2020
@@ -521,21 +585,21 @@
     - name: SPFx v1.7.1 - December 18, 2018
       href: spfx/release-1.7.1.md
     - name: SPFx v1.7.0 - November 8, 2018
-      href: spfx/release-1.7.md
+      href: spfx/release-1.7.0.md
     - name: SPFx v1.6.0 - September 5, 2018
-      href: spfx/release-1.6.md
+      href: spfx/release-1.6.0.md
     - name: SPFx v1.5.1 - June 26, 2018
       href: spfx/release-1.5.1.md
     - name: SPFx v1.5.0 - June 5, 2018
-      href: spfx/release-1.5.md
+      href: spfx/release-1.5.0.md
     - name: SPFx v1.4.1 - February 15, 2018
       href: spfx/release-1.4.1.md
     - name: SPFx v1.4.0 - December 7, 2017
-      href: spfx/release-1.4.md
+      href: spfx/release-1.4.0.md
     - name: SPFx v1.3.0 - September 25, 2017
-      href: spfx/release-1.3.md
+      href: spfx/release-1.3.0.md
     - name: SPFx v1.1.0 - June 6, 2017
-      href: spfx/release-1.1.md
+      href: spfx/release-1.1.0.md
     - name: SPFx v1.0.0 - February 22, 2017
       href: spfx/release-1.0.0.md
   - name: Extend SharePoint with SPFx - Learning Path
@@ -543,77 +607,123 @@
 - name: SharePoint Embedded
   items:
   - name: Overview
-    href: embedded/overview.md
-  - name: Getting Started
     items:
-    - name: SharePoint Embedded for Visual Studio Code
-      href: embedded/getting-started/spembedded-for-vscode.md
-  - name: Scenarios and Use Cases
-    href: embedded/scenarios-and-use-cases.md
-  - name: Concepts
+    - name: What is SharePoint Embedded?
+      href: embedded/overview.md
+    - name: Scenarios and use cases
+      href: embedded/scenarios-and-use-cases.md
+    - name: What's new
+      href: embedded/whats-new.md
+  - name: Plan a SharePoint Embedded solution
     items:
-    - name: Application Architecture
-      href: embedded/concepts/app-concepts/app-architecture.md
-    - name: Container Types
-      href: embedded/concepts/app-concepts/containertypes.md
-    - name: Register Container Type API
-      href: embedded/concepts/app-concepts/register-api-documentation.md
-    - name: Authentication
-      href: embedded/concepts/app-concepts/auth.md
-    - name: Sharing and Permissions
-      href: embedded/concepts/app-concepts/sharing-and-perm.md
-    - name: Limits and Calling Patterns
-      href: embedded/concepts/app-concepts/limits-calling.md
-    - name: Content Experiences
-      items:
-      - name: Office Experiences
-        href: embedded/concepts/content-experiences/office-experience.md
-      - name: User Experiences
-        href: embedded/concepts/content-experiences/user-experiences-overview.md
-      - name: Search Content
-        href: embedded/concepts/content-experiences/search-content.md
-    - name: Admin Experiences
-      items:
-      - name: Billing
-        href: embedded/concepts/admin-exp/billing/billing.md
-      - name: Billing Management
-        href: embedded/concepts/admin-exp/billing/billingmanagement.md
-      - name: SharePoint Embedded Billing Meters
-        href: embedded/concepts/admin-exp/billing/meters.md
-      - name: Consuming Tenant Admin
-        href: embedded/concepts/admin-exp/consuming-tenant-admin/cta.md
-      - name: Container Management in PowerShell
-        href: embedded/concepts/admin-exp/consuming-tenant-admin/ctapowershell.md
-      - name: Consuming Tenant Admin UX
-        href: embedded/concepts/admin-exp/consuming-tenant-admin/ctaUX.md
-      - name: Developer Admin
-        href: embedded/concepts/admin-exp/developer-admin/dev-admin.md
-      - name: SharePoint Embedded Admin
-        href: embedded/concepts/admin-exp/adminrole.md
-    - name: Fluid Framework
-      href: embedded/concepts/fluid.md
-    - name: Security and Compliance
-      href: embedded/concepts/security-and-compliance.md
-  - name: Tutorials
+    - name: When to choose SharePoint Embedded
+      href: embedded/plan/when-to-choose-sharepoint-embedded.md
+    - name: Understand app and tenant architecture
+      href: embedded/plan/app-tenant-architecture.md
+    - name: 'Choose an app model: single-tenant or multitenant'
+      href: embedded/plan/choose-app-model.md
+    - name: Understand container types and containers
+      href: embedded/plan/container-types-containers.md
+    - name: Choose a billing model
+      href: embedded/plan/choose-billing-model.md
+    - name: Plan authentication and permissions
+      href: embedded/plan/authentication-permissions.md
+    - name: Plan security, compliance, and governance
+      href: embedded/plan/security-compliance-governance.md
+    - name: Understand limits and calling patterns
+      href: embedded/plan/limits-calling-patterns.md
+    - name: Add Office co-authoring without building it
+      href: embedded/plan/office-collaboration-instead-of-building.md
+    - name: Ground AI without an external vector database
+      href: embedded/plan/ground-ai-without-a-vector-db.md
+  - name: Build apps with SharePoint Embedded
     items:
-    - name: Launch Experience
-      href: embedded/tutorials/launch-experience.md
-    - name: Using Metadata with SharePoint Embedded Containers
-      href: embedded/tutorials/metadata.md
-    - name: Using File Preview
-      href: embedded/tutorials/using-file-preview.md
-    - name: Using Document Processing with Azure Cognitive Services
-      href: embedded/tutorials/doc-processing-acs.md
-    - name: Using Webhooks
-      href: embedded/tutorials/using-webhooks.md
-    - name: Migrate ABS to SPE
-      href: embedded/tutorials/migrate-abs-to-spe.md
-  - name: SharePoint Embedded Learning Modules
+    - name: 'Quickstart: Build your first app with VS Code'
+      href: embedded/build/quickstart-vscode.md
+    - name: Use the MCP server to build apps with a coding agent
+      href: embedded/build/sharepoint-embedded-mcp-server.md
+    - name: Create and configure a container type
+      href: embedded/build/create-container-type.md
+    - name: Register application permissions
+      href: embedded/build/register-application-permissions.md
+    - name: Configure authentication and authorization
+      href: embedded/build/configure-authentication-authorization.md
+    - name: Create and manage containers
+      href: embedded/build/create-manage-containers.md
+    - name: Upload, download, and manage files
+      href: embedded/build/manage-files.md
+    - name: Open Office files from your app
+      href: embedded/build/open-office-files.md
+    - name: Preview files in your app
+      href: embedded/build/preview-files.md
+    - name: Search containers and files
+      href: embedded/build/search-containers-files.md
+    - name: Store and query container metadata
+      href: embedded/build/container-metadata.md
+    - name: Share files and manage permissions
+      href: embedded/build/share-files-manage-permissions.md
+    - name: Respond to file and container changes with webhooks
+      href: embedded/build/respond-to-changes-webhooks.md
+    - name: Archive and restore containers
+      href: embedded/build/archive-restore-containers.md
+    - name: Add real-time collaboration with Fluid Framework
+      href: embedded/build/fluid-framework.md
+    - name: Add Microsoft 365 Copilot and agent experiences
+      href: embedded/build/agent-experiences.md
+    - name: Set up SharePoint Embedded as a Foundry knowledge source
+      href: embedded/build/sharepoint-embedded-knowledge-source.md
+    - name: Migrate from Azure Blob Storage
+      href: embedded/build/migrate-azure-blob-storage.md
+  - name: Publish and onboard customers
     items:
-      - name: SharePoint Embedded - overview & configuration
-        href: /training/modules/sharepoint-embedded-setup
-      - name: SharePoint Embedded - building applications
-        href: /training/modules/sharepoint-embedded-create-app
+    - name: Prepare your app for customer installation
+      href: embedded/publish/prepare-customer-installation.md
+    - name: Choose a billing model for your app
+      href: embedded/publish/choose-app-billing-model.md
+    - name: Guide customers through tenant setup
+      href: embedded/publish/customer-tenant-setup-guide.md
+    - name: Validate customer app installation
+      href: embedded/publish/validate-customer-installation.md
+  - name: Install and manage apps
+    items:
+    - name: Admin overview
+      href: embedded/admin/admin-overview.md
+    - name: Consuming tenant admin
+      href: embedded/admin/consuming-tenant-admin.md
+    - name: Create apps in SharePoint admin center
+      href: embedded/admin/create-apps-sharepoint-admin-center.md
+    - name: Create apps with PowerShell
+      href: embedded/admin/create-apps-powershell.md
+    - name: Install a SharePoint Embedded app
+      href: embedded/admin/install-sharepoint-embedded-app.md
+    - name: Grant admin consent and permissions
+      href: embedded/admin/grant-admin-consent-permissions.md
+    - name: Set up billing in Microsoft 365 admin center
+      href: embedded/admin/setup-billing-microsoft-365-admin-center.md
+    - name: Manage containers in SharePoint admin center
+      href: embedded/admin/manage-containers-sharepoint-admin-center.md
+    - name: Manage containers with PowerShell
+      href: embedded/admin/manage-containers-powershell.md
+    - name: Monitor usage, billing, and cost
+      href: embedded/admin/monitor-usage-billing-cost.md
+    - name: Review audit events
+      href: embedded/admin/review-audit-events.md
+    - name: Apply security and compliance controls
+      href: embedded/admin/apply-security-compliance-controls.md
+  - name: Reference
+    items:
+    - name: Billing meters
+      href: embedded/reference/billing-meters.md
+    - name: Audit events
+      href: embedded/reference/audit-events.md
+    - name: PowerShell reference
+      href: embedded/reference/powershell.md
+    - name: Microsoft Graph API reference links
+      href: embedded/reference/graph-api-links.md
+    - name: Troubleshooting
+      href: embedded/reference/troubleshooting.md
+    - name: Glossary
+      href: embedded/reference/glossary.md
 - name: Microsoft Teams
   items:
   - name: Overview
@@ -662,24 +772,6 @@
       href: spfx/viva/design/quick-view-samples.md
     - name: Adaptive Card Extensions Iconography Limitations
       href: spfx/viva/get-started/fluent-icons-limitations.md
-  - name: Bot Powered Adaptive Card Extensions
-    items:
-    - name: Overview of Bot Powered Adaptive Card Extensions
-      href: spfx/viva/bot-powered/Overview-Bot-Powered-ACEs.md
-    - name: Understanding Bot Powered Adaptive Card Extensions
-      href: spfx/viva/bot-powered/Understanding-Bot-Powered-ACEs.md
-    - name: Building your first Bot Powered ACE with .NET
-      href: spfx/viva/bot-powered/Building-Your-First-Bot-Powered-ACE.md
-    - name: Building your first Bot Powered ACE with Microsoft Teams Toolkit and TypeScript
-      href: spfx/viva/bot-powered/Building-Your-First-Bot-Powered-ACE-TTK-TS.md
-    - name: Authentication and Authorization in Bot Powered ACEs
-      href: spfx/viva/bot-powered/AuthN-and-AuthZ-in-Bot-Powered-ACEs.md
-    - name: Building Bot Powered ACEs with Microsoft Entra ID and Single Sign-on (SSO)
-      href: spfx/viva/bot-powered/AuthN-and-AuthZ-in-Bot-Powered-ACEs-Entra.md
-    - name: Building Bot Powered ACEs with Magic Code authentication
-      href: spfx/viva/bot-powered/AuthN-and-AuthZ-in-Bot-Powered-ACEs-Magic-Code.md
-    - name: Bringing Bot Powered ACEs to the market place
-      href: spfx/viva/bot-powered/publish-to-marketplace-overview.md
   - name: Tutorials
     items:
     - name: Build your first SharePoint Adaptive Card Extension
@@ -703,12 +795,12 @@
     - name: Create a Data Visualization Adaptive Card Extension
       href: spfx/viva/get-started/build-data-visualization-adaptive-card-extension.md
     - name: Build an HTML Quick View SharePoint Framework Adaptive Card Extension
-      href: spfx/viva/get-started/build-html-quickview-adaptive-card-extension.md      
+      href: spfx/viva/get-started/build-html-quickview-adaptive-card-extension.md
     - name: Using focus feature in an ACE
       href: spfx/viva/features/focus-feature/FocusFeatureTutorial.md
     - name: Making Quick View compatible with dark mode
       href: spfx/viva/get-started/making-quickview-compatable-darkmode-mobile.md
-    - name: Migrate existing ACEs to SharePoint Framework v1.18
+    - name: Migrate existing ACEs to SharePoint Framework v1.18.0
       href: spfx/viva/get-started/migrate-to-spfx-1-18.md
   - name: Known issues
     href: spfx/viva/known-issues-adaptive-cards.md
@@ -1020,10 +1112,93 @@
     href: sp-add-ins-modernize/publishing-modern-sharepoint-apps-on-appsource.md
   - name: Modern provisioning of artifacts and information architecture
     href: sp-add-ins-modernize/modern-provisioning.md
+- name: Modernizing classic SharePoint pages
+  href: transform/assess-sharepoint-modernization.md
+  items:
+  - name: Assess classic pages
+    href: transform/assessment-tool-classic-pages.md
+    items:
+    - name: Requirements
+      href: transform/assessment-tool-classic-pages-requirements.md
+    - name: Run the assessment
+      href: transform/assessment-tool-classic-pages-run.md
+    - name: Interpret and prioritize
+      href: transform/assessment-tool-classic-pages-report.md
+    - name: Publishing page readiness
+      href: transform/assessment-tool-publishing-coverage.md
+    - name: Reference
+      items:
+      - name: Classic pages CSV files
+        href: transform/assessment-tool-classic-pages-csv.md
+      - name: Common CSV files
+        href: transform/assessment-tool-common-reports.md
+  - name: Transform classic pages
+    href: transform/modernize-userinterface-site-pages.md
+    items:
+    - name: Transform with PnP PowerShell
+      href: transform/modernize-userinterface-site-pages-powershell.md
+    - name: Validate transformed pages
+      href: transform/modernize-userinterface-site-pages-validation.md
+    - name: Reference
+      items:
+      - name: Page wave script reference
+        href: transform/modernize-userinterface-site-pages-wave-scripts.md
+      - name: In-place versus cross-site transformation
+        href: transform/modernize-userinterface-site-pages-approach.md
+      - name: Security requirements
+        href: transform/modernize-userinterface-site-pages-security.md
+      - name: Configuration options
+        href: transform/modernize-userinterface-site-pages-configuration.md
+      - name: Classic Web Part mappings
+        href: transform/modernize-userinterface-site-pages-webparts.md
+      - name: Page transformation model
+        href: transform/modernize-userinterface-site-pages-model.md
+      - name: Publishing page transformation model
+        href: transform/modernize-userinterface-site-pages-model-publishing.md
+      - name: Functions and selectors
+        href: transform/modernize-userinterface-site-pages-api.md
+      - name: User mapping
+        href: transform/modernize-userinterface-site-pages-usermapping.md
+      - name: URL mapping
+        href: transform/modernize-userinterface-site-pages-urlmapping.md
+      - name: Term mapping
+        href: transform/modernize-userinterface-site-pages-termmapping.md
+      - name: Layout transformation
+        href: transform/modernize-userinterface-site-pages-layout.md
+      - name: .NET integration
+        href: transform/modernize-userinterface-site-pages-dotnet.md
+      - name: Videos
+        href: transform/modernize-userinterface-site-pages-videos.md
 - name: Archive
   items:
   - name: Overview
     href: general-development/sharepoint-development-overview.md
+  - name: SharePoint Modernization scanner
+    items:
+    - name: Where should I start?
+      href: transform/modernize-scanner.md
+    - name: Understand the legacy scanner reports
+      items:
+      - name: Overview
+        href: transform/modernize-scanner-reports.md
+      - name: Microsoft 365 group connect report
+        href: transform/modernize-scanner-reports-groupconnect.md
+      - name: Modern list and libraries report
+        href: transform/modernize-scanner-reports-lists.md
+      - name: Page modernization report
+        href: transform/modernize-scanner-reports-pages.md
+      - name: Publishing portal modernization report
+        href: transform/modernize-scanner-reports-publishingportals.md
+      - name: Workflow usage report
+        href: transform/modernize-scanner-reports-workflow.md
+      - name: InfoPath usage report
+        href: transform/modernize-scanner-reports-infopath.md
+      - name: Blog usage report
+        href: transform/modernize-scanner-reports-blogs.md
+      - name: SharePoint Designer customized forms report
+        href: transform/modernize-scanner-reports-customizedforms.md
+    - name: Legacy scanner FAQ
+      href: transform/modernize-scanner-faq.yml
   - name: What's new in SharePoint Server 2019
     href: general-development/sharepoint-2019-development-platform.md
   - name: Programming models
@@ -1379,7 +1554,7 @@
       - name: Build search queries
         href: general-development/building-search-queries-in-sharepoint.md
         items:
-        - name: Keyword Query Language (KQL) syntax reference
+        - name: Keyword Query Language (KeyQL) syntax reference
           href: general-development/keyword-query-language-kql-syntax-reference.md
         - name: FAST Query Language (FQL) syntax reference
           href: general-development/fast-query-language-fql-syntax-reference.md
@@ -1760,74 +1935,17 @@
       - name: Maximize use of modern lists and libraries
         href: transform/modernize-userinterface-lists-and-libraries.md
         items:
-        - name: Analyze and use the scanner data
+        - name: Analyze legacy scanner data
           href: transform/modernize-userinterface-lists-and-libraries-scanner.md
         - name: Rollout approaches
           href: transform/modernize-userinterface-lists-and-libraries-rollout.md
         - name: Opting out from modern
           href: transform/modernize-userinterface-lists-and-libraries-optout.md
-      - name: Transform classic pages to modern pages
-        href: transform/modernize-userinterface-site-pages.md
-        items:
-        - name: Page transformation via PowerShell
-          href: transform/modernize-userinterface-site-pages-powershell.md
-        - name: Page transformation via .Net
-          href: transform/modernize-userinterface-site-pages-dotnet.md
-        - name: Page transformation videos
-          href: transform/modernize-userinterface-site-pages-videos.md
-        - name: Page transformation configuration options
-          href: transform/modernize-userinterface-site-pages-configuration.md
-        - name: Classic web part to modern mapping
-          href: transform/modernize-userinterface-site-pages-webparts.md
-        - name: In-place versus cross-site page transformation
-          href: transform/modernize-userinterface-site-pages-approach.md
-        - name: Page transformation security
-          href: transform/modernize-userinterface-site-pages-security.md
-        - name: Page transformation model
-          href: transform/modernize-userinterface-site-pages-model.md
-        - name: Publishing Page transformation model
-          href: transform/modernize-userinterface-site-pages-model-publishing.md
-        - name: Page transformation Functions and Selectors
-          href: transform/modernize-userinterface-site-pages-api.md
-        - name: User mapping
-          href: transform/modernize-userinterface-site-pages-usermapping.md
-        - name: URL mapping
-          href: transform/modernize-userinterface-site-pages-urlmapping.md
-        - name: Term mapping
-          href: transform/modernize-userinterface-site-pages-termmapping.md
-        - name: Page layout mapping
-          href: transform/modernize-userinterface-site-pages-layout.md
-    - name: SharePoint Modernization scanner
-      items:
-      - name: Overview
-        href: transform/modernize-scanner.md
-      - name: Understand the created reports
-        items:
-        - name: Overview
-          href: transform/modernize-scanner-reports.md
-        - name: Microsoft 365 group connect report
-          href: transform/modernize-scanner-reports-groupconnect.md
-        - name: Modern list and libraries report
-          href: transform/modernize-scanner-reports-lists.md
-        - name: Page modernization report
-          href: transform/modernize-scanner-reports-pages.md
-        - name: Publishing portal modernization report
-          href: transform/modernize-scanner-reports-publishingportals.md
-        - name: Workflow usage report
-          href: transform/modernize-scanner-reports-workflow.md
-        - name: InfoPath usage report
-          href: transform/modernize-scanner-reports-infopath.md
-        - name: Blog usage report
-          href: transform/modernize-scanner-reports-blogs.md
-        - name: SharePoint Designer customized forms report
-          href: transform/modernize-scanner-reports-customizedforms.md
-      - name: Scanner FAQ
-        href: transform/modernize-scanner-faq.yml
     - name: SharePoint modernization guidance
       items:
       - name: Overview
         href: transform/modernize-guidance.md
-      - name: Assessment
+      - name: Legacy assessment delivery guidance
         href: transform/modernize-guidance-assessment.md
       - name: Strategy
         href: transform/modernize-guidance-strategy.md
@@ -1849,7 +1967,7 @@
       items:
       - name: Overview
         href: transform/modernize-connect-to-office365-group.md
-      - name: Analyze and use the scanner data
+      - name: Analyze legacy scanner data
         href: transform/modernize-connect-to-office365-group-scanner.md
       - name: Subsites versus Microsoft 365 group connection
         href: transform/modernize-connect-to-office365-group-subsites.md
@@ -1861,7 +1979,7 @@
       items:
       - name: Overview
         href: transform/modernize-publishing-portal.md
-      - name: Analyze and use the scanner data
+      - name: Analyze legacy scanner data
         href: transform/modernize-publishing-portal-scanner.md
     - name: Modernize classic blogs
       href: transform/modernize-blogs.md
@@ -2034,7 +2152,7 @@
       items:
       - name: Grant access using Azure AD app-only
         href: solution-guidance/security-apponly-azuread.md
-      - name: Grant access using SharePoint app-only
+      - name: Grant access using SharePoint app-only (retired!)
         href: solution-guidance/security-apponly-azureacs.md
     - name: Implement a web app policy alternative
       href: solution-guidance/security-webapppolicies.md
@@ -2229,6 +2347,8 @@
       href: sp-add-ins/complete-basic-operations-using-sharepoint-client-library-code.md
     - name: Using CSOM for .NET Standard
       href: sp-add-ins/using-csom-for-dotnet-standard.md
+    - name: MediaServiceMetadata discontinued
+      href: apis/csom/mediaServiceMetadata-field-value-is-no-longer-available.md
   - name: "Complete basic operations: JSOM"
     href: sp-add-ins/complete-basic-operations-using-javascript-library-code-in-sharepoint.md
   - name: SharePoint REST API v1
@@ -2297,13 +2417,17 @@
         href: apis/amr-api-reference.md
     - name: Azure container and queue
       href: apis/migration-azure.md
+    - name: Entra-ID access to Azure containers
+      href: apis/migration-entra-id-access.md
+    - name: Migration Job Progress API
+      href: apis/migration-job-progress-api-reference.md
     - name: Migration Content Package
       href: apis/migration-content-package.md
     - name: Manifest Files
       href: apis/migration-manifest.md
     - name: Events
       href: apis/migration-events.md
-  - name: Microsoft Syntex REST API
+  - name: Document processing REST API
     items:
       - name: Overview
         href: apis/syntex/syntex-model-rest-api.md

@@ -1,7 +1,7 @@
 ---
 title: Build your first SharePoint Adaptive Card Extension
 description: Adaptive Card Extensions (ACEs) are a new SharePoint Framework component type, which enable developers to build rich, native extensions to Viva Connections' Dashboards and SharePoint Pages. In this tutorial, you'll build and explore your first ACE.
-ms.date: 12/14/2023
+ms.date: 02/13/2026
 ms.localizationpriority: high
 ---
 # Build your first SharePoint Adaptive Card Extension
@@ -9,7 +9,7 @@ ms.localizationpriority: high
 Adaptive Card Extensions (ACEs) are a new SharePoint Framework component type, which enables developers to build rich, native extensions to Viva Connections' Dashboards and SharePoint Pages. Since Adaptive Card Extensions use Microsoft's Adaptive Card Framework to generate UI with its declarative JSON schema, you only need to focus on your component's business logic and let the SharePoint Framework (SPFx) handle making your component look good and work across all platforms.
 
 > [!IMPORTANT]
-> This tutorial assumes you have installed the SPFx v1.18. For more information on installing the SPFx v1.18, see [SharePoint Framework v1.18 release notes](../../release-1.18.md).
+> This tutorial assumes you have installed the SPFx v1.18. For more information on installing the SPFx v1.18, see [SharePoint Framework v1.18 release notes](../../release-1.18.0.md).
 
 ## Scaffold an Adaptive Card Extension project
 
@@ -37,7 +37,7 @@ Before digging into the code, run the scaffolded output and see what an Adaptive
 The inner development loop with ACEs is similar to SPFx Web Parts. We can serve locally and run the code on the workbench.
 
 ```console
-gulp serve
+heft start
 ```
 
 Once local web server is running, navigate to the hosted Workbench: `https://{tenant}.sharepoint.com/_layouts/15/workbench.aspx`
@@ -377,7 +377,7 @@ In its `template()` getter, the Quick View of the ACE you generated returns the 
     }
     ```
 
-Test your changes by refreshing the hosted workbench in the browser. It should pickup the changes you've applied to the project if **gulp serve** is still running:
+Test your changes by refreshing the hosted workbench in the browser. It should pickup the changes you've applied to the project if **heft start** is still running:
 
 :::image type="content" source="../../../images/viva-extensibility/lab1-new-ql.png" alt-text="Updated ACE Quick View":::
 
@@ -414,7 +414,7 @@ public onAction(action: IActionArguments): void {
 }
 ```
 
-Test your changes by refreshing the hosted workbench in the browser. It should pickup the changes you've applied to the project if **gulp serve** is still running.
+Test your changes by refreshing the hosted workbench in the browser. It should pickup the changes you've applied to the project if **heft start** is still running.
 
 Selecting either button will now set the state's `subTitle` to the `data.message` value, causing a re-render (*more on this later*). The Quick View's Adaptive Card will now display this message, since its template binds to `subTitle`.
 

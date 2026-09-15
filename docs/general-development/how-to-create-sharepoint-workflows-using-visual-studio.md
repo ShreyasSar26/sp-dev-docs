@@ -1,7 +1,7 @@
 ---
 title: Create SharePoint workflows using Visual Studio
 description: Describes how to create a SharePoint workflow in the new SharePoint workflow platform using Visual Studio.
-ms.date: 10/15/2022
+ms.date: 04/24/2017
 ms.assetid: 739af178-96b3-4630-bbc0-5def02065eeb
 ms.localizationpriority: high
 ---
@@ -11,7 +11,10 @@ ms.localizationpriority: high
 
 Learn the basics of creating a SharePoint workflow in the new SharePoint workflow platform.
 
-**Provided by:** [Andrew Connell](https://www.andrewconnell.com), [Voitanos](https://www.voitanos.io)
+**Provided by:** [Andrew Connell](https://www.andrewconnell.com)
+
+> [!NOTE]
+> Beginning with Visual Studio 2026, SharePoint Workflow development in Visual Studio is deprecated and will be removed in a future release.
 
 > [!NOTE]
 > SharePoint 2010 workflows have been retired since August 1, 2020 for new tenants and removed from existing tenants on November 1, 2020. If you’re using SharePoint 2010 workflows, we recommend migrating to Power Automate or other supported solutions. For more info, see [SharePoint 2010 workflow retirement](https://support.microsoft.com/office/sharepoint-2010-workflow-retirement-1ca3fff8-9985-410a-85aa-8120f626965f).

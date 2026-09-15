@@ -6,7 +6,7 @@ ms.localizationpriority: high
 ---
 # SharePoint Framework v1.16.1 release notes
 
-This is a _minor bump_ that fixes the issues around SharePoint Framework solution packaging, provides improved default scaffolding and few other minor regressions which were in the previously [released 1.16 version](release-1.16.md).
+This is a _minor bump_ that fixes the issues around SharePoint Framework solution packaging, provides improved default scaffolding and few other minor regressions which were in the previously [released 1.16 version](release-1.16.0.md).
 
 **Released:** November 30, 2022
 
@@ -36,7 +36,18 @@ In the project's **package.json** file, identify all SPFx v1.16 packages. For ea
     npm install @microsoft/{spfx-package-name}@latest --save --save-exact
     ```
 
-[!INCLUDE [spfx-release-upgrade-tip](../../includes/snippets/spfx-release-upgrade-tip.md)]
+[!INCLUDE [spfx-release-upgrade-warning](../../includes/snippets/spfx-release-upgrade-warning.md)]
+
+> [!TIP]
+> To upgrade this project, run:
+>
+> ```console
+> npx -p @pnp/cli-microsoft365@latest m365 spfx project upgrade --toVersion 1.16.1 --output md
+> ```
+>
+> This analyzes your project and outputs all required changes, including a single script to apply them in one go.
+
+[!INCLUDE [pnp-o365cli](../../includes/snippets/open-source/pnp-o365cli.md)]
 
 ## New features and capabilities
 

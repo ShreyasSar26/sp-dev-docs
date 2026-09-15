@@ -1,7 +1,7 @@
 ---
 title: Advanced Quick View Functionality
 description: "This tutorial builds off the tutorial 'Advanced Card View Functionality'."
-ms.date: 08/28/2024
+ms.date: 02/13/2026
 ms.localizationpriority: high
 ---
 # Advanced Quick View Functionality
@@ -116,7 +116,7 @@ Start with the HelloWorld ACE from the previous tutorial, [Advanced Card View Fu
 Build and launch the ACE in the hosted workbench:
 
 ```console
-gulp serve
+heft start
 ```
 
 Once the local web server has loaded, navigate to the hosted workbench: `https://{tenant}.sharepoint.com/_layouts/15/workbench.aspx`

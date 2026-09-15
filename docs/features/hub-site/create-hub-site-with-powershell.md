@@ -1,19 +1,23 @@
 ---
 title: Create SharePoint hub sites using PowerShell
 description: Example code for creating a SharePoint hub site by using PowerShell.
-ms.date: 08/24/2022
+ms.date: 04/23/2025
 ms.localizationpriority: high
 ---
 
 # Create SharePoint hub sites by using PowerShell
 
 If you're a global or SharePoint admin in Office 365, you can convert any existing site to a hub site by using Microsoft PowerShell. In this example, you'll learn how to create a SharePoint hub site and to associate another site with it. In this scenario, you are setting up sites for the Contoso marketing department:
+
 - You will create a hub site that all other marketing sites will be associated with.
 - You will then specify settings and permissions for the hub site.
 - Finally, you will create a second site and associate it with the hub site.
 
 > [!NOTE]
 > To work with this example in SharePoint Online, we recommend that you use a developer tenant and not your production tenant. All of the following steps use a fictional tenant named "Contoso" that you can replace with your tenant name.
+
+> [!NOTE]
+> In SharePoint Multi-Geo environments, Hub Site association operations against sites located in satellite geo locations are not supported when using app-only authentication. To perform these operations, use delegated permissions.
 
 ## Using PnP PowerShell
 
@@ -28,10 +32,10 @@ The samples below can be performed using [PnP PowerShell](https://www.powershell
 
 First, we will create the marketing site that will serve as a hub site that other sites can associate with. The intent is that any sites that are marketing-oriented will be part of the hub site. This applies common navigation and branding across the associated sites, enables team members to search across all the sites associated with the single hub site, and takes advantage of other hub site features.
 
-1. Connect to the SharePoint Online Admin center using:
+1. Connect to the SharePoint Online Admin center using interactive login and [registered Azure AD (Entra ID)](https://pnp.github.io/powershell/articles/registerapplication.html) application:
 
     ```powershell
-    Connect-PnPOnline -Url https://contoso-admin.sharepoint.com -UseWebLogin
+    Connect-PnPOnline -Url https://contoso-admin.sharepoint.com -Interactive -ClientId <your-client-id>
     ```
 
 1. Create the site to be used as a hub site using the [New-PnPSite](https://pnp.github.io/powershell/cmdlets/New-PnPSite.html) cmdlet:

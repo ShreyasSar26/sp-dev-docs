@@ -1,7 +1,7 @@
 ---
 title: Show or hide columns in a list form
 description: Customize which columns to show or hide using a conditional formula in the list form by constructing a simple formula that are equations performing conditional checks on values in a SharePoint list or library.
-ms.date: 10/30/2024
+ms.date: 07/28/2025
 ms.localizationpriority: high
 ---
 
@@ -27,7 +27,7 @@ To show or hide a column in a list or library form:
 1. In the **Edit columns** pane, check (to show) or uncheck (to hide) the checkbox for the column or columns as needed.
 
     > [!NOTE]
-    > If you want to re-arrange the order of the columns, either drag-and-drop the column name, or first select the far right hand edge of the column name to display the options menu **(...)** and then select Move Up or Move Down as preferred.
+    > If you want to re-arrange the order of the columns, either drag-and-drop the column name or first select the far right-hand edge of the column name to display the options menu **(...)** and then select Move Up or Move Down as preferred.
 
 1. When you're finished, select **Save**.
 
@@ -58,7 +58,7 @@ For example, the following formula checks if the value for the *Category* column
 
 Returning _true_ shows the column on the form while returning _false_ hides the column.
 
-The column is represented by specifying the **internal name** of the field surrounded by square brackets and preceded by a dollar sign: `[$InternalName]`. For example, to get the value of a field with an internal name of "ProductName", use `[$ProductName]`.
+The column is represented by specifying the **internal name** of the field preceded by a dollar sign and surrounded by square brackets: `[$InternalName]`. For example, to get the value of a field with an internal name of "ProductName", use `[$ProductName]`.
 
 #### Unsupported column types in conditional formulas
 
@@ -66,6 +66,7 @@ While the formula supports many of the available column types, we do not current
 
 - Person or Group with multiple selections
 - Choice with multiple selections
+- Lookup with multiple selections
 - Time calculations in **Date and Time** column
 - Currency columns
 - Location columns
